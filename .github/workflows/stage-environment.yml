@@ -2,9 +2,9 @@ name: Stage Environment Pipeline
 
 on:
   push:
-    branches: [ develop, staging ]
+    branches: [ dev, develop, staging ]
   pull_request:
-    branches: [ develop, staging ]
+    branches: [ dev, develop, staging ]
   workflow_dispatch:
 
 env:

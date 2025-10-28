@@ -1,0 +1,2170 @@
+[2025-10-28 16:56:28,173] DESKTOP-16EJNEG/INFO/locust.main: Starting Locust 2.42.1
+[2025-10-28 16:56:28,176] DESKTOP-16EJNEG/INFO/locust.main: Run time limit set to 60 seconds
+[2025-10-28 16:56:28,182] DESKTOP-16EJNEG/INFO/locust.runners: Ramping to 10 users at a rate of 2.00 per second
+[2025-10-28 16:56:32,212] DESKTOP-16EJNEG/INFO/locust.runners: All users spawned: {"EcommerceUser": 3, "EcommerceWorkflowUser": 5, "HighLoadUser": 2} (10 total users)
+[2025-10-28 16:56:33,244] DESKTOP-16EJNEG/ERROR/locust.user.task: In order to use a with-block for requests, you must also pass catch_response=True
+Traceback (most recent call last):
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 355, in run
+    self.execute_next_task()
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 388, in execute_next_task
+    self.execute_task(self._task_queue.popleft())
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 505, in execute_task
+    task(self.user)
+  File "D:\ecommerce-microservice-backend-app\performance-tests\locustfile.py", line 715, in user_management_workflow
+    with self.client.post("/app/api/users",
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\clients.py", line 371, in __enter__
+    raise LocustError("In order to use a with-block for requests, you must also pass catch_response=True")
+locust.exception.LocustError: In order to use a with-block for requests, you must also pass catch_response=True
+
+[2025-10-28 16:56:34,241] DESKTOP-16EJNEG/ERROR/locust.user.task: In order to use a with-block for requests, you must also pass catch_response=True
+Traceback (most recent call last):
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 355, in run
+    self.execute_next_task()
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 388, in execute_next_task
+    self.execute_task(self._task_queue.popleft())
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 505, in execute_task
+    task(self.user)
+  File "D:\ecommerce-microservice-backend-app\performance-tests\locustfile.py", line 744, in product_management_workflow
+    with self.client.post("/app/api/products",
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\clients.py", line 371, in __enter__
+    raise LocustError("In order to use a with-block for requests, you must also pass catch_response=True")
+locust.exception.LocustError: In order to use a with-block for requests, you must also pass catch_response=True
+
+[2025-10-28 16:56:34,306] DESKTOP-16EJNEG/ERROR/locust.user.task: In order to use a with-block for requests, you must also pass catch_response=True
+Traceback (most recent call last):
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 355, in run
+    self.execute_next_task()
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 388, in execute_next_task
+    self.execute_task(self._task_queue.popleft())
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 505, in execute_task
+    task(self.user)
+  File "D:\ecommerce-microservice-backend-app\performance-tests\locustfile.py", line 657, in complete_purchase_workflow
+    with self.client.post("/app/api/orders",
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\clients.py", line 371, in __enter__
+    raise LocustError("In order to use a with-block for requests, you must also pass catch_response=True")
+locust.exception.LocustError: In order to use a with-block for requests, you must also pass catch_response=True
+
+[2025-10-28 16:56:35,272] DESKTOP-16EJNEG/ERROR/locust.user.task: In order to use a with-block for requests, you must also pass catch_response=True
+Traceback (most recent call last):
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 355, in run
+    self.execute_next_task()
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 388, in execute_next_task
+    self.execute_task(self._task_queue.popleft())
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 505, in execute_task
+    task(self.user)
+  File "D:\ecommerce-microservice-backend-app\performance-tests\locustfile.py", line 657, in complete_purchase_workflow
+    with self.client.post("/app/api/orders",
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\clients.py", line 371, in __enter__
+    raise LocustError("In order to use a with-block for requests, you must also pass catch_response=True")
+locust.exception.LocustError: In order to use a with-block for requests, you must also pass catch_response=True
+
+[2025-10-28 16:56:36,297] DESKTOP-16EJNEG/ERROR/locust.user.task: In order to use a with-block for requests, you must also pass catch_response=True
+Traceback (most recent call last):
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 355, in run
+    self.execute_next_task()
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 388, in execute_next_task
+    self.execute_task(self._task_queue.popleft())
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 505, in execute_task
+    task(self.user)
+  File "D:\ecommerce-microservice-backend-app\performance-tests\locustfile.py", line 657, in complete_purchase_workflow
+    with self.client.post("/app/api/orders",
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\clients.py", line 371, in __enter__
+    raise LocustError("In order to use a with-block for requests, you must also pass catch_response=True")
+locust.exception.LocustError: In order to use a with-block for requests, you must also pass catch_response=True
+
+[2025-10-28 16:56:41,356] DESKTOP-16EJNEG/ERROR/locust.user.task: In order to use a with-block for requests, you must also pass catch_response=True
+Traceback (most recent call last):
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 355, in run
+    self.execute_next_task()
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 388, in execute_next_task
+    self.execute_task(self._task_queue.popleft())
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 505, in execute_task
+    task(self.user)
+  File "D:\ecommerce-microservice-backend-app\performance-tests\locustfile.py", line 657, in complete_purchase_workflow
+    with self.client.post("/app/api/orders",
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\clients.py", line 371, in __enter__
+    raise LocustError("In order to use a with-block for requests, you must also pass catch_response=True")
+locust.exception.LocustError: In order to use a with-block for requests, you must also pass catch_response=True
+
+[2025-10-28 16:56:43,259] DESKTOP-16EJNEG/ERROR/locust.user.task: In order to use a with-block for requests, you must also pass catch_response=True
+Traceback (most recent call last):
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 355, in run
+    self.execute_next_task()
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 388, in execute_next_task
+    self.execute_task(self._task_queue.popleft())
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 505, in execute_task
+    task(self.user)
+  File "D:\ecommerce-microservice-backend-app\performance-tests\locustfile.py", line 657, in complete_purchase_workflow
+    with self.client.post("/app/api/orders",
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\clients.py", line 371, in __enter__
+    raise LocustError("In order to use a with-block for requests, you must also pass catch_response=True")
+locust.exception.LocustError: In order to use a with-block for requests, you must also pass catch_response=True
+
+[2025-10-28 16:56:43,541] DESKTOP-16EJNEG/ERROR/locust.user.task: In order to use a with-block for requests, you must also pass catch_response=True
+Traceback (most recent call last):
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 355, in run
+    self.execute_next_task()
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 388, in execute_next_task
+    self.execute_task(self._task_queue.popleft())
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 505, in execute_task
+    task(self.user)
+  File "D:\ecommerce-microservice-backend-app\performance-tests\locustfile.py", line 657, in complete_purchase_workflow
+    with self.client.post("/app/api/orders",
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\clients.py", line 371, in __enter__
+    raise LocustError("In order to use a with-block for requests, you must also pass catch_response=True")
+locust.exception.LocustError: In order to use a with-block for requests, you must also pass catch_response=True
+
+[2025-10-28 16:56:43,592] DESKTOP-16EJNEG/ERROR/locust.user.task: In order to use a with-block for requests, you must also pass catch_response=True
+Traceback (most recent call last):
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 355, in run
+    self.execute_next_task()
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 388, in execute_next_task
+    self.execute_task(self._task_queue.popleft())
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 505, in execute_task
+    task(self.user)
+  File "D:\ecommerce-microservice-backend-app\performance-tests\locustfile.py", line 657, in complete_purchase_workflow
+    with self.client.post("/app/api/orders",
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\clients.py", line 371, in __enter__
+    raise LocustError("In order to use a with-block for requests, you must also pass catch_response=True")
+locust.exception.LocustError: In order to use a with-block for requests, you must also pass catch_response=True
+
+[2025-10-28 16:56:47,002] DESKTOP-16EJNEG/ERROR/locust.user.task: In order to use a with-block for requests, you must also pass catch_response=True
+Traceback (most recent call last):
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 355, in run
+    self.execute_next_task()
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 388, in execute_next_task
+    self.execute_task(self._task_queue.popleft())
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 505, in execute_task
+    task(self.user)
+  File "D:\ecommerce-microservice-backend-app\performance-tests\locustfile.py", line 657, in complete_purchase_workflow
+    with self.client.post("/app/api/orders",
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\clients.py", line 371, in __enter__
+    raise LocustError("In order to use a with-block for requests, you must also pass catch_response=True")
+locust.exception.LocustError: In order to use a with-block for requests, you must also pass catch_response=True
+
+[2025-10-28 16:56:47,720] DESKTOP-16EJNEG/ERROR/locust.user.task: In order to use a with-block for requests, you must also pass catch_response=True
+Traceback (most recent call last):
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 355, in run
+    self.execute_next_task()
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 388, in execute_next_task
+    self.execute_task(self._task_queue.popleft())
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 505, in execute_task
+    task(self.user)
+  File "D:\ecommerce-microservice-backend-app\performance-tests\locustfile.py", line 744, in product_management_workflow
+    with self.client.post("/app/api/products",
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\clients.py", line 371, in __enter__
+    raise LocustError("In order to use a with-block for requests, you must also pass catch_response=True")
+locust.exception.LocustError: In order to use a with-block for requests, you must also pass catch_response=True
+
+[2025-10-28 16:56:48,988] DESKTOP-16EJNEG/ERROR/locust.user.task: In order to use a with-block for requests, you must also pass catch_response=True
+Traceback (most recent call last):
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 355, in run
+    self.execute_next_task()
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 388, in execute_next_task
+    self.execute_task(self._task_queue.popleft())
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 505, in execute_task
+    task(self.user)
+  File "D:\ecommerce-microservice-backend-app\performance-tests\locustfile.py", line 715, in user_management_workflow
+    with self.client.post("/app/api/users",
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\clients.py", line 371, in __enter__
+    raise LocustError("In order to use a with-block for requests, you must also pass catch_response=True")
+locust.exception.LocustError: In order to use a with-block for requests, you must also pass catch_response=True
+
+[2025-10-28 16:56:50,517] DESKTOP-16EJNEG/ERROR/locust.user.task: In order to use a with-block for requests, you must also pass catch_response=True
+Traceback (most recent call last):
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 355, in run
+    self.execute_next_task()
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 388, in execute_next_task
+    self.execute_task(self._task_queue.popleft())
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 505, in execute_task
+    task(self.user)
+  File "D:\ecommerce-microservice-backend-app\performance-tests\locustfile.py", line 715, in user_management_workflow
+    with self.client.post("/app/api/users",
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\clients.py", line 371, in __enter__
+    raise LocustError("In order to use a with-block for requests, you must also pass catch_response=True")
+locust.exception.LocustError: In order to use a with-block for requests, you must also pass catch_response=True
+
+[2025-10-28 16:56:53,507] DESKTOP-16EJNEG/ERROR/locust.user.task: In order to use a with-block for requests, you must also pass catch_response=True
+Traceback (most recent call last):
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 355, in run
+    self.execute_next_task()
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 388, in execute_next_task
+    self.execute_task(self._task_queue.popleft())
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 505, in execute_task
+    task(self.user)
+  File "D:\ecommerce-microservice-backend-app\performance-tests\locustfile.py", line 715, in user_management_workflow
+    with self.client.post("/app/api/users",
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\clients.py", line 371, in __enter__
+    raise LocustError("In order to use a with-block for requests, you must also pass catch_response=True")
+locust.exception.LocustError: In order to use a with-block for requests, you must also pass catch_response=True
+
+[2025-10-28 16:56:53,758] DESKTOP-16EJNEG/ERROR/locust.user.task: In order to use a with-block for requests, you must also pass catch_response=True
+Traceback (most recent call last):
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 355, in run
+    self.execute_next_task()
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 388, in execute_next_task
+    self.execute_task(self._task_queue.popleft())
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 505, in execute_task
+    task(self.user)
+  File "D:\ecommerce-microservice-backend-app\performance-tests\locustfile.py", line 657, in complete_purchase_workflow
+    with self.client.post("/app/api/orders",
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\clients.py", line 371, in __enter__
+    raise LocustError("In order to use a with-block for requests, you must also pass catch_response=True")
+locust.exception.LocustError: In order to use a with-block for requests, you must also pass catch_response=True
+
+[2025-10-28 16:56:55,726] DESKTOP-16EJNEG/ERROR/locust.user.task: In order to use a with-block for requests, you must also pass catch_response=True
+Traceback (most recent call last):
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 355, in run
+    self.execute_next_task()
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 388, in execute_next_task
+    self.execute_task(self._task_queue.popleft())
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 505, in execute_task
+    task(self.user)
+  File "D:\ecommerce-microservice-backend-app\performance-tests\locustfile.py", line 744, in product_management_workflow
+    with self.client.post("/app/api/products",
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\clients.py", line 371, in __enter__
+    raise LocustError("In order to use a with-block for requests, you must also pass catch_response=True")
+locust.exception.LocustError: In order to use a with-block for requests, you must also pass catch_response=True
+
+[2025-10-28 16:56:57,152] DESKTOP-16EJNEG/ERROR/locust.user.task: In order to use a with-block for requests, you must also pass catch_response=True
+Traceback (most recent call last):
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 355, in run
+    self.execute_next_task()
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 388, in execute_next_task
+    self.execute_task(self._task_queue.popleft())
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 505, in execute_task
+    task(self.user)
+  File "D:\ecommerce-microservice-backend-app\performance-tests\locustfile.py", line 657, in complete_purchase_workflow
+    with self.client.post("/app/api/orders",
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\clients.py", line 371, in __enter__
+    raise LocustError("In order to use a with-block for requests, you must also pass catch_response=True")
+locust.exception.LocustError: In order to use a with-block for requests, you must also pass catch_response=True
+
+[2025-10-28 16:56:58,444] DESKTOP-16EJNEG/ERROR/locust.user.task: In order to use a with-block for requests, you must also pass catch_response=True
+Traceback (most recent call last):
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 355, in run
+    self.execute_next_task()
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 388, in execute_next_task
+    self.execute_task(self._task_queue.popleft())
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 505, in execute_task
+    task(self.user)
+  File "D:\ecommerce-microservice-backend-app\performance-tests\locustfile.py", line 657, in complete_purchase_workflow
+    with self.client.post("/app/api/orders",
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\clients.py", line 371, in __enter__
+    raise LocustError("In order to use a with-block for requests, you must also pass catch_response=True")
+locust.exception.LocustError: In order to use a with-block for requests, you must also pass catch_response=True
+
+[2025-10-28 16:57:00,481] DESKTOP-16EJNEG/ERROR/locust.user.task: In order to use a with-block for requests, you must also pass catch_response=True
+Traceback (most recent call last):
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 355, in run
+    self.execute_next_task()
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 388, in execute_next_task
+    self.execute_task(self._task_queue.popleft())
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 505, in execute_task
+    task(self.user)
+  File "D:\ecommerce-microservice-backend-app\performance-tests\locustfile.py", line 744, in product_management_workflow
+    with self.client.post("/app/api/products",
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\clients.py", line 371, in __enter__
+    raise LocustError("In order to use a with-block for requests, you must also pass catch_response=True")
+locust.exception.LocustError: In order to use a with-block for requests, you must also pass catch_response=True
+
+[2025-10-28 16:57:00,690] DESKTOP-16EJNEG/ERROR/locust.user.task: In order to use a with-block for requests, you must also pass catch_response=True
+Traceback (most recent call last):
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 355, in run
+    self.execute_next_task()
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 388, in execute_next_task
+    self.execute_task(self._task_queue.popleft())
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 505, in execute_task
+    task(self.user)
+  File "D:\ecommerce-microservice-backend-app\performance-tests\locustfile.py", line 744, in product_management_workflow
+    with self.client.post("/app/api/products",
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\clients.py", line 371, in __enter__
+    raise LocustError("In order to use a with-block for requests, you must also pass catch_response=True")
+locust.exception.LocustError: In order to use a with-block for requests, you must also pass catch_response=True
+
+[2025-10-28 16:57:04,331] DESKTOP-16EJNEG/ERROR/locust.user.task: In order to use a with-block for requests, you must also pass catch_response=True
+Traceback (most recent call last):
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 355, in run
+    self.execute_next_task()
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 388, in execute_next_task
+    self.execute_task(self._task_queue.popleft())
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 505, in execute_task
+    task(self.user)
+  File "D:\ecommerce-microservice-backend-app\performance-tests\locustfile.py", line 657, in complete_purchase_workflow
+    with self.client.post("/app/api/orders",
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\clients.py", line 371, in __enter__
+    raise LocustError("In order to use a with-block for requests, you must also pass catch_response=True")
+locust.exception.LocustError: In order to use a with-block for requests, you must also pass catch_response=True
+
+[2025-10-28 16:57:04,889] DESKTOP-16EJNEG/ERROR/locust.user.task: In order to use a with-block for requests, you must also pass catch_response=True
+Traceback (most recent call last):
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 355, in run
+    self.execute_next_task()
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 388, in execute_next_task
+    self.execute_task(self._task_queue.popleft())
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 505, in execute_task
+    task(self.user)
+  File "D:\ecommerce-microservice-backend-app\performance-tests\locustfile.py", line 715, in user_management_workflow
+    with self.client.post("/app/api/users",
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\clients.py", line 371, in __enter__
+    raise LocustError("In order to use a with-block for requests, you must also pass catch_response=True")
+locust.exception.LocustError: In order to use a with-block for requests, you must also pass catch_response=True
+
+[2025-10-28 16:57:04,988] DESKTOP-16EJNEG/ERROR/locust.user.task: In order to use a with-block for requests, you must also pass catch_response=True
+Traceback (most recent call last):
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 355, in run
+    self.execute_next_task()
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 388, in execute_next_task
+    self.execute_task(self._task_queue.popleft())
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 505, in execute_task
+    task(self.user)
+  File "D:\ecommerce-microservice-backend-app\performance-tests\locustfile.py", line 744, in product_management_workflow
+    with self.client.post("/app/api/products",
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\clients.py", line 371, in __enter__
+    raise LocustError("In order to use a with-block for requests, you must also pass catch_response=True")
+locust.exception.LocustError: In order to use a with-block for requests, you must also pass catch_response=True
+
+[2025-10-28 16:57:06,226] DESKTOP-16EJNEG/ERROR/locust.user.task: In order to use a with-block for requests, you must also pass catch_response=True
+Traceback (most recent call last):
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 355, in run
+    self.execute_next_task()
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 388, in execute_next_task
+    self.execute_task(self._task_queue.popleft())
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 505, in execute_task
+    task(self.user)
+  File "D:\ecommerce-microservice-backend-app\performance-tests\locustfile.py", line 657, in complete_purchase_workflow
+    with self.client.post("/app/api/orders",
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\clients.py", line 371, in __enter__
+    raise LocustError("In order to use a with-block for requests, you must also pass catch_response=True")
+locust.exception.LocustError: In order to use a with-block for requests, you must also pass catch_response=True
+
+[2025-10-28 16:57:09,841] DESKTOP-16EJNEG/ERROR/locust.user.task: In order to use a with-block for requests, you must also pass catch_response=True
+Traceback (most recent call last):
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 355, in run
+    self.execute_next_task()
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 388, in execute_next_task
+    self.execute_task(self._task_queue.popleft())
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 505, in execute_task
+    task(self.user)
+  File "D:\ecommerce-microservice-backend-app\performance-tests\locustfile.py", line 657, in complete_purchase_workflow
+    with self.client.post("/app/api/orders",
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\clients.py", line 371, in __enter__
+    raise LocustError("In order to use a with-block for requests, you must also pass catch_response=True")
+locust.exception.LocustError: In order to use a with-block for requests, you must also pass catch_response=True
+
+[2025-10-28 16:57:11,901] DESKTOP-16EJNEG/ERROR/locust.user.task: In order to use a with-block for requests, you must also pass catch_response=True
+Traceback (most recent call last):
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 355, in run
+    self.execute_next_task()
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 388, in execute_next_task
+    self.execute_task(self._task_queue.popleft())
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 505, in execute_task
+    task(self.user)
+  File "D:\ecommerce-microservice-backend-app\performance-tests\locustfile.py", line 744, in product_management_workflow
+    with self.client.post("/app/api/products",
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\clients.py", line 371, in __enter__
+    raise LocustError("In order to use a with-block for requests, you must also pass catch_response=True")
+locust.exception.LocustError: In order to use a with-block for requests, you must also pass catch_response=True
+
+[2025-10-28 16:57:12,804] DESKTOP-16EJNEG/ERROR/locust.user.task: In order to use a with-block for requests, you must also pass catch_response=True
+Traceback (most recent call last):
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 355, in run
+    self.execute_next_task()
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 388, in execute_next_task
+    self.execute_task(self._task_queue.popleft())
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 505, in execute_task
+    task(self.user)
+  File "D:\ecommerce-microservice-backend-app\performance-tests\locustfile.py", line 715, in user_management_workflow
+    with self.client.post("/app/api/users",
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\clients.py", line 371, in __enter__
+    raise LocustError("In order to use a with-block for requests, you must also pass catch_response=True")
+locust.exception.LocustError: In order to use a with-block for requests, you must also pass catch_response=True
+
+[2025-10-28 16:57:13,693] DESKTOP-16EJNEG/ERROR/locust.user.task: In order to use a with-block for requests, you must also pass catch_response=True
+Traceback (most recent call last):
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 355, in run
+    self.execute_next_task()
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 388, in execute_next_task
+    self.execute_task(self._task_queue.popleft())
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 505, in execute_task
+    task(self.user)
+  File "D:\ecommerce-microservice-backend-app\performance-tests\locustfile.py", line 657, in complete_purchase_workflow
+    with self.client.post("/app/api/orders",
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\clients.py", line 371, in __enter__
+    raise LocustError("In order to use a with-block for requests, you must also pass catch_response=True")
+locust.exception.LocustError: In order to use a with-block for requests, you must also pass catch_response=True
+
+[2025-10-28 16:57:15,158] DESKTOP-16EJNEG/ERROR/locust.user.task: In order to use a with-block for requests, you must also pass catch_response=True
+Traceback (most recent call last):
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 355, in run
+    self.execute_next_task()
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 388, in execute_next_task
+    self.execute_task(self._task_queue.popleft())
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 505, in execute_task
+    task(self.user)
+  File "D:\ecommerce-microservice-backend-app\performance-tests\locustfile.py", line 657, in complete_purchase_workflow
+    with self.client.post("/app/api/orders",
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\clients.py", line 371, in __enter__
+    raise LocustError("In order to use a with-block for requests, you must also pass catch_response=True")
+locust.exception.LocustError: In order to use a with-block for requests, you must also pass catch_response=True
+
+[2025-10-28 16:57:18,454] DESKTOP-16EJNEG/ERROR/locust.user.task: In order to use a with-block for requests, you must also pass catch_response=True
+Traceback (most recent call last):
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 355, in run
+    self.execute_next_task()
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 388, in execute_next_task
+    self.execute_task(self._task_queue.popleft())
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 505, in execute_task
+    task(self.user)
+  File "D:\ecommerce-microservice-backend-app\performance-tests\locustfile.py", line 657, in complete_purchase_workflow
+    with self.client.post("/app/api/orders",
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\clients.py", line 371, in __enter__
+    raise LocustError("In order to use a with-block for requests, you must also pass catch_response=True")
+locust.exception.LocustError: In order to use a with-block for requests, you must also pass catch_response=True
+
+[2025-10-28 16:57:19,305] DESKTOP-16EJNEG/ERROR/locust.user.task: In order to use a with-block for requests, you must also pass catch_response=True
+Traceback (most recent call last):
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 355, in run
+    self.execute_next_task()
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 388, in execute_next_task
+    self.execute_task(self._task_queue.popleft())
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 505, in execute_task
+    task(self.user)
+  File "D:\ecommerce-microservice-backend-app\performance-tests\locustfile.py", line 715, in user_management_workflow
+    with self.client.post("/app/api/users",
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\clients.py", line 371, in __enter__
+    raise LocustError("In order to use a with-block for requests, you must also pass catch_response=True")
+locust.exception.LocustError: In order to use a with-block for requests, you must also pass catch_response=True
+
+[2025-10-28 16:57:21,421] DESKTOP-16EJNEG/ERROR/locust.user.task: In order to use a with-block for requests, you must also pass catch_response=True
+Traceback (most recent call last):
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 355, in run
+    self.execute_next_task()
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 388, in execute_next_task
+    self.execute_task(self._task_queue.popleft())
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 505, in execute_task
+    task(self.user)
+  File "D:\ecommerce-microservice-backend-app\performance-tests\locustfile.py", line 657, in complete_purchase_workflow
+    with self.client.post("/app/api/orders",
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\clients.py", line 371, in __enter__
+    raise LocustError("In order to use a with-block for requests, you must also pass catch_response=True")
+locust.exception.LocustError: In order to use a with-block for requests, you must also pass catch_response=True
+
+[2025-10-28 16:57:22,158] DESKTOP-16EJNEG/ERROR/locust.user.task: In order to use a with-block for requests, you must also pass catch_response=True
+Traceback (most recent call last):
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 355, in run
+    self.execute_next_task()
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 388, in execute_next_task
+    self.execute_task(self._task_queue.popleft())
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 505, in execute_task
+    task(self.user)
+  File "D:\ecommerce-microservice-backend-app\performance-tests\locustfile.py", line 657, in complete_purchase_workflow
+    with self.client.post("/app/api/orders",
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\clients.py", line 371, in __enter__
+    raise LocustError("In order to use a with-block for requests, you must also pass catch_response=True")
+locust.exception.LocustError: In order to use a with-block for requests, you must also pass catch_response=True
+
+[2025-10-28 16:57:22,824] DESKTOP-16EJNEG/ERROR/locust.user.task: In order to use a with-block for requests, you must also pass catch_response=True
+Traceback (most recent call last):
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 355, in run
+    self.execute_next_task()
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 388, in execute_next_task
+    self.execute_task(self._task_queue.popleft())
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 505, in execute_task
+    task(self.user)
+  File "D:\ecommerce-microservice-backend-app\performance-tests\locustfile.py", line 657, in complete_purchase_workflow
+    with self.client.post("/app/api/orders",
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\clients.py", line 371, in __enter__
+    raise LocustError("In order to use a with-block for requests, you must also pass catch_response=True")
+locust.exception.LocustError: In order to use a with-block for requests, you must also pass catch_response=True
+
+[2025-10-28 16:57:24,156] DESKTOP-16EJNEG/ERROR/locust.user.task: In order to use a with-block for requests, you must also pass catch_response=True
+Traceback (most recent call last):
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 355, in run
+    self.execute_next_task()
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 388, in execute_next_task
+    self.execute_task(self._task_queue.popleft())
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 505, in execute_task
+    task(self.user)
+  File "D:\ecommerce-microservice-backend-app\performance-tests\locustfile.py", line 744, in product_management_workflow
+    with self.client.post("/app/api/products",
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\clients.py", line 371, in __enter__
+    raise LocustError("In order to use a with-block for requests, you must also pass catch_response=True")
+locust.exception.LocustError: In order to use a with-block for requests, you must also pass catch_response=True
+
+[2025-10-28 16:57:25,705] DESKTOP-16EJNEG/ERROR/locust.user.task: In order to use a with-block for requests, you must also pass catch_response=True
+Traceback (most recent call last):
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 355, in run
+    self.execute_next_task()
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 388, in execute_next_task
+    self.execute_task(self._task_queue.popleft())
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 505, in execute_task
+    task(self.user)
+  File "D:\ecommerce-microservice-backend-app\performance-tests\locustfile.py", line 744, in product_management_workflow
+    with self.client.post("/app/api/products",
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\clients.py", line 371, in __enter__
+    raise LocustError("In order to use a with-block for requests, you must also pass catch_response=True")
+locust.exception.LocustError: In order to use a with-block for requests, you must also pass catch_response=True
+
+[2025-10-28 16:57:26,337] DESKTOP-16EJNEG/INFO/locust.main: --run-time limit reached, shutting down
+[2025-10-28 16:57:27,690] DESKTOP-16EJNEG/ERROR/locust.user.task: In order to use a with-block for requests, you must also pass catch_response=True
+Traceback (most recent call last):
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 355, in run
+    self.execute_next_task()
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 388, in execute_next_task
+    self.execute_task(self._task_queue.popleft())
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 505, in execute_task
+    task(self.user)
+  File "D:\ecommerce-microservice-backend-app\performance-tests\locustfile.py", line 744, in product_management_workflow
+    with self.client.post("/app/api/products",
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\clients.py", line 371, in __enter__
+    raise LocustError("In order to use a with-block for requests, you must also pass catch_response=True")
+locust.exception.LocustError: In order to use a with-block for requests, you must also pass catch_response=True
+
+[2025-10-28 16:57:29,138] DESKTOP-16EJNEG/ERROR/locust.user.task: In order to use a with-block for requests, you must also pass catch_response=True
+Traceback (most recent call last):
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 355, in run
+    self.execute_next_task()
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 388, in execute_next_task
+    self.execute_task(self._task_queue.popleft())
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 505, in execute_task
+    task(self.user)
+  File "D:\ecommerce-microservice-backend-app\performance-tests\locustfile.py", line 657, in complete_purchase_workflow
+    with self.client.post("/app/api/orders",
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\clients.py", line 371, in __enter__
+    raise LocustError("In order to use a with-block for requests, you must also pass catch_response=True")
+locust.exception.LocustError: In order to use a with-block for requests, you must also pass catch_response=True
+
+[2025-10-28 16:57:32,340] DESKTOP-16EJNEG/ERROR/locust.user.task: In order to use a with-block for requests, you must also pass catch_response=True
+Traceback (most recent call last):
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 355, in run
+    self.execute_next_task()
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 388, in execute_next_task
+    self.execute_task(self._task_queue.popleft())
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 505, in execute_task
+    task(self.user)
+  File "D:\ecommerce-microservice-backend-app\performance-tests\locustfile.py", line 657, in complete_purchase_workflow
+    with self.client.post("/app/api/orders",
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\clients.py", line 371, in __enter__
+    raise LocustError("In order to use a with-block for requests, you must also pass catch_response=True")
+locust.exception.LocustError: In order to use a with-block for requests, you must also pass catch_response=True
+
+[2025-10-28 16:57:32,656] DESKTOP-16EJNEG/INFO/locust.main: writing html report to file: ../test-results/performance/performance_report.html
+[2025-10-28 16:57:32,660] DESKTOP-16EJNEG/INFO/locust.main: Shutting down (exit code 1)
+[2025-10-28 16:59:27,497] DESKTOP-16EJNEG/INFO/locust.main: Starting Locust 2.42.1
+[2025-10-28 16:59:27,499] DESKTOP-16EJNEG/INFO/locust.main: Run time limit set to 60 seconds
+[2025-10-28 16:59:27,502] DESKTOP-16EJNEG/INFO/locust.runners: Ramping to 10 users at a rate of 2.00 per second
+[2025-10-28 16:59:31,520] DESKTOP-16EJNEG/INFO/locust.runners: All users spawned: {"EcommerceUser": 3, "EcommerceWorkflowUser": 5, "HighLoadUser": 2} (10 total users)
+[2025-10-28 16:59:33,557] DESKTOP-16EJNEG/ERROR/locust.user.task: In order to use a with-block for requests, you must also pass catch_response=True
+Traceback (most recent call last):
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 355, in run
+    self.execute_next_task()
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 388, in execute_next_task
+    self.execute_task(self._task_queue.popleft())
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 505, in execute_task
+    task(self.user)
+  File "D:\ecommerce-microservice-backend-app\performance-tests\locustfile.py", line 715, in user_management_workflow
+    with self.client.post("/app/api/users",
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\clients.py", line 371, in __enter__
+    raise LocustError("In order to use a with-block for requests, you must also pass catch_response=True")
+locust.exception.LocustError: In order to use a with-block for requests, you must also pass catch_response=True
+
+[2025-10-28 16:59:33,572] DESKTOP-16EJNEG/ERROR/locust.user.task: In order to use a with-block for requests, you must also pass catch_response=True
+Traceback (most recent call last):
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 355, in run
+    self.execute_next_task()
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 388, in execute_next_task
+    self.execute_task(self._task_queue.popleft())
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 505, in execute_task
+    task(self.user)
+  File "D:\ecommerce-microservice-backend-app\performance-tests\locustfile.py", line 657, in complete_purchase_workflow
+    with self.client.post("/app/api/orders",
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\clients.py", line 371, in __enter__
+    raise LocustError("In order to use a with-block for requests, you must also pass catch_response=True")
+locust.exception.LocustError: In order to use a with-block for requests, you must also pass catch_response=True
+
+[2025-10-28 16:59:34,587] DESKTOP-16EJNEG/ERROR/locust.user.task: In order to use a with-block for requests, you must also pass catch_response=True
+Traceback (most recent call last):
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 355, in run
+    self.execute_next_task()
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 388, in execute_next_task
+    self.execute_task(self._task_queue.popleft())
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 505, in execute_task
+    task(self.user)
+  File "D:\ecommerce-microservice-backend-app\performance-tests\locustfile.py", line 657, in complete_purchase_workflow
+    with self.client.post("/app/api/orders",
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\clients.py", line 371, in __enter__
+    raise LocustError("In order to use a with-block for requests, you must also pass catch_response=True")
+locust.exception.LocustError: In order to use a with-block for requests, you must also pass catch_response=True
+
+[2025-10-28 16:59:35,602] DESKTOP-16EJNEG/ERROR/locust.user.task: In order to use a with-block for requests, you must also pass catch_response=True
+Traceback (most recent call last):
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 355, in run
+    self.execute_next_task()
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 388, in execute_next_task
+    self.execute_task(self._task_queue.popleft())
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 505, in execute_task
+    task(self.user)
+  File "D:\ecommerce-microservice-backend-app\performance-tests\locustfile.py", line 657, in complete_purchase_workflow
+    with self.client.post("/app/api/orders",
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\clients.py", line 371, in __enter__
+    raise LocustError("In order to use a with-block for requests, you must also pass catch_response=True")
+locust.exception.LocustError: In order to use a with-block for requests, you must also pass catch_response=True
+
+[2025-10-28 16:59:36,623] DESKTOP-16EJNEG/ERROR/locust.user.task: In order to use a with-block for requests, you must also pass catch_response=True
+Traceback (most recent call last):
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 355, in run
+    self.execute_next_task()
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 388, in execute_next_task
+    self.execute_task(self._task_queue.popleft())
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 505, in execute_task
+    task(self.user)
+  File "D:\ecommerce-microservice-backend-app\performance-tests\locustfile.py", line 657, in complete_purchase_workflow
+    with self.client.post("/app/api/orders",
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\clients.py", line 371, in __enter__
+    raise LocustError("In order to use a with-block for requests, you must also pass catch_response=True")
+locust.exception.LocustError: In order to use a with-block for requests, you must also pass catch_response=True
+
+[2025-10-28 16:59:39,704] DESKTOP-16EJNEG/ERROR/locust.user.task: In order to use a with-block for requests, you must also pass catch_response=True
+Traceback (most recent call last):
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 355, in run
+    self.execute_next_task()
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 388, in execute_next_task
+    self.execute_task(self._task_queue.popleft())
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 505, in execute_task
+    task(self.user)
+  File "D:\ecommerce-microservice-backend-app\performance-tests\locustfile.py", line 744, in product_management_workflow
+    with self.client.post("/app/api/products",
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\clients.py", line 371, in __enter__
+    raise LocustError("In order to use a with-block for requests, you must also pass catch_response=True")
+locust.exception.LocustError: In order to use a with-block for requests, you must also pass catch_response=True
+
+[2025-10-28 16:59:40,555] DESKTOP-16EJNEG/ERROR/locust.user.task: In order to use a with-block for requests, you must also pass catch_response=True
+Traceback (most recent call last):
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 355, in run
+    self.execute_next_task()
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 388, in execute_next_task
+    self.execute_task(self._task_queue.popleft())
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 505, in execute_task
+    task(self.user)
+  File "D:\ecommerce-microservice-backend-app\performance-tests\locustfile.py", line 744, in product_management_workflow
+    with self.client.post("/app/api/products",
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\clients.py", line 371, in __enter__
+    raise LocustError("In order to use a with-block for requests, you must also pass catch_response=True")
+locust.exception.LocustError: In order to use a with-block for requests, you must also pass catch_response=True
+
+[2025-10-28 16:59:41,771] DESKTOP-16EJNEG/ERROR/locust.user.task: In order to use a with-block for requests, you must also pass catch_response=True
+Traceback (most recent call last):
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 355, in run
+    self.execute_next_task()
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 388, in execute_next_task
+    self.execute_task(self._task_queue.popleft())
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 505, in execute_task
+    task(self.user)
+  File "D:\ecommerce-microservice-backend-app\performance-tests\locustfile.py", line 744, in product_management_workflow
+    with self.client.post("/app/api/products",
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\clients.py", line 371, in __enter__
+    raise LocustError("In order to use a with-block for requests, you must also pass catch_response=True")
+locust.exception.LocustError: In order to use a with-block for requests, you must also pass catch_response=True
+
+[2025-10-28 16:59:43,639] DESKTOP-16EJNEG/ERROR/locust.user.task: In order to use a with-block for requests, you must also pass catch_response=True
+Traceback (most recent call last):
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 355, in run
+    self.execute_next_task()
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 388, in execute_next_task
+    self.execute_task(self._task_queue.popleft())
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 505, in execute_task
+    task(self.user)
+  File "D:\ecommerce-microservice-backend-app\performance-tests\locustfile.py", line 657, in complete_purchase_workflow
+    with self.client.post("/app/api/orders",
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\clients.py", line 371, in __enter__
+    raise LocustError("In order to use a with-block for requests, you must also pass catch_response=True")
+locust.exception.LocustError: In order to use a with-block for requests, you must also pass catch_response=True
+
+[2025-10-28 16:59:44,355] DESKTOP-16EJNEG/ERROR/locust.user.task: In order to use a with-block for requests, you must also pass catch_response=True
+Traceback (most recent call last):
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 355, in run
+    self.execute_next_task()
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 388, in execute_next_task
+    self.execute_task(self._task_queue.popleft())
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 505, in execute_task
+    task(self.user)
+  File "D:\ecommerce-microservice-backend-app\performance-tests\locustfile.py", line 657, in complete_purchase_workflow
+    with self.client.post("/app/api/orders",
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\clients.py", line 371, in __enter__
+    raise LocustError("In order to use a with-block for requests, you must also pass catch_response=True")
+locust.exception.LocustError: In order to use a with-block for requests, you must also pass catch_response=True
+
+[2025-10-28 16:59:45,484] DESKTOP-16EJNEG/ERROR/locust.user.task: In order to use a with-block for requests, you must also pass catch_response=True
+Traceback (most recent call last):
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 355, in run
+    self.execute_next_task()
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 388, in execute_next_task
+    self.execute_task(self._task_queue.popleft())
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 505, in execute_task
+    task(self.user)
+  File "D:\ecommerce-microservice-backend-app\performance-tests\locustfile.py", line 715, in user_management_workflow
+    with self.client.post("/app/api/users",
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\clients.py", line 371, in __enter__
+    raise LocustError("In order to use a with-block for requests, you must also pass catch_response=True")
+locust.exception.LocustError: In order to use a with-block for requests, you must also pass catch_response=True
+
+[2025-10-28 16:59:46,188] DESKTOP-16EJNEG/ERROR/locust.user.task: In order to use a with-block for requests, you must also pass catch_response=True
+Traceback (most recent call last):
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 355, in run
+    self.execute_next_task()
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 388, in execute_next_task
+    self.execute_task(self._task_queue.popleft())
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 505, in execute_task
+    task(self.user)
+  File "D:\ecommerce-microservice-backend-app\performance-tests\locustfile.py", line 715, in user_management_workflow
+    with self.client.post("/app/api/users",
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\clients.py", line 371, in __enter__
+    raise LocustError("In order to use a with-block for requests, you must also pass catch_response=True")
+locust.exception.LocustError: In order to use a with-block for requests, you must also pass catch_response=True
+
+[2025-10-28 16:59:50,105] DESKTOP-16EJNEG/ERROR/locust.user.task: In order to use a with-block for requests, you must also pass catch_response=True
+Traceback (most recent call last):
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 355, in run
+    self.execute_next_task()
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 388, in execute_next_task
+    self.execute_task(self._task_queue.popleft())
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 505, in execute_task
+    task(self.user)
+  File "D:\ecommerce-microservice-backend-app\performance-tests\locustfile.py", line 715, in user_management_workflow
+    with self.client.post("/app/api/users",
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\clients.py", line 371, in __enter__
+    raise LocustError("In order to use a with-block for requests, you must also pass catch_response=True")
+locust.exception.LocustError: In order to use a with-block for requests, you must also pass catch_response=True
+
+[2025-10-28 16:59:50,975] DESKTOP-16EJNEG/ERROR/locust.user.task: In order to use a with-block for requests, you must also pass catch_response=True
+Traceback (most recent call last):
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 355, in run
+    self.execute_next_task()
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 388, in execute_next_task
+    self.execute_task(self._task_queue.popleft())
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 505, in execute_task
+    task(self.user)
+  File "D:\ecommerce-microservice-backend-app\performance-tests\locustfile.py", line 657, in complete_purchase_workflow
+    with self.client.post("/app/api/orders",
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\clients.py", line 371, in __enter__
+    raise LocustError("In order to use a with-block for requests, you must also pass catch_response=True")
+locust.exception.LocustError: In order to use a with-block for requests, you must also pass catch_response=True
+
+[2025-10-28 16:59:53,326] DESKTOP-16EJNEG/ERROR/locust.user.task: In order to use a with-block for requests, you must also pass catch_response=True
+Traceback (most recent call last):
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 355, in run
+    self.execute_next_task()
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 388, in execute_next_task
+    self.execute_task(self._task_queue.popleft())
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 505, in execute_task
+    task(self.user)
+  File "D:\ecommerce-microservice-backend-app\performance-tests\locustfile.py", line 657, in complete_purchase_workflow
+    with self.client.post("/app/api/orders",
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\clients.py", line 371, in __enter__
+    raise LocustError("In order to use a with-block for requests, you must also pass catch_response=True")
+locust.exception.LocustError: In order to use a with-block for requests, you must also pass catch_response=True
+
+[2025-10-28 16:59:55,254] DESKTOP-16EJNEG/ERROR/locust.user.task: In order to use a with-block for requests, you must also pass catch_response=True
+Traceback (most recent call last):
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 355, in run
+    self.execute_next_task()
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 388, in execute_next_task
+    self.execute_task(self._task_queue.popleft())
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 505, in execute_task
+    task(self.user)
+  File "D:\ecommerce-microservice-backend-app\performance-tests\locustfile.py", line 657, in complete_purchase_workflow
+    with self.client.post("/app/api/orders",
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\clients.py", line 371, in __enter__
+    raise LocustError("In order to use a with-block for requests, you must also pass catch_response=True")
+locust.exception.LocustError: In order to use a with-block for requests, you must also pass catch_response=True
+
+[2025-10-28 16:59:55,799] DESKTOP-16EJNEG/ERROR/locust.user.task: In order to use a with-block for requests, you must also pass catch_response=True
+Traceback (most recent call last):
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 355, in run
+    self.execute_next_task()
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 388, in execute_next_task
+    self.execute_task(self._task_queue.popleft())
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 505, in execute_task
+    task(self.user)
+  File "D:\ecommerce-microservice-backend-app\performance-tests\locustfile.py", line 657, in complete_purchase_workflow
+    with self.client.post("/app/api/orders",
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\clients.py", line 371, in __enter__
+    raise LocustError("In order to use a with-block for requests, you must also pass catch_response=True")
+locust.exception.LocustError: In order to use a with-block for requests, you must also pass catch_response=True
+
+[2025-10-28 16:59:57,726] DESKTOP-16EJNEG/ERROR/locust.user.task: In order to use a with-block for requests, you must also pass catch_response=True
+Traceback (most recent call last):
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 355, in run
+    self.execute_next_task()
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 388, in execute_next_task
+    self.execute_task(self._task_queue.popleft())
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 505, in execute_task
+    task(self.user)
+  File "D:\ecommerce-microservice-backend-app\performance-tests\locustfile.py", line 715, in user_management_workflow
+    with self.client.post("/app/api/users",
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\clients.py", line 371, in __enter__
+    raise LocustError("In order to use a with-block for requests, you must also pass catch_response=True")
+locust.exception.LocustError: In order to use a with-block for requests, you must also pass catch_response=True
+
+[2025-10-28 16:59:57,889] DESKTOP-16EJNEG/ERROR/locust.user.task: In order to use a with-block for requests, you must also pass catch_response=True
+Traceback (most recent call last):
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 355, in run
+    self.execute_next_task()
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 388, in execute_next_task
+    self.execute_task(self._task_queue.popleft())
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 505, in execute_task
+    task(self.user)
+  File "D:\ecommerce-microservice-backend-app\performance-tests\locustfile.py", line 744, in product_management_workflow
+    with self.client.post("/app/api/products",
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\clients.py", line 371, in __enter__
+    raise LocustError("In order to use a with-block for requests, you must also pass catch_response=True")
+locust.exception.LocustError: In order to use a with-block for requests, you must also pass catch_response=True
+
+[2025-10-28 16:59:59,056] DESKTOP-16EJNEG/ERROR/locust.user.task: In order to use a with-block for requests, you must also pass catch_response=True
+Traceback (most recent call last):
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 355, in run
+    self.execute_next_task()
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 388, in execute_next_task
+    self.execute_task(self._task_queue.popleft())
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 505, in execute_task
+    task(self.user)
+  File "D:\ecommerce-microservice-backend-app\performance-tests\locustfile.py", line 657, in complete_purchase_workflow
+    with self.client.post("/app/api/orders",
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\clients.py", line 371, in __enter__
+    raise LocustError("In order to use a with-block for requests, you must also pass catch_response=True")
+locust.exception.LocustError: In order to use a with-block for requests, you must also pass catch_response=True
+
+[2025-10-28 17:00:01,842] DESKTOP-16EJNEG/ERROR/locust.user.task: In order to use a with-block for requests, you must also pass catch_response=True
+Traceback (most recent call last):
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 355, in run
+    self.execute_next_task()
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 388, in execute_next_task
+    self.execute_task(self._task_queue.popleft())
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 505, in execute_task
+    task(self.user)
+  File "D:\ecommerce-microservice-backend-app\performance-tests\locustfile.py", line 715, in user_management_workflow
+    with self.client.post("/app/api/users",
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\clients.py", line 371, in __enter__
+    raise LocustError("In order to use a with-block for requests, you must also pass catch_response=True")
+locust.exception.LocustError: In order to use a with-block for requests, you must also pass catch_response=True
+
+[2025-10-28 17:00:01,938] DESKTOP-16EJNEG/ERROR/locust.user.task: In order to use a with-block for requests, you must also pass catch_response=True
+Traceback (most recent call last):
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 355, in run
+    self.execute_next_task()
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 388, in execute_next_task
+    self.execute_task(self._task_queue.popleft())
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 505, in execute_task
+    task(self.user)
+  File "D:\ecommerce-microservice-backend-app\performance-tests\locustfile.py", line 715, in user_management_workflow
+    with self.client.post("/app/api/users",
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\clients.py", line 371, in __enter__
+    raise LocustError("In order to use a with-block for requests, you must also pass catch_response=True")
+locust.exception.LocustError: In order to use a with-block for requests, you must also pass catch_response=True
+
+[2025-10-28 17:00:03,054] DESKTOP-16EJNEG/ERROR/locust.user.task: In order to use a with-block for requests, you must also pass catch_response=True
+Traceback (most recent call last):
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 355, in run
+    self.execute_next_task()
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 388, in execute_next_task
+    self.execute_task(self._task_queue.popleft())
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 505, in execute_task
+    task(self.user)
+  File "D:\ecommerce-microservice-backend-app\performance-tests\locustfile.py", line 715, in user_management_workflow
+    with self.client.post("/app/api/users",
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\clients.py", line 371, in __enter__
+    raise LocustError("In order to use a with-block for requests, you must also pass catch_response=True")
+locust.exception.LocustError: In order to use a with-block for requests, you must also pass catch_response=True
+
+[2025-10-28 17:00:04,607] DESKTOP-16EJNEG/ERROR/locust.user.task: In order to use a with-block for requests, you must also pass catch_response=True
+Traceback (most recent call last):
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 355, in run
+    self.execute_next_task()
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 388, in execute_next_task
+    self.execute_task(self._task_queue.popleft())
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 505, in execute_task
+    task(self.user)
+  File "D:\ecommerce-microservice-backend-app\performance-tests\locustfile.py", line 715, in user_management_workflow
+    with self.client.post("/app/api/users",
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\clients.py", line 371, in __enter__
+    raise LocustError("In order to use a with-block for requests, you must also pass catch_response=True")
+locust.exception.LocustError: In order to use a with-block for requests, you must also pass catch_response=True
+
+[2025-10-28 17:00:06,573] DESKTOP-16EJNEG/ERROR/locust.user.task: In order to use a with-block for requests, you must also pass catch_response=True
+Traceback (most recent call last):
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 355, in run
+    self.execute_next_task()
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 388, in execute_next_task
+    self.execute_task(self._task_queue.popleft())
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 505, in execute_task
+    task(self.user)
+  File "D:\ecommerce-microservice-backend-app\performance-tests\locustfile.py", line 715, in user_management_workflow
+    with self.client.post("/app/api/users",
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\clients.py", line 371, in __enter__
+    raise LocustError("In order to use a with-block for requests, you must also pass catch_response=True")
+locust.exception.LocustError: In order to use a with-block for requests, you must also pass catch_response=True
+
+[2025-10-28 17:00:08,691] DESKTOP-16EJNEG/ERROR/locust.user.task: In order to use a with-block for requests, you must also pass catch_response=True
+Traceback (most recent call last):
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 355, in run
+    self.execute_next_task()
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 388, in execute_next_task
+    self.execute_task(self._task_queue.popleft())
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 505, in execute_task
+    task(self.user)
+  File "D:\ecommerce-microservice-backend-app\performance-tests\locustfile.py", line 657, in complete_purchase_workflow
+    with self.client.post("/app/api/orders",
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\clients.py", line 371, in __enter__
+    raise LocustError("In order to use a with-block for requests, you must also pass catch_response=True")
+locust.exception.LocustError: In order to use a with-block for requests, you must also pass catch_response=True
+
+[2025-10-28 17:00:11,182] DESKTOP-16EJNEG/ERROR/locust.user.task: In order to use a with-block for requests, you must also pass catch_response=True
+Traceback (most recent call last):
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 355, in run
+    self.execute_next_task()
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 388, in execute_next_task
+    self.execute_task(self._task_queue.popleft())
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 505, in execute_task
+    task(self.user)
+  File "D:\ecommerce-microservice-backend-app\performance-tests\locustfile.py", line 715, in user_management_workflow
+    with self.client.post("/app/api/users",
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\clients.py", line 371, in __enter__
+    raise LocustError("In order to use a with-block for requests, you must also pass catch_response=True")
+locust.exception.LocustError: In order to use a with-block for requests, you must also pass catch_response=True
+
+[2025-10-28 17:00:11,787] DESKTOP-16EJNEG/ERROR/locust.user.task: In order to use a with-block for requests, you must also pass catch_response=True
+Traceback (most recent call last):
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 355, in run
+    self.execute_next_task()
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 388, in execute_next_task
+    self.execute_task(self._task_queue.popleft())
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 505, in execute_task
+    task(self.user)
+  File "D:\ecommerce-microservice-backend-app\performance-tests\locustfile.py", line 744, in product_management_workflow
+    with self.client.post("/app/api/products",
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\clients.py", line 371, in __enter__
+    raise LocustError("In order to use a with-block for requests, you must also pass catch_response=True")
+locust.exception.LocustError: In order to use a with-block for requests, you must also pass catch_response=True
+
+[2025-10-28 17:00:12,323] DESKTOP-16EJNEG/ERROR/locust.user.task: In order to use a with-block for requests, you must also pass catch_response=True
+Traceback (most recent call last):
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 355, in run
+    self.execute_next_task()
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 388, in execute_next_task
+    self.execute_task(self._task_queue.popleft())
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 505, in execute_task
+    task(self.user)
+  File "D:\ecommerce-microservice-backend-app\performance-tests\locustfile.py", line 657, in complete_purchase_workflow
+    with self.client.post("/app/api/orders",
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\clients.py", line 371, in __enter__
+    raise LocustError("In order to use a with-block for requests, you must also pass catch_response=True")
+locust.exception.LocustError: In order to use a with-block for requests, you must also pass catch_response=True
+
+[2025-10-28 17:00:13,502] DESKTOP-16EJNEG/ERROR/locust.user.task: In order to use a with-block for requests, you must also pass catch_response=True
+Traceback (most recent call last):
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 355, in run
+    self.execute_next_task()
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 388, in execute_next_task
+    self.execute_task(self._task_queue.popleft())
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 505, in execute_task
+    task(self.user)
+  File "D:\ecommerce-microservice-backend-app\performance-tests\locustfile.py", line 657, in complete_purchase_workflow
+    with self.client.post("/app/api/orders",
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\clients.py", line 371, in __enter__
+    raise LocustError("In order to use a with-block for requests, you must also pass catch_response=True")
+locust.exception.LocustError: In order to use a with-block for requests, you must also pass catch_response=True
+
+[2025-10-28 17:00:16,590] DESKTOP-16EJNEG/ERROR/locust.user.task: In order to use a with-block for requests, you must also pass catch_response=True
+Traceback (most recent call last):
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 355, in run
+    self.execute_next_task()
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 388, in execute_next_task
+    self.execute_task(self._task_queue.popleft())
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 505, in execute_task
+    task(self.user)
+  File "D:\ecommerce-microservice-backend-app\performance-tests\locustfile.py", line 744, in product_management_workflow
+    with self.client.post("/app/api/products",
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\clients.py", line 371, in __enter__
+    raise LocustError("In order to use a with-block for requests, you must also pass catch_response=True")
+locust.exception.LocustError: In order to use a with-block for requests, you must also pass catch_response=True
+
+[2025-10-28 17:00:18,105] DESKTOP-16EJNEG/ERROR/locust.user.task: In order to use a with-block for requests, you must also pass catch_response=True
+Traceback (most recent call last):
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 355, in run
+    self.execute_next_task()
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 388, in execute_next_task
+    self.execute_task(self._task_queue.popleft())
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 505, in execute_task
+    task(self.user)
+  File "D:\ecommerce-microservice-backend-app\performance-tests\locustfile.py", line 744, in product_management_workflow
+    with self.client.post("/app/api/products",
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\clients.py", line 371, in __enter__
+    raise LocustError("In order to use a with-block for requests, you must also pass catch_response=True")
+locust.exception.LocustError: In order to use a with-block for requests, you must also pass catch_response=True
+
+[2025-10-28 17:00:18,421] DESKTOP-16EJNEG/ERROR/locust.user.task: In order to use a with-block for requests, you must also pass catch_response=True
+Traceback (most recent call last):
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 355, in run
+    self.execute_next_task()
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 388, in execute_next_task
+    self.execute_task(self._task_queue.popleft())
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 505, in execute_task
+    task(self.user)
+  File "D:\ecommerce-microservice-backend-app\performance-tests\locustfile.py", line 657, in complete_purchase_workflow
+    with self.client.post("/app/api/orders",
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\clients.py", line 371, in __enter__
+    raise LocustError("In order to use a with-block for requests, you must also pass catch_response=True")
+locust.exception.LocustError: In order to use a with-block for requests, you must also pass catch_response=True
+
+[2025-10-28 17:00:18,589] DESKTOP-16EJNEG/ERROR/locust.user.task: In order to use a with-block for requests, you must also pass catch_response=True
+Traceback (most recent call last):
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 355, in run
+    self.execute_next_task()
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 388, in execute_next_task
+    self.execute_task(self._task_queue.popleft())
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 505, in execute_task
+    task(self.user)
+  File "D:\ecommerce-microservice-backend-app\performance-tests\locustfile.py", line 744, in product_management_workflow
+    with self.client.post("/app/api/products",
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\clients.py", line 371, in __enter__
+    raise LocustError("In order to use a with-block for requests, you must also pass catch_response=True")
+locust.exception.LocustError: In order to use a with-block for requests, you must also pass catch_response=True
+
+[2025-10-28 17:00:20,922] DESKTOP-16EJNEG/ERROR/locust.user.task: In order to use a with-block for requests, you must also pass catch_response=True
+Traceback (most recent call last):
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 355, in run
+    self.execute_next_task()
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 388, in execute_next_task
+    self.execute_task(self._task_queue.popleft())
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 505, in execute_task
+    task(self.user)
+  File "D:\ecommerce-microservice-backend-app\performance-tests\locustfile.py", line 715, in user_management_workflow
+    with self.client.post("/app/api/users",
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\clients.py", line 371, in __enter__
+    raise LocustError("In order to use a with-block for requests, you must also pass catch_response=True")
+locust.exception.LocustError: In order to use a with-block for requests, you must also pass catch_response=True
+
+[2025-10-28 17:00:22,104] DESKTOP-16EJNEG/ERROR/locust.user.task: In order to use a with-block for requests, you must also pass catch_response=True
+Traceback (most recent call last):
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 355, in run
+    self.execute_next_task()
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 388, in execute_next_task
+    self.execute_task(self._task_queue.popleft())
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 505, in execute_task
+    task(self.user)
+  File "D:\ecommerce-microservice-backend-app\performance-tests\locustfile.py", line 657, in complete_purchase_workflow
+    with self.client.post("/app/api/orders",
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\clients.py", line 371, in __enter__
+    raise LocustError("In order to use a with-block for requests, you must also pass catch_response=True")
+locust.exception.LocustError: In order to use a with-block for requests, you must also pass catch_response=True
+
+[2025-10-28 17:00:26,271] DESKTOP-16EJNEG/INFO/locust.main: --run-time limit reached, shutting down
+[2025-10-28 17:00:26,556] DESKTOP-16EJNEG/ERROR/locust.user.task: In order to use a with-block for requests, you must also pass catch_response=True
+Traceback (most recent call last):
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 355, in run
+    self.execute_next_task()
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 388, in execute_next_task
+    self.execute_task(self._task_queue.popleft())
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 505, in execute_task
+    task(self.user)
+  File "D:\ecommerce-microservice-backend-app\performance-tests\locustfile.py", line 657, in complete_purchase_workflow
+    with self.client.post("/app/api/orders",
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\clients.py", line 371, in __enter__
+    raise LocustError("In order to use a with-block for requests, you must also pass catch_response=True")
+locust.exception.LocustError: In order to use a with-block for requests, you must also pass catch_response=True
+
+[2025-10-28 17:00:27,822] DESKTOP-16EJNEG/ERROR/locust.user.task: In order to use a with-block for requests, you must also pass catch_response=True
+Traceback (most recent call last):
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 355, in run
+    self.execute_next_task()
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 388, in execute_next_task
+    self.execute_task(self._task_queue.popleft())
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 505, in execute_task
+    task(self.user)
+  File "D:\ecommerce-microservice-backend-app\performance-tests\locustfile.py", line 657, in complete_purchase_workflow
+    with self.client.post("/app/api/orders",
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\clients.py", line 371, in __enter__
+    raise LocustError("In order to use a with-block for requests, you must also pass catch_response=True")
+locust.exception.LocustError: In order to use a with-block for requests, you must also pass catch_response=True
+
+[2025-10-28 17:00:28,751] DESKTOP-16EJNEG/ERROR/locust.user.task: In order to use a with-block for requests, you must also pass catch_response=True
+Traceback (most recent call last):
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 355, in run
+    self.execute_next_task()
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 388, in execute_next_task
+    self.execute_task(self._task_queue.popleft())
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 505, in execute_task
+    task(self.user)
+  File "D:\ecommerce-microservice-backend-app\performance-tests\locustfile.py", line 657, in complete_purchase_workflow
+    with self.client.post("/app/api/orders",
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\clients.py", line 371, in __enter__
+    raise LocustError("In order to use a with-block for requests, you must also pass catch_response=True")
+locust.exception.LocustError: In order to use a with-block for requests, you must also pass catch_response=True
+
+[2025-10-28 17:00:29,071] DESKTOP-16EJNEG/ERROR/locust.user.task: In order to use a with-block for requests, you must also pass catch_response=True
+Traceback (most recent call last):
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 355, in run
+    self.execute_next_task()
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 388, in execute_next_task
+    self.execute_task(self._task_queue.popleft())
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 505, in execute_task
+    task(self.user)
+  File "D:\ecommerce-microservice-backend-app\performance-tests\locustfile.py", line 657, in complete_purchase_workflow
+    with self.client.post("/app/api/orders",
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\clients.py", line 371, in __enter__
+    raise LocustError("In order to use a with-block for requests, you must also pass catch_response=True")
+locust.exception.LocustError: In order to use a with-block for requests, you must also pass catch_response=True
+
+[2025-10-28 17:00:31,172] DESKTOP-16EJNEG/ERROR/locust.user.task: In order to use a with-block for requests, you must also pass catch_response=True
+Traceback (most recent call last):
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 355, in run
+    self.execute_next_task()
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 388, in execute_next_task
+    self.execute_task(self._task_queue.popleft())
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 505, in execute_task
+    task(self.user)
+  File "D:\ecommerce-microservice-backend-app\performance-tests\locustfile.py", line 657, in complete_purchase_workflow
+    with self.client.post("/app/api/orders",
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\clients.py", line 371, in __enter__
+    raise LocustError("In order to use a with-block for requests, you must also pass catch_response=True")
+locust.exception.LocustError: In order to use a with-block for requests, you must also pass catch_response=True
+
+[2025-10-28 17:00:31,227] DESKTOP-16EJNEG/INFO/locust.main: writing html report to file: ../test-results/performance/performance_report.html
+[2025-10-28 17:00:31,232] DESKTOP-16EJNEG/INFO/locust.main: Shutting down (exit code 1)
+[2025-10-28 17:06:41,379] DESKTOP-16EJNEG/INFO/locust.main: Starting Locust 2.42.1
+[2025-10-28 17:06:41,384] DESKTOP-16EJNEG/INFO/locust.main: Run time limit set to 60 seconds
+[2025-10-28 17:06:41,387] DESKTOP-16EJNEG/INFO/locust.runners: Ramping to 10 users at a rate of 2.00 per second
+[2025-10-28 17:06:43,894] DESKTOP-16EJNEG/ERROR/locust.user.task: In order to use a with-block for requests, you must also pass catch_response=True
+Traceback (most recent call last):
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 355, in run
+    self.execute_next_task()
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 388, in execute_next_task
+    self.execute_task(self._task_queue.popleft())
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 505, in execute_task
+    task(self.user)
+  File "D:\ecommerce-microservice-backend-app\performance-tests\locustfile.py", line 657, in complete_purchase_workflow
+    with self.client.post("/app/api/orders",
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\clients.py", line 371, in __enter__
+    raise LocustError("In order to use a with-block for requests, you must also pass catch_response=True")
+locust.exception.LocustError: In order to use a with-block for requests, you must also pass catch_response=True
+
+[2025-10-28 17:06:44,524] DESKTOP-16EJNEG/ERROR/locust.user.task: In order to use a with-block for requests, you must also pass catch_response=True
+Traceback (most recent call last):
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 355, in run
+    self.execute_next_task()
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 388, in execute_next_task
+    self.execute_task(self._task_queue.popleft())
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 505, in execute_task
+    task(self.user)
+  File "D:\ecommerce-microservice-backend-app\performance-tests\locustfile.py", line 715, in user_management_workflow
+    with self.client.post("/app/api/users",
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\clients.py", line 371, in __enter__
+    raise LocustError("In order to use a with-block for requests, you must also pass catch_response=True")
+locust.exception.LocustError: In order to use a with-block for requests, you must also pass catch_response=True
+
+[2025-10-28 17:06:45,428] DESKTOP-16EJNEG/INFO/locust.runners: All users spawned: {"EcommerceUser": 3, "EcommerceWorkflowUser": 5, "HighLoadUser": 2} (10 total users)
+[2025-10-28 17:06:45,846] DESKTOP-16EJNEG/ERROR/locust.user.task: In order to use a with-block for requests, you must also pass catch_response=True
+Traceback (most recent call last):
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 355, in run
+    self.execute_next_task()
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 388, in execute_next_task
+    self.execute_task(self._task_queue.popleft())
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 505, in execute_task
+    task(self.user)
+  File "D:\ecommerce-microservice-backend-app\performance-tests\locustfile.py", line 715, in user_management_workflow
+    with self.client.post("/app/api/users",
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\clients.py", line 371, in __enter__
+    raise LocustError("In order to use a with-block for requests, you must also pass catch_response=True")
+locust.exception.LocustError: In order to use a with-block for requests, you must also pass catch_response=True
+
+[2025-10-28 17:06:47,331] DESKTOP-16EJNEG/ERROR/locust.user.task: In order to use a with-block for requests, you must also pass catch_response=True
+Traceback (most recent call last):
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 355, in run
+    self.execute_next_task()
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 388, in execute_next_task
+    self.execute_task(self._task_queue.popleft())
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 505, in execute_task
+    task(self.user)
+  File "D:\ecommerce-microservice-backend-app\performance-tests\locustfile.py", line 657, in complete_purchase_workflow
+    with self.client.post("/app/api/orders",
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\clients.py", line 371, in __enter__
+    raise LocustError("In order to use a with-block for requests, you must also pass catch_response=True")
+locust.exception.LocustError: In order to use a with-block for requests, you must also pass catch_response=True
+
+[2025-10-28 17:06:47,413] DESKTOP-16EJNEG/ERROR/locust.user.task: In order to use a with-block for requests, you must also pass catch_response=True
+Traceback (most recent call last):
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 355, in run
+    self.execute_next_task()
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 388, in execute_next_task
+    self.execute_task(self._task_queue.popleft())
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 505, in execute_task
+    task(self.user)
+  File "D:\ecommerce-microservice-backend-app\performance-tests\locustfile.py", line 657, in complete_purchase_workflow
+    with self.client.post("/app/api/orders",
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\clients.py", line 371, in __enter__
+    raise LocustError("In order to use a with-block for requests, you must also pass catch_response=True")
+locust.exception.LocustError: In order to use a with-block for requests, you must also pass catch_response=True
+
+[2025-10-28 17:06:47,838] DESKTOP-16EJNEG/ERROR/locust.user.task: In order to use a with-block for requests, you must also pass catch_response=True
+Traceback (most recent call last):
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 355, in run
+    self.execute_next_task()
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 388, in execute_next_task
+    self.execute_task(self._task_queue.popleft())
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 505, in execute_task
+    task(self.user)
+  File "D:\ecommerce-microservice-backend-app\performance-tests\locustfile.py", line 715, in user_management_workflow
+    with self.client.post("/app/api/users",
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\clients.py", line 371, in __enter__
+    raise LocustError("In order to use a with-block for requests, you must also pass catch_response=True")
+locust.exception.LocustError: In order to use a with-block for requests, you must also pass catch_response=True
+
+[2025-10-28 17:06:50,107] DESKTOP-16EJNEG/ERROR/locust.user.task: In order to use a with-block for requests, you must also pass catch_response=True
+Traceback (most recent call last):
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 355, in run
+    self.execute_next_task()
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 388, in execute_next_task
+    self.execute_task(self._task_queue.popleft())
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 505, in execute_task
+    task(self.user)
+  File "D:\ecommerce-microservice-backend-app\performance-tests\locustfile.py", line 657, in complete_purchase_workflow
+    with self.client.post("/app/api/orders",
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\clients.py", line 371, in __enter__
+    raise LocustError("In order to use a with-block for requests, you must also pass catch_response=True")
+locust.exception.LocustError: In order to use a with-block for requests, you must also pass catch_response=True
+
+[2025-10-28 17:06:50,669] DESKTOP-16EJNEG/ERROR/locust.user.task: In order to use a with-block for requests, you must also pass catch_response=True
+Traceback (most recent call last):
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 355, in run
+    self.execute_next_task()
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 388, in execute_next_task
+    self.execute_task(self._task_queue.popleft())
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 505, in execute_task
+    task(self.user)
+  File "D:\ecommerce-microservice-backend-app\performance-tests\locustfile.py", line 657, in complete_purchase_workflow
+    with self.client.post("/app/api/orders",
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\clients.py", line 371, in __enter__
+    raise LocustError("In order to use a with-block for requests, you must also pass catch_response=True")
+locust.exception.LocustError: In order to use a with-block for requests, you must also pass catch_response=True
+
+[2025-10-28 17:06:51,894] DESKTOP-16EJNEG/ERROR/locust.user.task: In order to use a with-block for requests, you must also pass catch_response=True
+Traceback (most recent call last):
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 355, in run
+    self.execute_next_task()
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 388, in execute_next_task
+    self.execute_task(self._task_queue.popleft())
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 505, in execute_task
+    task(self.user)
+  File "D:\ecommerce-microservice-backend-app\performance-tests\locustfile.py", line 657, in complete_purchase_workflow
+    with self.client.post("/app/api/orders",
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\clients.py", line 371, in __enter__
+    raise LocustError("In order to use a with-block for requests, you must also pass catch_response=True")
+locust.exception.LocustError: In order to use a with-block for requests, you must also pass catch_response=True
+
+[2025-10-28 17:06:52,042] DESKTOP-16EJNEG/ERROR/locust.user.task: In order to use a with-block for requests, you must also pass catch_response=True
+Traceback (most recent call last):
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 355, in run
+    self.execute_next_task()
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 388, in execute_next_task
+    self.execute_task(self._task_queue.popleft())
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 505, in execute_task
+    task(self.user)
+  File "D:\ecommerce-microservice-backend-app\performance-tests\locustfile.py", line 715, in user_management_workflow
+    with self.client.post("/app/api/users",
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\clients.py", line 371, in __enter__
+    raise LocustError("In order to use a with-block for requests, you must also pass catch_response=True")
+locust.exception.LocustError: In order to use a with-block for requests, you must also pass catch_response=True
+
+[2025-10-28 17:06:52,473] DESKTOP-16EJNEG/ERROR/locust.user.task: In order to use a with-block for requests, you must also pass catch_response=True
+Traceback (most recent call last):
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 355, in run
+    self.execute_next_task()
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 388, in execute_next_task
+    self.execute_task(self._task_queue.popleft())
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 505, in execute_task
+    task(self.user)
+  File "D:\ecommerce-microservice-backend-app\performance-tests\locustfile.py", line 744, in product_management_workflow
+    with self.client.post("/app/api/products",
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\clients.py", line 371, in __enter__
+    raise LocustError("In order to use a with-block for requests, you must also pass catch_response=True")
+locust.exception.LocustError: In order to use a with-block for requests, you must also pass catch_response=True
+
+[2025-10-28 17:06:53,833] DESKTOP-16EJNEG/ERROR/locust.user.task: In order to use a with-block for requests, you must also pass catch_response=True
+Traceback (most recent call last):
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 355, in run
+    self.execute_next_task()
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 388, in execute_next_task
+    self.execute_task(self._task_queue.popleft())
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 505, in execute_task
+    task(self.user)
+  File "D:\ecommerce-microservice-backend-app\performance-tests\locustfile.py", line 715, in user_management_workflow
+    with self.client.post("/app/api/users",
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\clients.py", line 371, in __enter__
+    raise LocustError("In order to use a with-block for requests, you must also pass catch_response=True")
+locust.exception.LocustError: In order to use a with-block for requests, you must also pass catch_response=True
+
+[2025-10-28 17:06:55,198] DESKTOP-16EJNEG/ERROR/locust.user.task: In order to use a with-block for requests, you must also pass catch_response=True
+Traceback (most recent call last):
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 355, in run
+    self.execute_next_task()
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 388, in execute_next_task
+    self.execute_task(self._task_queue.popleft())
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 505, in execute_task
+    task(self.user)
+  File "D:\ecommerce-microservice-backend-app\performance-tests\locustfile.py", line 657, in complete_purchase_workflow
+    with self.client.post("/app/api/orders",
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\clients.py", line 371, in __enter__
+    raise LocustError("In order to use a with-block for requests, you must also pass catch_response=True")
+locust.exception.LocustError: In order to use a with-block for requests, you must also pass catch_response=True
+
+[2025-10-28 17:06:55,302] DESKTOP-16EJNEG/ERROR/locust.user.task: In order to use a with-block for requests, you must also pass catch_response=True
+Traceback (most recent call last):
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 355, in run
+    self.execute_next_task()
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 388, in execute_next_task
+    self.execute_task(self._task_queue.popleft())
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 505, in execute_task
+    task(self.user)
+  File "D:\ecommerce-microservice-backend-app\performance-tests\locustfile.py", line 715, in user_management_workflow
+    with self.client.post("/app/api/users",
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\clients.py", line 371, in __enter__
+    raise LocustError("In order to use a with-block for requests, you must also pass catch_response=True")
+locust.exception.LocustError: In order to use a with-block for requests, you must also pass catch_response=True
+
+[2025-10-28 17:06:55,514] DESKTOP-16EJNEG/ERROR/locust.user.task: In order to use a with-block for requests, you must also pass catch_response=True
+Traceback (most recent call last):
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 355, in run
+    self.execute_next_task()
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 388, in execute_next_task
+    self.execute_task(self._task_queue.popleft())
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 505, in execute_task
+    task(self.user)
+  File "D:\ecommerce-microservice-backend-app\performance-tests\locustfile.py", line 657, in complete_purchase_workflow
+    with self.client.post("/app/api/orders",
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\clients.py", line 371, in __enter__
+    raise LocustError("In order to use a with-block for requests, you must also pass catch_response=True")
+locust.exception.LocustError: In order to use a with-block for requests, you must also pass catch_response=True
+
+[2025-10-28 17:06:55,741] DESKTOP-16EJNEG/ERROR/locust.user.task: In order to use a with-block for requests, you must also pass catch_response=True
+Traceback (most recent call last):
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 355, in run
+    self.execute_next_task()
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 388, in execute_next_task
+    self.execute_task(self._task_queue.popleft())
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 505, in execute_task
+    task(self.user)
+  File "D:\ecommerce-microservice-backend-app\performance-tests\locustfile.py", line 657, in complete_purchase_workflow
+    with self.client.post("/app/api/orders",
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\clients.py", line 371, in __enter__
+    raise LocustError("In order to use a with-block for requests, you must also pass catch_response=True")
+locust.exception.LocustError: In order to use a with-block for requests, you must also pass catch_response=True
+
+[2025-10-28 17:06:56,385] DESKTOP-16EJNEG/ERROR/locust.user.task: In order to use a with-block for requests, you must also pass catch_response=True
+Traceback (most recent call last):
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 355, in run
+    self.execute_next_task()
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 388, in execute_next_task
+    self.execute_task(self._task_queue.popleft())
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 505, in execute_task
+    task(self.user)
+  File "D:\ecommerce-microservice-backend-app\performance-tests\locustfile.py", line 657, in complete_purchase_workflow
+    with self.client.post("/app/api/orders",
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\clients.py", line 371, in __enter__
+    raise LocustError("In order to use a with-block for requests, you must also pass catch_response=True")
+locust.exception.LocustError: In order to use a with-block for requests, you must also pass catch_response=True
+
+[2025-10-28 17:06:58,501] DESKTOP-16EJNEG/ERROR/locust.user.task: In order to use a with-block for requests, you must also pass catch_response=True
+Traceback (most recent call last):
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 355, in run
+    self.execute_next_task()
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 388, in execute_next_task
+    self.execute_task(self._task_queue.popleft())
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 505, in execute_task
+    task(self.user)
+  File "D:\ecommerce-microservice-backend-app\performance-tests\locustfile.py", line 657, in complete_purchase_workflow
+    with self.client.post("/app/api/orders",
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\clients.py", line 371, in __enter__
+    raise LocustError("In order to use a with-block for requests, you must also pass catch_response=True")
+locust.exception.LocustError: In order to use a with-block for requests, you must also pass catch_response=True
+
+[2025-10-28 17:06:58,869] DESKTOP-16EJNEG/ERROR/locust.user.task: In order to use a with-block for requests, you must also pass catch_response=True
+Traceback (most recent call last):
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 355, in run
+    self.execute_next_task()
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 388, in execute_next_task
+    self.execute_task(self._task_queue.popleft())
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 505, in execute_task
+    task(self.user)
+  File "D:\ecommerce-microservice-backend-app\performance-tests\locustfile.py", line 657, in complete_purchase_workflow
+    with self.client.post("/app/api/orders",
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\clients.py", line 371, in __enter__
+    raise LocustError("In order to use a with-block for requests, you must also pass catch_response=True")
+locust.exception.LocustError: In order to use a with-block for requests, you must also pass catch_response=True
+
+[2025-10-28 17:07:00,285] DESKTOP-16EJNEG/ERROR/locust.user.task: In order to use a with-block for requests, you must also pass catch_response=True
+Traceback (most recent call last):
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 355, in run
+    self.execute_next_task()
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 388, in execute_next_task
+    self.execute_task(self._task_queue.popleft())
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 505, in execute_task
+    task(self.user)
+  File "D:\ecommerce-microservice-backend-app\performance-tests\locustfile.py", line 657, in complete_purchase_workflow
+    with self.client.post("/app/api/orders",
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\clients.py", line 371, in __enter__
+    raise LocustError("In order to use a with-block for requests, you must also pass catch_response=True")
+locust.exception.LocustError: In order to use a with-block for requests, you must also pass catch_response=True
+
+[2025-10-28 17:07:00,519] DESKTOP-16EJNEG/ERROR/locust.user.task: In order to use a with-block for requests, you must also pass catch_response=True
+Traceback (most recent call last):
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 355, in run
+    self.execute_next_task()
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 388, in execute_next_task
+    self.execute_task(self._task_queue.popleft())
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 505, in execute_task
+    task(self.user)
+  File "D:\ecommerce-microservice-backend-app\performance-tests\locustfile.py", line 657, in complete_purchase_workflow
+    with self.client.post("/app/api/orders",
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\clients.py", line 371, in __enter__
+    raise LocustError("In order to use a with-block for requests, you must also pass catch_response=True")
+locust.exception.LocustError: In order to use a with-block for requests, you must also pass catch_response=True
+
+[2025-10-28 17:07:01,335] DESKTOP-16EJNEG/ERROR/locust.user.task: In order to use a with-block for requests, you must also pass catch_response=True
+Traceback (most recent call last):
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 355, in run
+    self.execute_next_task()
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 388, in execute_next_task
+    self.execute_task(self._task_queue.popleft())
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 505, in execute_task
+    task(self.user)
+  File "D:\ecommerce-microservice-backend-app\performance-tests\locustfile.py", line 715, in user_management_workflow
+    with self.client.post("/app/api/users",
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\clients.py", line 371, in __enter__
+    raise LocustError("In order to use a with-block for requests, you must also pass catch_response=True")
+locust.exception.LocustError: In order to use a with-block for requests, you must also pass catch_response=True
+
+[2025-10-28 17:07:01,529] DESKTOP-16EJNEG/ERROR/locust.user.task: In order to use a with-block for requests, you must also pass catch_response=True
+Traceback (most recent call last):
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 355, in run
+    self.execute_next_task()
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 388, in execute_next_task
+    self.execute_task(self._task_queue.popleft())
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 505, in execute_task
+    task(self.user)
+  File "D:\ecommerce-microservice-backend-app\performance-tests\locustfile.py", line 657, in complete_purchase_workflow
+    with self.client.post("/app/api/orders",
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\clients.py", line 371, in __enter__
+    raise LocustError("In order to use a with-block for requests, you must also pass catch_response=True")
+locust.exception.LocustError: In order to use a with-block for requests, you must also pass catch_response=True
+
+[2025-10-28 17:07:01,583] DESKTOP-16EJNEG/ERROR/locust.user.task: In order to use a with-block for requests, you must also pass catch_response=True
+Traceback (most recent call last):
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 355, in run
+    self.execute_next_task()
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 388, in execute_next_task
+    self.execute_task(self._task_queue.popleft())
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 505, in execute_task
+    task(self.user)
+  File "D:\ecommerce-microservice-backend-app\performance-tests\locustfile.py", line 715, in user_management_workflow
+    with self.client.post("/app/api/users",
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\clients.py", line 371, in __enter__
+    raise LocustError("In order to use a with-block for requests, you must also pass catch_response=True")
+locust.exception.LocustError: In order to use a with-block for requests, you must also pass catch_response=True
+
+[2025-10-28 17:07:03,139] DESKTOP-16EJNEG/ERROR/locust.user.task: In order to use a with-block for requests, you must also pass catch_response=True
+Traceback (most recent call last):
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 355, in run
+    self.execute_next_task()
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 388, in execute_next_task
+    self.execute_task(self._task_queue.popleft())
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 505, in execute_task
+    task(self.user)
+  File "D:\ecommerce-microservice-backend-app\performance-tests\locustfile.py", line 657, in complete_purchase_workflow
+    with self.client.post("/app/api/orders",
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\clients.py", line 371, in __enter__
+    raise LocustError("In order to use a with-block for requests, you must also pass catch_response=True")
+locust.exception.LocustError: In order to use a with-block for requests, you must also pass catch_response=True
+
+[2025-10-28 17:07:03,409] DESKTOP-16EJNEG/ERROR/locust.user.task: In order to use a with-block for requests, you must also pass catch_response=True
+Traceback (most recent call last):
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 355, in run
+    self.execute_next_task()
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 388, in execute_next_task
+    self.execute_task(self._task_queue.popleft())
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 505, in execute_task
+    task(self.user)
+  File "D:\ecommerce-microservice-backend-app\performance-tests\locustfile.py", line 715, in user_management_workflow
+    with self.client.post("/app/api/users",
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\clients.py", line 371, in __enter__
+    raise LocustError("In order to use a with-block for requests, you must also pass catch_response=True")
+locust.exception.LocustError: In order to use a with-block for requests, you must also pass catch_response=True
+
+[2025-10-28 17:07:04,767] DESKTOP-16EJNEG/ERROR/locust.user.task: In order to use a with-block for requests, you must also pass catch_response=True
+Traceback (most recent call last):
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 355, in run
+    self.execute_next_task()
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 388, in execute_next_task
+    self.execute_task(self._task_queue.popleft())
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 505, in execute_task
+    task(self.user)
+  File "D:\ecommerce-microservice-backend-app\performance-tests\locustfile.py", line 715, in user_management_workflow
+    with self.client.post("/app/api/users",
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\clients.py", line 371, in __enter__
+    raise LocustError("In order to use a with-block for requests, you must also pass catch_response=True")
+locust.exception.LocustError: In order to use a with-block for requests, you must also pass catch_response=True
+
+[2025-10-28 17:07:05,690] DESKTOP-16EJNEG/ERROR/locust.user.task: In order to use a with-block for requests, you must also pass catch_response=True
+Traceback (most recent call last):
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 355, in run
+    self.execute_next_task()
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 388, in execute_next_task
+    self.execute_task(self._task_queue.popleft())
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 505, in execute_task
+    task(self.user)
+  File "D:\ecommerce-microservice-backend-app\performance-tests\locustfile.py", line 657, in complete_purchase_workflow
+    with self.client.post("/app/api/orders",
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\clients.py", line 371, in __enter__
+    raise LocustError("In order to use a with-block for requests, you must also pass catch_response=True")
+locust.exception.LocustError: In order to use a with-block for requests, you must also pass catch_response=True
+
+[2025-10-28 17:07:06,218] DESKTOP-16EJNEG/ERROR/locust.user.task: In order to use a with-block for requests, you must also pass catch_response=True
+Traceback (most recent call last):
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 355, in run
+    self.execute_next_task()
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 388, in execute_next_task
+    self.execute_task(self._task_queue.popleft())
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 505, in execute_task
+    task(self.user)
+  File "D:\ecommerce-microservice-backend-app\performance-tests\locustfile.py", line 715, in user_management_workflow
+    with self.client.post("/app/api/users",
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\clients.py", line 371, in __enter__
+    raise LocustError("In order to use a with-block for requests, you must also pass catch_response=True")
+locust.exception.LocustError: In order to use a with-block for requests, you must also pass catch_response=True
+
+[2025-10-28 17:07:06,792] DESKTOP-16EJNEG/ERROR/locust.user.task: In order to use a with-block for requests, you must also pass catch_response=True
+Traceback (most recent call last):
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 355, in run
+    self.execute_next_task()
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 388, in execute_next_task
+    self.execute_task(self._task_queue.popleft())
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 505, in execute_task
+    task(self.user)
+  File "D:\ecommerce-microservice-backend-app\performance-tests\locustfile.py", line 715, in user_management_workflow
+    with self.client.post("/app/api/users",
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\clients.py", line 371, in __enter__
+    raise LocustError("In order to use a with-block for requests, you must also pass catch_response=True")
+locust.exception.LocustError: In order to use a with-block for requests, you must also pass catch_response=True
+
+[2025-10-28 17:07:07,801] DESKTOP-16EJNEG/ERROR/locust.user.task: In order to use a with-block for requests, you must also pass catch_response=True
+Traceback (most recent call last):
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 355, in run
+    self.execute_next_task()
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 388, in execute_next_task
+    self.execute_task(self._task_queue.popleft())
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 505, in execute_task
+    task(self.user)
+  File "D:\ecommerce-microservice-backend-app\performance-tests\locustfile.py", line 715, in user_management_workflow
+    with self.client.post("/app/api/users",
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\clients.py", line 371, in __enter__
+    raise LocustError("In order to use a with-block for requests, you must also pass catch_response=True")
+locust.exception.LocustError: In order to use a with-block for requests, you must also pass catch_response=True
+
+[2025-10-28 17:07:08,003] DESKTOP-16EJNEG/ERROR/locust.user.task: In order to use a with-block for requests, you must also pass catch_response=True
+Traceback (most recent call last):
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 355, in run
+    self.execute_next_task()
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 388, in execute_next_task
+    self.execute_task(self._task_queue.popleft())
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 505, in execute_task
+    task(self.user)
+  File "D:\ecommerce-microservice-backend-app\performance-tests\locustfile.py", line 657, in complete_purchase_workflow
+    with self.client.post("/app/api/orders",
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\clients.py", line 371, in __enter__
+    raise LocustError("In order to use a with-block for requests, you must also pass catch_response=True")
+locust.exception.LocustError: In order to use a with-block for requests, you must also pass catch_response=True
+
+[2025-10-28 17:07:09,178] DESKTOP-16EJNEG/ERROR/locust.user.task: In order to use a with-block for requests, you must also pass catch_response=True
+Traceback (most recent call last):
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 355, in run
+    self.execute_next_task()
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 388, in execute_next_task
+    self.execute_task(self._task_queue.popleft())
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 505, in execute_task
+    task(self.user)
+  File "D:\ecommerce-microservice-backend-app\performance-tests\locustfile.py", line 744, in product_management_workflow
+    with self.client.post("/app/api/products",
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\clients.py", line 371, in __enter__
+    raise LocustError("In order to use a with-block for requests, you must also pass catch_response=True")
+locust.exception.LocustError: In order to use a with-block for requests, you must also pass catch_response=True
+
+[2025-10-28 17:07:09,430] DESKTOP-16EJNEG/ERROR/locust.user.task: In order to use a with-block for requests, you must also pass catch_response=True
+Traceback (most recent call last):
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 355, in run
+    self.execute_next_task()
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 388, in execute_next_task
+    self.execute_task(self._task_queue.popleft())
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 505, in execute_task
+    task(self.user)
+  File "D:\ecommerce-microservice-backend-app\performance-tests\locustfile.py", line 744, in product_management_workflow
+    with self.client.post("/app/api/products",
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\clients.py", line 371, in __enter__
+    raise LocustError("In order to use a with-block for requests, you must also pass catch_response=True")
+locust.exception.LocustError: In order to use a with-block for requests, you must also pass catch_response=True
+
+[2025-10-28 17:07:09,760] DESKTOP-16EJNEG/ERROR/locust.user.task: In order to use a with-block for requests, you must also pass catch_response=True
+Traceback (most recent call last):
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 355, in run
+    self.execute_next_task()
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 388, in execute_next_task
+    self.execute_task(self._task_queue.popleft())
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 505, in execute_task
+    task(self.user)
+  File "D:\ecommerce-microservice-backend-app\performance-tests\locustfile.py", line 657, in complete_purchase_workflow
+    with self.client.post("/app/api/orders",
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\clients.py", line 371, in __enter__
+    raise LocustError("In order to use a with-block for requests, you must also pass catch_response=True")
+locust.exception.LocustError: In order to use a with-block for requests, you must also pass catch_response=True
+
+[2025-10-28 17:07:10,876] DESKTOP-16EJNEG/ERROR/locust.user.task: In order to use a with-block for requests, you must also pass catch_response=True
+Traceback (most recent call last):
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 355, in run
+    self.execute_next_task()
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 388, in execute_next_task
+    self.execute_task(self._task_queue.popleft())
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 505, in execute_task
+    task(self.user)
+  File "D:\ecommerce-microservice-backend-app\performance-tests\locustfile.py", line 715, in user_management_workflow
+    with self.client.post("/app/api/users",
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\clients.py", line 371, in __enter__
+    raise LocustError("In order to use a with-block for requests, you must also pass catch_response=True")
+locust.exception.LocustError: In order to use a with-block for requests, you must also pass catch_response=True
+
+[2025-10-28 17:07:12,296] DESKTOP-16EJNEG/ERROR/locust.user.task: In order to use a with-block for requests, you must also pass catch_response=True
+Traceback (most recent call last):
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 355, in run
+    self.execute_next_task()
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 388, in execute_next_task
+    self.execute_task(self._task_queue.popleft())
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 505, in execute_task
+    task(self.user)
+  File "D:\ecommerce-microservice-backend-app\performance-tests\locustfile.py", line 657, in complete_purchase_workflow
+    with self.client.post("/app/api/orders",
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\clients.py", line 371, in __enter__
+    raise LocustError("In order to use a with-block for requests, you must also pass catch_response=True")
+locust.exception.LocustError: In order to use a with-block for requests, you must also pass catch_response=True
+
+[2025-10-28 17:07:13,076] DESKTOP-16EJNEG/ERROR/locust.user.task: In order to use a with-block for requests, you must also pass catch_response=True
+Traceback (most recent call last):
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 355, in run
+    self.execute_next_task()
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 388, in execute_next_task
+    self.execute_task(self._task_queue.popleft())
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 505, in execute_task
+    task(self.user)
+  File "D:\ecommerce-microservice-backend-app\performance-tests\locustfile.py", line 744, in product_management_workflow
+    with self.client.post("/app/api/products",
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\clients.py", line 371, in __enter__
+    raise LocustError("In order to use a with-block for requests, you must also pass catch_response=True")
+locust.exception.LocustError: In order to use a with-block for requests, you must also pass catch_response=True
+
+[2025-10-28 17:07:13,507] DESKTOP-16EJNEG/ERROR/locust.user.task: In order to use a with-block for requests, you must also pass catch_response=True
+Traceback (most recent call last):
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 355, in run
+    self.execute_next_task()
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 388, in execute_next_task
+    self.execute_task(self._task_queue.popleft())
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 505, in execute_task
+    task(self.user)
+  File "D:\ecommerce-microservice-backend-app\performance-tests\locustfile.py", line 744, in product_management_workflow
+    with self.client.post("/app/api/products",
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\clients.py", line 371, in __enter__
+    raise LocustError("In order to use a with-block for requests, you must also pass catch_response=True")
+locust.exception.LocustError: In order to use a with-block for requests, you must also pass catch_response=True
+
+[2025-10-28 17:07:13,650] DESKTOP-16EJNEG/ERROR/locust.user.task: In order to use a with-block for requests, you must also pass catch_response=True
+Traceback (most recent call last):
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 355, in run
+    self.execute_next_task()
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 388, in execute_next_task
+    self.execute_task(self._task_queue.popleft())
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 505, in execute_task
+    task(self.user)
+  File "D:\ecommerce-microservice-backend-app\performance-tests\locustfile.py", line 744, in product_management_workflow
+    with self.client.post("/app/api/products",
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\clients.py", line 371, in __enter__
+    raise LocustError("In order to use a with-block for requests, you must also pass catch_response=True")
+locust.exception.LocustError: In order to use a with-block for requests, you must also pass catch_response=True
+
+[2025-10-28 17:07:14,518] DESKTOP-16EJNEG/ERROR/locust.user.task: In order to use a with-block for requests, you must also pass catch_response=True
+Traceback (most recent call last):
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 355, in run
+    self.execute_next_task()
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 388, in execute_next_task
+    self.execute_task(self._task_queue.popleft())
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 505, in execute_task
+    task(self.user)
+  File "D:\ecommerce-microservice-backend-app\performance-tests\locustfile.py", line 657, in complete_purchase_workflow
+    with self.client.post("/app/api/orders",
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\clients.py", line 371, in __enter__
+    raise LocustError("In order to use a with-block for requests, you must also pass catch_response=True")
+locust.exception.LocustError: In order to use a with-block for requests, you must also pass catch_response=True
+
+[2025-10-28 17:07:17,173] DESKTOP-16EJNEG/ERROR/locust.user.task: In order to use a with-block for requests, you must also pass catch_response=True
+Traceback (most recent call last):
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 355, in run
+    self.execute_next_task()
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 388, in execute_next_task
+    self.execute_task(self._task_queue.popleft())
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 505, in execute_task
+    task(self.user)
+  File "D:\ecommerce-microservice-backend-app\performance-tests\locustfile.py", line 657, in complete_purchase_workflow
+    with self.client.post("/app/api/orders",
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\clients.py", line 371, in __enter__
+    raise LocustError("In order to use a with-block for requests, you must also pass catch_response=True")
+locust.exception.LocustError: In order to use a with-block for requests, you must also pass catch_response=True
+
+[2025-10-28 17:07:17,326] DESKTOP-16EJNEG/ERROR/locust.user.task: In order to use a with-block for requests, you must also pass catch_response=True
+Traceback (most recent call last):
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 355, in run
+    self.execute_next_task()
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 388, in execute_next_task
+    self.execute_task(self._task_queue.popleft())
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 505, in execute_task
+    task(self.user)
+  File "D:\ecommerce-microservice-backend-app\performance-tests\locustfile.py", line 715, in user_management_workflow
+    with self.client.post("/app/api/users",
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\clients.py", line 371, in __enter__
+    raise LocustError("In order to use a with-block for requests, you must also pass catch_response=True")
+locust.exception.LocustError: In order to use a with-block for requests, you must also pass catch_response=True
+
+[2025-10-28 17:07:17,374] DESKTOP-16EJNEG/ERROR/locust.user.task: In order to use a with-block for requests, you must also pass catch_response=True
+Traceback (most recent call last):
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 355, in run
+    self.execute_next_task()
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 388, in execute_next_task
+    self.execute_task(self._task_queue.popleft())
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 505, in execute_task
+    task(self.user)
+  File "D:\ecommerce-microservice-backend-app\performance-tests\locustfile.py", line 657, in complete_purchase_workflow
+    with self.client.post("/app/api/orders",
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\clients.py", line 371, in __enter__
+    raise LocustError("In order to use a with-block for requests, you must also pass catch_response=True")
+locust.exception.LocustError: In order to use a with-block for requests, you must also pass catch_response=True
+
+[2025-10-28 17:07:17,579] DESKTOP-16EJNEG/ERROR/locust.user.task: In order to use a with-block for requests, you must also pass catch_response=True
+Traceback (most recent call last):
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 355, in run
+    self.execute_next_task()
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 388, in execute_next_task
+    self.execute_task(self._task_queue.popleft())
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 505, in execute_task
+    task(self.user)
+  File "D:\ecommerce-microservice-backend-app\performance-tests\locustfile.py", line 657, in complete_purchase_workflow
+    with self.client.post("/app/api/orders",
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\clients.py", line 371, in __enter__
+    raise LocustError("In order to use a with-block for requests, you must also pass catch_response=True")
+locust.exception.LocustError: In order to use a with-block for requests, you must also pass catch_response=True
+
+[2025-10-28 17:07:17,686] DESKTOP-16EJNEG/ERROR/locust.user.task: In order to use a with-block for requests, you must also pass catch_response=True
+Traceback (most recent call last):
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 355, in run
+    self.execute_next_task()
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 388, in execute_next_task
+    self.execute_task(self._task_queue.popleft())
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 505, in execute_task
+    task(self.user)
+  File "D:\ecommerce-microservice-backend-app\performance-tests\locustfile.py", line 715, in user_management_workflow
+    with self.client.post("/app/api/users",
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\clients.py", line 371, in __enter__
+    raise LocustError("In order to use a with-block for requests, you must also pass catch_response=True")
+locust.exception.LocustError: In order to use a with-block for requests, you must also pass catch_response=True
+
+[2025-10-28 17:07:19,825] DESKTOP-16EJNEG/ERROR/locust.user.task: In order to use a with-block for requests, you must also pass catch_response=True
+Traceback (most recent call last):
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 355, in run
+    self.execute_next_task()
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 388, in execute_next_task
+    self.execute_task(self._task_queue.popleft())
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 505, in execute_task
+    task(self.user)
+  File "D:\ecommerce-microservice-backend-app\performance-tests\locustfile.py", line 715, in user_management_workflow
+    with self.client.post("/app/api/users",
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\clients.py", line 371, in __enter__
+    raise LocustError("In order to use a with-block for requests, you must also pass catch_response=True")
+locust.exception.LocustError: In order to use a with-block for requests, you must also pass catch_response=True
+
+[2025-10-28 17:07:20,093] DESKTOP-16EJNEG/ERROR/locust.user.task: In order to use a with-block for requests, you must also pass catch_response=True
+Traceback (most recent call last):
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 355, in run
+    self.execute_next_task()
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 388, in execute_next_task
+    self.execute_task(self._task_queue.popleft())
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 505, in execute_task
+    task(self.user)
+  File "D:\ecommerce-microservice-backend-app\performance-tests\locustfile.py", line 715, in user_management_workflow
+    with self.client.post("/app/api/users",
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\clients.py", line 371, in __enter__
+    raise LocustError("In order to use a with-block for requests, you must also pass catch_response=True")
+locust.exception.LocustError: In order to use a with-block for requests, you must also pass catch_response=True
+
+[2025-10-28 17:07:20,219] DESKTOP-16EJNEG/ERROR/locust.user.task: In order to use a with-block for requests, you must also pass catch_response=True
+Traceback (most recent call last):
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 355, in run
+    self.execute_next_task()
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 388, in execute_next_task
+    self.execute_task(self._task_queue.popleft())
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 505, in execute_task
+    task(self.user)
+  File "D:\ecommerce-microservice-backend-app\performance-tests\locustfile.py", line 715, in user_management_workflow
+    with self.client.post("/app/api/users",
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\clients.py", line 371, in __enter__
+    raise LocustError("In order to use a with-block for requests, you must also pass catch_response=True")
+locust.exception.LocustError: In order to use a with-block for requests, you must also pass catch_response=True
+
+[2025-10-28 17:07:20,646] DESKTOP-16EJNEG/ERROR/locust.user.task: In order to use a with-block for requests, you must also pass catch_response=True
+Traceback (most recent call last):
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 355, in run
+    self.execute_next_task()
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 388, in execute_next_task
+    self.execute_task(self._task_queue.popleft())
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 505, in execute_task
+    task(self.user)
+  File "D:\ecommerce-microservice-backend-app\performance-tests\locustfile.py", line 715, in user_management_workflow
+    with self.client.post("/app/api/users",
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\clients.py", line 371, in __enter__
+    raise LocustError("In order to use a with-block for requests, you must also pass catch_response=True")
+locust.exception.LocustError: In order to use a with-block for requests, you must also pass catch_response=True
+
+[2025-10-28 17:07:24,146] DESKTOP-16EJNEG/ERROR/locust.user.task: In order to use a with-block for requests, you must also pass catch_response=True
+Traceback (most recent call last):
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 355, in run
+    self.execute_next_task()
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 388, in execute_next_task
+    self.execute_task(self._task_queue.popleft())
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 505, in execute_task
+    task(self.user)
+  File "D:\ecommerce-microservice-backend-app\performance-tests\locustfile.py", line 715, in user_management_workflow
+    with self.client.post("/app/api/users",
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\clients.py", line 371, in __enter__
+    raise LocustError("In order to use a with-block for requests, you must also pass catch_response=True")
+locust.exception.LocustError: In order to use a with-block for requests, you must also pass catch_response=True
+
+[2025-10-28 17:07:24,584] DESKTOP-16EJNEG/ERROR/locust.user.task: In order to use a with-block for requests, you must also pass catch_response=True
+Traceback (most recent call last):
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 355, in run
+    self.execute_next_task()
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 388, in execute_next_task
+    self.execute_task(self._task_queue.popleft())
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 505, in execute_task
+    task(self.user)
+  File "D:\ecommerce-microservice-backend-app\performance-tests\locustfile.py", line 715, in user_management_workflow
+    with self.client.post("/app/api/users",
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\clients.py", line 371, in __enter__
+    raise LocustError("In order to use a with-block for requests, you must also pass catch_response=True")
+locust.exception.LocustError: In order to use a with-block for requests, you must also pass catch_response=True
+
+[2025-10-28 17:07:25,095] DESKTOP-16EJNEG/ERROR/locust.user.task: In order to use a with-block for requests, you must also pass catch_response=True
+Traceback (most recent call last):
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 355, in run
+    self.execute_next_task()
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 388, in execute_next_task
+    self.execute_task(self._task_queue.popleft())
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 505, in execute_task
+    task(self.user)
+  File "D:\ecommerce-microservice-backend-app\performance-tests\locustfile.py", line 657, in complete_purchase_workflow
+    with self.client.post("/app/api/orders",
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\clients.py", line 371, in __enter__
+    raise LocustError("In order to use a with-block for requests, you must also pass catch_response=True")
+locust.exception.LocustError: In order to use a with-block for requests, you must also pass catch_response=True
+
+[2025-10-28 17:07:25,200] DESKTOP-16EJNEG/ERROR/locust.user.task: In order to use a with-block for requests, you must also pass catch_response=True
+Traceback (most recent call last):
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 355, in run
+    self.execute_next_task()
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 388, in execute_next_task
+    self.execute_task(self._task_queue.popleft())
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 505, in execute_task
+    task(self.user)
+  File "D:\ecommerce-microservice-backend-app\performance-tests\locustfile.py", line 657, in complete_purchase_workflow
+    with self.client.post("/app/api/orders",
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\clients.py", line 371, in __enter__
+    raise LocustError("In order to use a with-block for requests, you must also pass catch_response=True")
+locust.exception.LocustError: In order to use a with-block for requests, you must also pass catch_response=True
+
+[2025-10-28 17:07:25,202] DESKTOP-16EJNEG/ERROR/locust.user.task: In order to use a with-block for requests, you must also pass catch_response=True
+Traceback (most recent call last):
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 355, in run
+    self.execute_next_task()
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 388, in execute_next_task
+    self.execute_task(self._task_queue.popleft())
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 505, in execute_task
+    task(self.user)
+  File "D:\ecommerce-microservice-backend-app\performance-tests\locustfile.py", line 657, in complete_purchase_workflow
+    with self.client.post("/app/api/orders",
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\clients.py", line 371, in __enter__
+    raise LocustError("In order to use a with-block for requests, you must also pass catch_response=True")
+locust.exception.LocustError: In order to use a with-block for requests, you must also pass catch_response=True
+
+[2025-10-28 17:07:27,119] DESKTOP-16EJNEG/ERROR/locust.user.task: In order to use a with-block for requests, you must also pass catch_response=True
+Traceback (most recent call last):
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 355, in run
+    self.execute_next_task()
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 388, in execute_next_task
+    self.execute_task(self._task_queue.popleft())
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 505, in execute_task
+    task(self.user)
+  File "D:\ecommerce-microservice-backend-app\performance-tests\locustfile.py", line 657, in complete_purchase_workflow
+    with self.client.post("/app/api/orders",
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\clients.py", line 371, in __enter__
+    raise LocustError("In order to use a with-block for requests, you must also pass catch_response=True")
+locust.exception.LocustError: In order to use a with-block for requests, you must also pass catch_response=True
+
+[2025-10-28 17:07:27,491] DESKTOP-16EJNEG/ERROR/locust.user.task: In order to use a with-block for requests, you must also pass catch_response=True
+Traceback (most recent call last):
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 355, in run
+    self.execute_next_task()
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 388, in execute_next_task
+    self.execute_task(self._task_queue.popleft())
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 505, in execute_task
+    task(self.user)
+  File "D:\ecommerce-microservice-backend-app\performance-tests\locustfile.py", line 657, in complete_purchase_workflow
+    with self.client.post("/app/api/orders",
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\clients.py", line 371, in __enter__
+    raise LocustError("In order to use a with-block for requests, you must also pass catch_response=True")
+locust.exception.LocustError: In order to use a with-block for requests, you must also pass catch_response=True
+
+[2025-10-28 17:07:27,820] DESKTOP-16EJNEG/ERROR/locust.user.task: In order to use a with-block for requests, you must also pass catch_response=True
+Traceback (most recent call last):
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 355, in run
+    self.execute_next_task()
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 388, in execute_next_task
+    self.execute_task(self._task_queue.popleft())
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 505, in execute_task
+    task(self.user)
+  File "D:\ecommerce-microservice-backend-app\performance-tests\locustfile.py", line 657, in complete_purchase_workflow
+    with self.client.post("/app/api/orders",
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\clients.py", line 371, in __enter__
+    raise LocustError("In order to use a with-block for requests, you must also pass catch_response=True")
+locust.exception.LocustError: In order to use a with-block for requests, you must also pass catch_response=True
+
+[2025-10-28 17:07:28,587] DESKTOP-16EJNEG/ERROR/locust.user.task: In order to use a with-block for requests, you must also pass catch_response=True
+Traceback (most recent call last):
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 355, in run
+    self.execute_next_task()
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 388, in execute_next_task
+    self.execute_task(self._task_queue.popleft())
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 505, in execute_task
+    task(self.user)
+  File "D:\ecommerce-microservice-backend-app\performance-tests\locustfile.py", line 657, in complete_purchase_workflow
+    with self.client.post("/app/api/orders",
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\clients.py", line 371, in __enter__
+    raise LocustError("In order to use a with-block for requests, you must also pass catch_response=True")
+locust.exception.LocustError: In order to use a with-block for requests, you must also pass catch_response=True
+
+[2025-10-28 17:07:29,582] DESKTOP-16EJNEG/ERROR/locust.user.task: In order to use a with-block for requests, you must also pass catch_response=True
+Traceback (most recent call last):
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 355, in run
+    self.execute_next_task()
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 388, in execute_next_task
+    self.execute_task(self._task_queue.popleft())
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 505, in execute_task
+    task(self.user)
+  File "D:\ecommerce-microservice-backend-app\performance-tests\locustfile.py", line 744, in product_management_workflow
+    with self.client.post("/app/api/products",
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\clients.py", line 371, in __enter__
+    raise LocustError("In order to use a with-block for requests, you must also pass catch_response=True")
+locust.exception.LocustError: In order to use a with-block for requests, you must also pass catch_response=True
+
+[2025-10-28 17:07:31,341] DESKTOP-16EJNEG/ERROR/locust.user.task: In order to use a with-block for requests, you must also pass catch_response=True
+Traceback (most recent call last):
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 355, in run
+    self.execute_next_task()
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 388, in execute_next_task
+    self.execute_task(self._task_queue.popleft())
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 505, in execute_task
+    task(self.user)
+  File "D:\ecommerce-microservice-backend-app\performance-tests\locustfile.py", line 657, in complete_purchase_workflow
+    with self.client.post("/app/api/orders",
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\clients.py", line 371, in __enter__
+    raise LocustError("In order to use a with-block for requests, you must also pass catch_response=True")
+locust.exception.LocustError: In order to use a with-block for requests, you must also pass catch_response=True
+
+[2025-10-28 17:07:31,624] DESKTOP-16EJNEG/ERROR/locust.user.task: In order to use a with-block for requests, you must also pass catch_response=True
+Traceback (most recent call last):
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 355, in run
+    self.execute_next_task()
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 388, in execute_next_task
+    self.execute_task(self._task_queue.popleft())
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 505, in execute_task
+    task(self.user)
+  File "D:\ecommerce-microservice-backend-app\performance-tests\locustfile.py", line 715, in user_management_workflow
+    with self.client.post("/app/api/users",
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\clients.py", line 371, in __enter__
+    raise LocustError("In order to use a with-block for requests, you must also pass catch_response=True")
+locust.exception.LocustError: In order to use a with-block for requests, you must also pass catch_response=True
+
+[2025-10-28 17:07:32,401] DESKTOP-16EJNEG/ERROR/locust.user.task: In order to use a with-block for requests, you must also pass catch_response=True
+Traceback (most recent call last):
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 355, in run
+    self.execute_next_task()
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 388, in execute_next_task
+    self.execute_task(self._task_queue.popleft())
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 505, in execute_task
+    task(self.user)
+  File "D:\ecommerce-microservice-backend-app\performance-tests\locustfile.py", line 744, in product_management_workflow
+    with self.client.post("/app/api/products",
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\clients.py", line 371, in __enter__
+    raise LocustError("In order to use a with-block for requests, you must also pass catch_response=True")
+locust.exception.LocustError: In order to use a with-block for requests, you must also pass catch_response=True
+
+[2025-10-28 17:07:32,655] DESKTOP-16EJNEG/ERROR/locust.user.task: In order to use a with-block for requests, you must also pass catch_response=True
+Traceback (most recent call last):
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 355, in run
+    self.execute_next_task()
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 388, in execute_next_task
+    self.execute_task(self._task_queue.popleft())
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 505, in execute_task
+    task(self.user)
+  File "D:\ecommerce-microservice-backend-app\performance-tests\locustfile.py", line 657, in complete_purchase_workflow
+    with self.client.post("/app/api/orders",
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\clients.py", line 371, in __enter__
+    raise LocustError("In order to use a with-block for requests, you must also pass catch_response=True")
+locust.exception.LocustError: In order to use a with-block for requests, you must also pass catch_response=True
+
+[2025-10-28 17:07:34,283] DESKTOP-16EJNEG/ERROR/locust.user.task: In order to use a with-block for requests, you must also pass catch_response=True
+Traceback (most recent call last):
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 355, in run
+    self.execute_next_task()
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 388, in execute_next_task
+    self.execute_task(self._task_queue.popleft())
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 505, in execute_task
+    task(self.user)
+  File "D:\ecommerce-microservice-backend-app\performance-tests\locustfile.py", line 744, in product_management_workflow
+    with self.client.post("/app/api/products",
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\clients.py", line 371, in __enter__
+    raise LocustError("In order to use a with-block for requests, you must also pass catch_response=True")
+locust.exception.LocustError: In order to use a with-block for requests, you must also pass catch_response=True
+
+[2025-10-28 17:07:35,289] DESKTOP-16EJNEG/ERROR/locust.user.task: In order to use a with-block for requests, you must also pass catch_response=True
+Traceback (most recent call last):
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 355, in run
+    self.execute_next_task()
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 388, in execute_next_task
+    self.execute_task(self._task_queue.popleft())
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 505, in execute_task
+    task(self.user)
+  File "D:\ecommerce-microservice-backend-app\performance-tests\locustfile.py", line 657, in complete_purchase_workflow
+    with self.client.post("/app/api/orders",
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\clients.py", line 371, in __enter__
+    raise LocustError("In order to use a with-block for requests, you must also pass catch_response=True")
+locust.exception.LocustError: In order to use a with-block for requests, you must also pass catch_response=True
+
+[2025-10-28 17:07:35,291] DESKTOP-16EJNEG/ERROR/locust.user.task: In order to use a with-block for requests, you must also pass catch_response=True
+Traceback (most recent call last):
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 355, in run
+    self.execute_next_task()
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 388, in execute_next_task
+    self.execute_task(self._task_queue.popleft())
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 505, in execute_task
+    task(self.user)
+  File "D:\ecommerce-microservice-backend-app\performance-tests\locustfile.py", line 715, in user_management_workflow
+    with self.client.post("/app/api/users",
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\clients.py", line 371, in __enter__
+    raise LocustError("In order to use a with-block for requests, you must also pass catch_response=True")
+locust.exception.LocustError: In order to use a with-block for requests, you must also pass catch_response=True
+
+[2025-10-28 17:07:36,449] DESKTOP-16EJNEG/ERROR/locust.user.task: In order to use a with-block for requests, you must also pass catch_response=True
+Traceback (most recent call last):
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 355, in run
+    self.execute_next_task()
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 388, in execute_next_task
+    self.execute_task(self._task_queue.popleft())
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 505, in execute_task
+    task(self.user)
+  File "D:\ecommerce-microservice-backend-app\performance-tests\locustfile.py", line 715, in user_management_workflow
+    with self.client.post("/app/api/users",
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\clients.py", line 371, in __enter__
+    raise LocustError("In order to use a with-block for requests, you must also pass catch_response=True")
+locust.exception.LocustError: In order to use a with-block for requests, you must also pass catch_response=True
+
+[2025-10-28 17:07:36,609] DESKTOP-16EJNEG/ERROR/locust.user.task: In order to use a with-block for requests, you must also pass catch_response=True
+Traceback (most recent call last):
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 355, in run
+    self.execute_next_task()
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 388, in execute_next_task
+    self.execute_task(self._task_queue.popleft())
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 505, in execute_task
+    task(self.user)
+  File "D:\ecommerce-microservice-backend-app\performance-tests\locustfile.py", line 657, in complete_purchase_workflow
+    with self.client.post("/app/api/orders",
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\clients.py", line 371, in __enter__
+    raise LocustError("In order to use a with-block for requests, you must also pass catch_response=True")
+locust.exception.LocustError: In order to use a with-block for requests, you must also pass catch_response=True
+
+[2025-10-28 17:07:37,666] DESKTOP-16EJNEG/ERROR/locust.user.task: In order to use a with-block for requests, you must also pass catch_response=True
+Traceback (most recent call last):
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 355, in run
+    self.execute_next_task()
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 388, in execute_next_task
+    self.execute_task(self._task_queue.popleft())
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 505, in execute_task
+    task(self.user)
+  File "D:\ecommerce-microservice-backend-app\performance-tests\locustfile.py", line 657, in complete_purchase_workflow
+    with self.client.post("/app/api/orders",
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\clients.py", line 371, in __enter__
+    raise LocustError("In order to use a with-block for requests, you must also pass catch_response=True")
+locust.exception.LocustError: In order to use a with-block for requests, you must also pass catch_response=True
+
+[2025-10-28 17:07:38,494] DESKTOP-16EJNEG/ERROR/locust.user.task: In order to use a with-block for requests, you must also pass catch_response=True
+Traceback (most recent call last):
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 355, in run
+    self.execute_next_task()
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 388, in execute_next_task
+    self.execute_task(self._task_queue.popleft())
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 505, in execute_task
+    task(self.user)
+  File "D:\ecommerce-microservice-backend-app\performance-tests\locustfile.py", line 715, in user_management_workflow
+    with self.client.post("/app/api/users",
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\clients.py", line 371, in __enter__
+    raise LocustError("In order to use a with-block for requests, you must also pass catch_response=True")
+locust.exception.LocustError: In order to use a with-block for requests, you must also pass catch_response=True
+
+[2025-10-28 17:07:39,089] DESKTOP-16EJNEG/ERROR/locust.user.task: In order to use a with-block for requests, you must also pass catch_response=True
+Traceback (most recent call last):
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 355, in run
+    self.execute_next_task()
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 388, in execute_next_task
+    self.execute_task(self._task_queue.popleft())
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 505, in execute_task
+    task(self.user)
+  File "D:\ecommerce-microservice-backend-app\performance-tests\locustfile.py", line 657, in complete_purchase_workflow
+    with self.client.post("/app/api/orders",
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\clients.py", line 371, in __enter__
+    raise LocustError("In order to use a with-block for requests, you must also pass catch_response=True")
+locust.exception.LocustError: In order to use a with-block for requests, you must also pass catch_response=True
+
+[2025-10-28 17:07:39,416] DESKTOP-16EJNEG/ERROR/locust.user.task: In order to use a with-block for requests, you must also pass catch_response=True
+Traceback (most recent call last):
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 355, in run
+    self.execute_next_task()
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 388, in execute_next_task
+    self.execute_task(self._task_queue.popleft())
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\user\task.py", line 505, in execute_task
+    task(self.user)
+  File "D:\ecommerce-microservice-backend-app\performance-tests\locustfile.py", line 657, in complete_purchase_workflow
+    with self.client.post("/app/api/orders",
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\clients.py", line 371, in __enter__
+    raise LocustError("In order to use a with-block for requests, you must also pass catch_response=True")
+locust.exception.LocustError: In order to use a with-block for requests, you must also pass catch_response=True
+
+[2025-10-28 17:07:40,113] DESKTOP-16EJNEG/INFO/locust.main: --run-time limit reached, shutting down
+[2025-10-28 17:07:40,427] DESKTOP-16EJNEG/INFO/locust.main: writing html report to file: ../test-results/performance/performance_report.html
+[2025-10-28 17:07:40,433] DESKTOP-16EJNEG/INFO/locust.main: Shutting down (exit code 1)
+[2025-10-28 17:10:59,106] DESKTOP-16EJNEG/INFO/locust.main: Starting Locust 2.42.1
+[2025-10-28 17:10:59,107] DESKTOP-16EJNEG/INFO/locust.main: Run time limit set to 60 seconds
+[2025-10-28 17:10:59,110] DESKTOP-16EJNEG/INFO/locust.runners: Ramping to 10 users at a rate of 2.00 per second
+[2025-10-28 17:11:03,138] DESKTOP-16EJNEG/INFO/locust.runners: All users spawned: {"EcommerceUser": 5, "HighLoadUser": 5} (10 total users)
+[2025-10-28 17:11:57,962] DESKTOP-16EJNEG/INFO/locust.main: --run-time limit reached, shutting down
+[2025-10-28 17:11:58,320] DESKTOP-16EJNEG/INFO/locust.main: writing html report to file: ../test-results/performance/performance_report.html
+[2025-10-28 17:11:58,325] DESKTOP-16EJNEG/INFO/locust.main: Shutting down (exit code 1)

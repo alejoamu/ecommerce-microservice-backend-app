@@ -1,0 +1,125 @@
+Method,Name,Error,Occurrences
+GET,/app/api/products/28,HTTPError('400 Client Error: Bad Request for url: /app/api/products/28'),7
+GET,/app/api/users/username/omarderouiche,CatchResponseError('HTTP 403'),2
+GET,/app/api/products/38,HTTPError('400 Client Error: Bad Request for url: /app/api/products/38'),6
+GET,/app/api/users,CatchResponseError('HTTP 403'),9
+GET,/app/api/products/11,HTTPError('400 Client Error: Bad Request for url: /app/api/products/11'),4
+GET,/app/api/favourites/6,CatchResponseError('HTTP 403'),1
+GET,/app/api/payments/status/FAILED,CatchResponseError('HTTP 403'),3
+GET,/app/api/favourites/user/10,CatchResponseError('HTTP 403'),1
+GET,/app/api/products/8,CatchResponseError('HTTP 400'),1
+GET,/app/api/payments/order/10,CatchResponseError('HTTP 403'),1
+GET,/app/api/users/phone/+1234567890,CatchResponseError('HTTP 403'),1
+GET,/app/api/users,HTTPError('403 Client Error: Forbidden for url: /app/api/users'),36
+GET,/app/api/products/10,CatchResponseError('HTTP 400'),1
+GET,/app/api/users/email/test@example.com,CatchResponseError('HTTP 403'),4
+GET,/app/api/payments/order/5,CatchResponseError('HTTP 403'),1
+GET,/app/api/orders,HTTPError('403 Client Error: Forbidden for url: /app/api/orders'),35
+GET,/app/api/favourites/user/2,CatchResponseError('HTTP 403'),1
+GET,/app/api/products/43,HTTPError('400 Client Error: Bad Request for url: /app/api/products/43'),9
+GET,/app/api/shippings/status/PENDING,CatchResponseError('HTTP 403'),1
+GET,/app/api/shippings/user/6,CatchResponseError('HTTP 403'),1
+GET,/app/api/users/phone/+1122334455,CatchResponseError('HTTP 403'),1
+GET,/app/api/products/17,HTTPError('400 Client Error: Bad Request for url: /app/api/products/17'),5
+GET,/app/api/users/username/testuser,HTTPError('403 Client Error: Forbidden for url: /app/api/users/username/testuser'),51
+GET,/app/api/products/22,HTTPError('400 Client Error: Bad Request for url: /app/api/products/22'),4
+GET,/app/api/products/50,HTTPError('400 Client Error: Bad Request for url: /app/api/products/50'),6
+GET,/app/api/shippings/order/5,CatchResponseError('HTTP 403'),1
+GET,/app/api/products/category/Home,CatchResponseError('HTTP 404'),1
+GET,/app/api/favourites/category/Home,CatchResponseError('HTTP 403'),1
+GET,/app/api/users/5,CatchResponseError('HTTP 403'),1
+GET,/app/api/favourites,CatchResponseError('HTTP 403'),6
+GET,/app/api/orders/user/10,CatchResponseError('HTTP 403'),1
+GET,/app/api/payments/user/5,CatchResponseError('HTTP 403'),1
+GET,/app/api/payments,CatchResponseError('HTTP 403'),9
+GET,/app/api/products/5,HTTPError('400 Client Error: Bad Request for url: /app/api/products/5'),6
+GET,/app/api/products/42,HTTPError('400 Client Error: Bad Request for url: /app/api/products/42'),6
+GET,/app/api/products/49,HTTPError('400 Client Error: Bad Request for url: /app/api/products/49'),11
+GET,/app/api/favourites/user/8,CatchResponseError('HTTP 403'),1
+GET,/app/api/products/sku/SKU003,CatchResponseError('HTTP 404'),1
+GET,/app/api/payments,HTTPError('403 Client Error: Forbidden for url: /app/api/payments'),25
+GET,/app/api/products/46,HTTPError('400 Client Error: Bad Request for url: /app/api/products/46'),9
+GET,/app/api/shippings/status/IN_TRANSIT,CatchResponseError('HTTP 403'),1
+GET,/app/api/shippings/status/DELIVERED,CatchResponseError('HTTP 403'),1
+GET,/app/api/products/27,HTTPError('400 Client Error: Bad Request for url: /app/api/products/27'),5
+GET,/app/api/products/40,HTTPError('400 Client Error: Bad Request for url: /app/api/products/40'),6
+GET,/app/api/orders/3,CatchResponseError('HTTP 403'),2
+GET,/app/api/payments/order/6,CatchResponseError('HTTP 403'),1
+GET,/app/api/products/20,HTTPError('400 Client Error: Bad Request for url: /app/api/products/20'),9
+GET,/app/api/users/username/admin,HTTPError('403 Client Error: Forbidden for url: /app/api/users/username/admin'),44
+GET,/app/api/products/32,HTTPError('400 Client Error: Bad Request for url: /app/api/products/32'),4
+GET,/app/api/payments/3,CatchResponseError('HTTP 403'),1
+GET,/app/api/products/34,HTTPError('400 Client Error: Bad Request for url: /app/api/products/34'),6
+GET,/app/api/payments/6,CatchResponseError('HTTP 403'),1
+GET,/app/api/products/6,CatchResponseError('HTTP 400'),3
+GET,/app/api/shippings/order/4,CatchResponseError('HTTP 403'),1
+GET,/app/api/payments/order/7,CatchResponseError('HTTP 403'),1
+GET,/app/api/orders/user/6,CatchResponseError('HTTP 403'),1
+GET,/app/api/shippings/status/SHIPPED,CatchResponseError('HTTP 403'),1
+GET,/app/api/orders/date-range?start=2024-01-01&end=2024-12-31,CatchResponseError('HTTP 403'),2
+GET,/app/api/products/6,HTTPError('400 Client Error: Bad Request for url: /app/api/products/6'),5
+GET,/app/api/products/30,HTTPError('400 Client Error: Bad Request for url: /app/api/products/30'),5
+GET,/app/api/products/sku/SKU001,CatchResponseError('HTTP 404'),2
+GET,/app/api/users/email/admin@example.com,CatchResponseError('HTTP 403'),2
+GET,/app/api/products/33,HTTPError('400 Client Error: Bad Request for url: /app/api/products/33'),7
+GET,/app/api/products/24,HTTPError('400 Client Error: Bad Request for url: /app/api/products/24'),6
+GET,/app/api/orders/4,CatchResponseError('HTTP 403'),4
+GET,/app/api/orders/5,CatchResponseError('HTTP 403'),1
+GET,/app/api/products/7,HTTPError('400 Client Error: Bad Request for url: /app/api/products/7'),9
+GET,/app/api/products/18,HTTPError('400 Client Error: Bad Request for url: /app/api/products/18'),9
+GET,/app/api/users/username/amineladjimi,HTTPError('403 Client Error: Forbidden for url: /app/api/users/username/amineladjimi'),57
+GET,/app/api/shippings/10,CatchResponseError('HTTP 403'),1
+GET,/app/api/products/8,HTTPError('400 Client Error: Bad Request for url: /app/api/products/8'),4
+GET,/app/api/products/29,HTTPError('400 Client Error: Bad Request for url: /app/api/products/29'),6
+GET,/app/api/products/48,HTTPError('400 Client Error: Bad Request for url: /app/api/products/48'),1
+GET,/app/api/products/35,HTTPError('400 Client Error: Bad Request for url: /app/api/products/35'),9
+GET,/app/api/products/39,HTTPError('400 Client Error: Bad Request for url: /app/api/products/39'),9
+GET,/app/api/products/sku/SKU005,CatchResponseError('HTTP 404'),3
+GET,/app/api/products/9,HTTPError('400 Client Error: Bad Request for url: /app/api/products/9'),7
+GET,/app/api/products/37,HTTPError('400 Client Error: Bad Request for url: /app/api/products/37'),6
+GET,/app/api/favourites/user/3,CatchResponseError('HTTP 403'),1
+GET,/app/api/users/username/testuser,CatchResponseError('HTTP 403'),1
+GET,/app/api/users/username/admin,CatchResponseError('HTTP 403'),1
+GET,/app/api/products/category/Electronics,CatchResponseError('HTTP 404'),2
+GET,/app/api/products/sku/SKU002,CatchResponseError('HTTP 404'),2
+GET,/app/api/products/36,HTTPError('400 Client Error: Bad Request for url: /app/api/products/36'),4
+GET,/app/api/shippings,HTTPError('403 Client Error: Forbidden for url: /app/api/shippings'),28
+GET,/app/api/users/username/selimhorri,HTTPError('403 Client Error: Forbidden for url: /app/api/users/username/selimhorri'),64
+GET,/app/api/shippings/2,CatchResponseError('HTTP 403'),1
+GET,/app/api/products/44,HTTPError('400 Client Error: Bad Request for url: /app/api/products/44'),4
+GET,/app/api/products/price-range?min=58&max=228,CatchResponseError('HTTP 400'),1
+GET,/app/api/payments/order/1,CatchResponseError('HTTP 403'),1
+GET,/app/api/products/12,HTTPError('400 Client Error: Bad Request for url: /app/api/products/12'),8
+GET,/app/api/products/45,HTTPError('400 Client Error: Bad Request for url: /app/api/products/45'),5
+GET,/app/api/products/19,HTTPError('400 Client Error: Bad Request for url: /app/api/products/19'),6
+GET,/app/api/shippings/order/1,CatchResponseError('HTTP 403'),1
+GET,/app/api/orders,CatchResponseError('HTTP 403'),4
+GET,/app/api/products/25,HTTPError('400 Client Error: Bad Request for url: /app/api/products/25'),3
+GET,/app/api/products/10,HTTPError('400 Client Error: Bad Request for url: /app/api/products/10'),4
+GET,/app/api/favourites,HTTPError('403 Client Error: Forbidden for url: /app/api/favourites'),21
+GET,/app/api/users/1,CatchResponseError('HTTP 403'),1
+GET,/app/api/shippings/5,CatchResponseError('HTTP 403'),1
+GET,/app/api/payments/4,CatchResponseError('HTTP 403'),1
+GET,/app/api/users/email/selim@example.com,CatchResponseError('HTTP 403'),4
+GET,/app/api/products/14,HTTPError('400 Client Error: Bad Request for url: /app/api/products/14'),4
+GET,/app/api/products/9,CatchResponseError('HTTP 400'),3
+GET,/app/api/products/26,HTTPError('400 Client Error: Bad Request for url: /app/api/products/26'),9
+GET,/app/api/shippings,CatchResponseError('HTTP 403'),5
+GET,/app/api/payments/user/6,CatchResponseError('HTTP 403'),1
+GET,/app/api/products/23,HTTPError('400 Client Error: Bad Request for url: /app/api/products/23'),6
+GET,/app/api/products/15,HTTPError('400 Client Error: Bad Request for url: /app/api/products/15'),11
+GET,/app/api/products/41,HTTPError('400 Client Error: Bad Request for url: /app/api/products/41'),5
+GET,/app/api/products/21,HTTPError('400 Client Error: Bad Request for url: /app/api/products/21'),9
+GET,/app/api/payments/order/9,CatchResponseError('HTTP 403'),1
+GET,/app/api/products/16,HTTPError('400 Client Error: Bad Request for url: /app/api/products/16'),7
+GET,/app/api/products/13,HTTPError('400 Client Error: Bad Request for url: /app/api/products/13'),9
+GET,/app/api/products/category/Books,CatchResponseError('HTTP 404'),1
+GET,/app/api/shippings/status/CANCELLED,CatchResponseError('HTTP 403'),2
+GET,/app/api/favourites/product/6,CatchResponseError('HTTP 403'),1
+GET,/app/api/payments/status/IN_PROGRESS,CatchResponseError('HTTP 403'),2
+GET,/app/api/payments/status/COMPLETED,CatchResponseError('HTTP 403'),2
+GET,/app/api/users/10,CatchResponseError('HTTP 403'),1
+GET,/app/api/products/47,HTTPError('400 Client Error: Bad Request for url: /app/api/products/47'),14
+GET,/app/api/users/username/omarderouiche,HTTPError('403 Client Error: Forbidden for url: /app/api/users/username/omarderouiche'),46
+GET,/app/api/products/31,HTTPError('400 Client Error: Bad Request for url: /app/api/products/31'),4
+GET,/app/api/shippings/order/8,CatchResponseError('HTTP 403'),2
