@@ -15,9 +15,10 @@ jobs:
       with:
         java-version: '11'
         distribution: 'adopt'
-    - name: Build product-service JAR
-      working-directory: ./product-service
+    - name: Build all service JARs (root)
       run: ./mvnw -B -DskipTests package
+    - name: Diagnostic - list product-service target
+      run: ls -la product-service/target || true
     - name: Build with Maven
       run: mvn -B package --file pom.xml
 
