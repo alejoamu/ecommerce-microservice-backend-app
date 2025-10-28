@@ -20,16 +20,22 @@ Let's explain first the system structure to understand its components:
 ecommerce-microservice-backend-app [μService] --> Parent folder.
 |- docs --> All docs and diagrams.
 |- k8s --> All **Kubernetes** config files.
-    |- proxy-client --> Authentication & Authorization µService, exposing all 
-    |- api-gateway --> API Gateway server
-    |- service-discovery --> Service Registery server
-    |- cloud-config --> Centralized Configuration server
-    |- user-service --> Manage app users (customers & admins) as well as their credentials
-    |- product-service --> Manage app products and their respective categories
-    |- favourite-service --> Manage app users' favourite products added to their own favourite list
-    |- order-service --> Manage app orders based on carts
-    |- shipping-service --> Manage app order-shipping products
-    |- payment-service --> Manage app order payments
+    |- manifests --> Kubernetes manifests for all services
+        |- namespace.yaml --> Namespace definition for ecommerce
+        |- core/ --> Core infrastructure services
+            |- zipkin.yaml --> Distributed tracing service
+            |- config-server.yaml --> Centralized configuration server
+            |- eureka.yaml --> Service discovery server
+        |- edge/ --> Edge services (API Gateway and Proxy)
+            |- api-gateway.yaml --> API Gateway service
+            |- proxy-client.yaml --> Proxy client service
+        |- services/ --> Business microservices
+            |- user-service.yaml --> User management service
+            |- product-service.yaml --> Product management service
+            |- order-service.yaml --> Order management service
+            |- payment-service.yaml --> Payment management service
+            |- shipping-service.yaml --> Shipping management service
+            |- favourite-service.yaml --> Favourite products service
 |- compose.yml --> contains all services landscape with Kafka  
 |- run-em-all.sh --> Run all microservices in separate mode. 
 |- setup.sh --> Install all shared POMs and shared libraries. 
@@ -124,11 +130,374 @@ All build commands and test suite for each microservice should run successfully,
 [INFO] ------------------------------------------------------------------------
 ```
 
-### Running Them All
+## 🚀 **Kubernetes Deployment with Minikube**
+
+### Overview
+
+This project has been successfully migrated from Docker Compose to Kubernetes using Minikube for local development and testing. The migration includes:
+
+- **Core Infrastructure Services**: Zipkin, Cloud Config Server, Eureka Service Discovery
+- **Edge Services**: API Gateway, Proxy Client
+- **Business Services**: User, Product, Order, Payment, Shipping, Favourite Services
+
+### Architecture Changes
+
+#### **Before (Docker Compose)**
+- Services deployed as individual containers
+- Network communication via Docker networks
+- Service discovery via container names
+- Port mapping to host machine
+
+#### **After (Kubernetes)**
+- Services deployed as Kubernetes Deployments
+- Network communication via Kubernetes Services
+- Service discovery via Kubernetes DNS
+- External access via NodePort services
+
+### Key Changes Made
+
+#### **1. File Structure Changes**
+
+**Added:**
+- `k8s/manifests/` directory with Kubernetes manifests
+- `k8s/manifests/namespace.yaml` - Namespace definition
+- `k8s/manifests/core/` - Core infrastructure services
+- `k8s/manifests/edge/` - Edge services (API Gateway, Proxy)
+- `k8s/manifests/services/` - Business microservices
+
+**Modified:**
+- `compose.yml` - Separated business services from core infrastructure
+- `core.yml` - Contains only core infrastructure services
+
+#### **2. Service Discovery Configuration**
+
+**Problem Solved:**
+- Eureka registration issues in Kubernetes environment
+- Service resolution problems between microservices
+
+**Solution Implemented:**
+- Added `EUREKA_INSTANCE_PREFER_IP_ADDRESS=true` to all services
+- Configured proper Kubernetes DNS resolution
+- Enabled Spring Cloud LoadBalancer for client-side load balancing
+
+#### **3. Health Checks and Probes**
+
+**Added:**
+- Readiness probes for all services
+- Liveness probes for critical services
+- Proper health check endpoints configuration
+
+**Configuration Example:**
+```yaml
+readinessProbe:
+  httpGet:
+    path: /actuator/health
+    port: 8080
+  initialDelaySeconds: 30
+  periodSeconds: 10
+livenessProbe:
+  httpGet:
+    path: /actuator/health
+    port: 8080
+  initialDelaySeconds: 60
+  periodSeconds: 30
+```
+
+#### **4. Memory and Resource Management**
+
+**Problem Solved:**
+- OOMKilled errors in Eureka and Config Server
+- Memory allocation issues in Kubernetes environment
+
+**Solution Implemented:**
+- Increased memory limits for core services
+- Added Java heap size configuration via `JAVA_TOOL_OPTIONS`
+- Configured proper resource requests and limits
+
+**Configuration Example:**
+```yaml
+resources:
+  requests:
+    memory: 1Gi
+    cpu: 500m
+  limits:
+    memory: 2Gi
+    cpu: 1000m
+env:
+  - name: JAVA_TOOL_OPTIONS
+    value: "-Xms512m -Xmx1024m"
+```
+
+#### **5. Deployment Strategy**
+
+**Problem Solved:**
+- Stuck deployments during updates
+- Multiple pod instances causing conflicts
+
+**Solution Implemented:**
+- Changed deployment strategy to `Recreate` for core services
+- Ensured single pod instances for critical services
+- Proper rollout management
+
+#### **6. Network Configuration**
+
+**Added:**
+- NodePort services for external access
+- ClusterIP services for internal communication
+- Proper service port mapping
+
+**Configuration Example:**
+```yaml
+spec:
+  type: NodePort
+  ports:
+  - port: 8080
+    targetPort: 8080
+    nodePort: 30080
+```
+
+### Prerequisites for Kubernetes Deployment
+
+1. **Minikube**: Local Kubernetes cluster
+2. **kubectl**: Kubernetes command-line tool
+3. **Docker**: Container runtime (Minikube uses Docker driver)
+
+### Installation Steps
+
+#### **1. Install Minikube**
+
+```bash
+# Windows (using Chocolatey)
+choco install minikube
+
+# Or download from: https://minikube.sigs.k8s.io/docs/start/
+```
+
+#### **2. Start Minikube**
+
+```bash
+# Start Minikube with sufficient resources
+minikube start --memory=4096 --cpus=2
+
+# Verify Minikube is running
+minikube status
+```
+
+#### **3. Enable Minikube Addons**
+
+```bash
+# Enable metrics server for resource monitoring
+minikube addons enable metrics-server
+
+# Enable dashboard (optional)
+minikube addons enable dashboard
+```
+
+### Deployment Process
+
+#### **1. Deploy Core Infrastructure**
+
+```bash
+# Apply namespace
+kubectl apply -f k8s/manifests/namespace.yaml
+
+# Deploy core services in order
+kubectl apply -f k8s/manifests/core/zipkin.yaml
+kubectl apply -f k8s/manifests/core/config-server.yaml
+kubectl apply -f k8s/manifests/core/eureka.yaml
+```
+
+#### **2. Deploy Edge Services**
+
+```bash
+# Deploy API Gateway and Proxy Client
+kubectl apply -f k8s/manifests/edge/api-gateway.yaml
+kubectl apply -f k8s/manifests/edge/proxy-client.yaml
+```
+
+#### **3. Deploy Business Services**
+
+```bash
+# Deploy all business microservices
+kubectl apply -f k8s/manifests/services/user-service.yaml
+kubectl apply -f k8s/manifests/services/product-service.yaml
+kubectl apply -f k8s/manifests/services/order-service.yaml
+kubectl apply -f k8s/manifests/services/payment-service.yaml
+kubectl apply -f k8s/manifests/services/shipping-service.yaml
+kubectl apply -f k8s/manifests/services/favourite-service.yaml
+```
+
+#### **4. Verify Deployment**
+
+```bash
+# Check all pods are running
+kubectl get pods -n ecommerce
+
+# Check services
+kubectl get services -n ecommerce
+
+# Check deployments
+kubectl get deployments -n ecommerce
+```
+
+### Accessing Services
+
+#### **1. Get Service URLs**
+
+```bash
+# Get API Gateway URL
+minikube service -n ecommerce api-gateway --url
+
+# Get Eureka URL
+minikube service -n ecommerce service-discovery --url
+
+# Get Zipkin URL
+minikube service -n ecommerce zipkin --url
+```
+
+#### **2. Test Services**
+
+```bash
+# Test API Gateway
+curl http://127.0.0.1:49941/app/api/products
+
+# Test Eureka UI
+curl http://127.0.0.1:59681
+
+# Test Health Check
+curl http://127.0.0.1:49941/actuator/health
+```
+
+### Service URLs (Minikube)
+
+| Service | URL | Description |
+|---------|-----|-------------|
+| API Gateway | `http://127.0.0.1:49941` | Main entry point |
+| Eureka | `http://127.0.0.1:59681` | Service discovery UI |
+| Zipkin | `http://127.0.0.1:58972` | Distributed tracing |
+| Products | `http://127.0.0.1:49941/app/api/products` | Product API |
+| Users | `http://127.0.0.1:49941/user-service/api/users` | User API |
+| Orders | `http://127.0.0.1:49941/order-service/api/orders` | Order API |
+| Payments | `http://127.0.0.1:49941/payment-service/api/payments` | Payment API |
+| Shipping | `http://127.0.0.1:49941/shipping-service/api/shippings` | Shipping API |
+| Favourites | `http://127.0.0.1:49941/favourite-service/api/favourites` | Favourite API |
+
+### Troubleshooting
+
+#### **Common Issues and Solutions**
+
+1. **Pods not starting:**
+   ```bash
+   # Check pod logs
+   kubectl logs -n ecommerce <pod-name>
+   
+   # Check pod events
+   kubectl describe pod -n ecommerce <pod-name>
+   ```
+
+2. **Services not accessible:**
+   ```bash
+   # Check service endpoints
+   kubectl get endpoints -n ecommerce
+   
+   # Test internal connectivity
+   kubectl exec -n ecommerce <pod-name> -- curl <service-name>:<port>
+   ```
+
+3. **Eureka registration issues:**
+   ```bash
+   # Check Eureka logs
+   kubectl logs -n ecommerce deploy/service-discovery
+   
+   # Verify service discovery
+   kubectl exec -n ecommerce <pod-name> -- nslookup service-discovery
+   ```
+
+4. **Memory issues:**
+   ```bash
+   # Check resource usage
+   kubectl top pods -n ecommerce
+   
+   # Check resource limits
+   kubectl describe pod -n ecommerce <pod-name>
+   ```
+
+### Monitoring and Logs
+
+#### **View Logs**
+
+```bash
+# View logs for specific service
+kubectl logs -n ecommerce deploy/<service-name>
+
+# Follow logs in real-time
+kubectl logs -n ecommerce deploy/<service-name> -f
+
+# View logs from all pods
+kubectl logs -n ecommerce -l app=<service-name>
+```
+
+#### **Monitor Resources**
+
+```bash
+# Check pod resource usage
+kubectl top pods -n ecommerce
+
+# Check node resource usage
+kubectl top nodes
+
+# Check service status
+kubectl get services -n ecommerce
+```
+
+### Cleanup
+
+#### **Remove Services**
+
+```bash
+# Remove all services
+kubectl delete -f k8s/manifests/services/
+kubectl delete -f k8s/manifests/edge/
+kubectl delete -f k8s/manifests/core/
+kubectl delete -f k8s/manifests/namespace.yaml
+```
+
+#### **Stop Minikube**
+
+```bash
+# Stop Minikube
+minikube stop
+
+# Delete Minikube cluster
+minikube delete
+```
+
+### Migration Benefits
+
+1. **Scalability**: Easy horizontal scaling of services
+2. **High Availability**: Built-in health checks and restart policies
+3. **Service Discovery**: Native Kubernetes service discovery
+4. **Resource Management**: Better resource allocation and monitoring
+5. **Rolling Updates**: Zero-downtime deployments
+6. **Configuration Management**: Centralized configuration via ConfigMaps and Secrets
+
+### Next Steps
+
+1. **Production Deployment**: Migrate to production Kubernetes cluster
+2. **CI/CD Pipeline**: Implement automated deployment pipelines
+3. **Monitoring**: Add Prometheus and Grafana for monitoring
+4. **Logging**: Implement centralized logging with ELK stack
+5. **Security**: Add network policies and RBAC
+6. **Testing**: Implement comprehensive testing strategies
+
+---
+
+### Running Them All (Docker Compose - Legacy)
 Now it's the time to run all of our Microservices, and it's straightforward just run the following `docker-compose` commands:
 
 ```bash
-selim@:~/ecommerce-microservice-backend-app$ docker-compose -f compose.yml up
+selim@:~/ecommerce-microservice-backend-app$ docker-compose -f core.yml up -d
+selim@:~/ecommerce-microservice-backend-app$ docker-compose -f compose.yml up -d
 ```
 
 All the **services**, **databases**, and **messaging service** will run in parallel in detach mode (option `-d`), and command output will print to the console the following:
