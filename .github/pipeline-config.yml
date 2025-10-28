@@ -1,0 +1,208 @@
+# Configuración de Pipelines para E-commerce Microservices
+# Este archivo contiene la configuración centralizada para todos los pipelines
+
+# Versiones de herramientas
+versions:
+  minikube: "1.32.0"
+  kubernetes: "1.28.0"
+  java: "17"
+  maven: "3.9.0"
+
+# Configuración de microservicios
+microservices:
+  - name: "product-service"
+    port: 8500
+    health_path: "/actuator/health"
+    description: "Gestión de productos"
+    
+  - name: "user-service"
+    port: 8700
+    health_path: "/actuator/health"
+    description: "Gestión de usuarios"
+    
+  - name: "payment-service"
+    port: 8400
+    health_path: "/actuator/health"
+    description: "Procesamiento de pagos"
+    
+  - name: "order-service"
+    port: 8300
+    health_path: "/actuator/health"
+    description: "Gestión de órdenes"
+    
+  - name: "shipping-service"
+    port: 8600
+    health_path: "/actuator/health"
+    description: "Gestión de envíos"
+    
+  - name: "favourite-service"
+    port: 8800
+    health_path: "/actuator/health"
+    description: "Lista de favoritos"
+    
+  - name: "api-gateway"
+    port: 8080
+    health_path: "/actuator/health"
+    description: "Gateway de API"
+    service_type: "NodePort"
+    
+  - name: "cloud-config"
+    port: 9296
+    health_path: "/actuator/health"
+    description: "Configuración centralizada"
+    
+  - name: "service-discovery"
+    port: 8761
+    health_path: "/actuator/health"
+    description: "Descubrimiento de servicios"
+    service_type: "NodePort"
+    
+  - name: "proxy-client"
+    port: 8900
+    health_path: "/actuator/health"
+    description: "Cliente proxy"
+    service_type: "NodePort"
+
+# Configuración de testing
+testing:
+  unit_tests:
+    enabled: true
+    timeout: 300
+    parallel: true
+    
+  integration_tests:
+    enabled: true
+    timeout: 600
+    parallel: false
+    
+  e2e_tests:
+    enabled: true
+    timeout: 900
+    parallel: false
+    
+  performance_tests:
+    enabled: true
+    tool: "locust"
+    users: 10
+    spawn_rate: 2
+    run_time: 60
+    timeout: 300
+
+# Configuración de Docker
+docker:
+  registry: "ghcr.io"
+  namespace: "ecommerce-microservices"
+  tag_strategy: "commit-sha"
+  multi_arch: false
+
+# Configuración de Kubernetes
+kubernetes:
+  namespaces:
+    ci: "ecommerce-test"
+    stage: "ecommerce-stage"
+    prod: "ecommerce-prod"
+    
+  resources:
+    requests:
+      cpu: "100m"
+      memory: "128Mi"
+    limits:
+      cpu: "500m"
+      memory: "512Mi"
+      
+  replicas:
+    min: 1
+    max: 3
+    default: 2
+
+# Configuración de monitoreo
+monitoring:
+  health_checks:
+    enabled: true
+    initial_delay: 30
+    period: 10
+    timeout: 5
+    failure_threshold: 3
+    
+  readiness_checks:
+    enabled: true
+    initial_delay: 5
+    period: 5
+    timeout: 3
+    failure_threshold: 3
+    
+  metrics:
+    enabled: true
+    port: 8080
+    path: "/actuator/prometheus"
+
+# Configuración de CI/CD
+cicd:
+  triggers:
+    ci:
+      - "push"
+      - "pull_request"
+    stage:
+      - "push:develop"
+      - "push:staging"
+      - "pull_request:develop"
+      - "pull_request:staging"
+      - "workflow_dispatch"
+    prod:
+      - "push:main"
+      - "push:master"
+      - "release:published"
+      - "workflow_dispatch"
+      
+  notifications:
+    success: true
+    failure: true
+    channels: ["github", "email"]
+    
+  artifacts:
+    retention_days: 30
+    include_logs: true
+    include_reports: true
+
+# Configuración de seguridad
+security:
+  dependency_scan: true
+  secret_scan: true
+  code_scan: false
+  
+  policies:
+    - "no-hardcoded-secrets"
+    - "dependency-vulnerability-check"
+    - "container-security-scan"
+
+# Configuración de performance
+performance:
+  load_testing:
+    enabled: true
+    scenarios:
+      - name: "normal_load"
+        users: 10
+        duration: 60
+      - name: "stress_test"
+        users: 50
+        duration: 120
+      - name: "spike_test"
+        users: 100
+        duration: 30
+        
+  thresholds:
+    response_time_p95: 2000  # ms
+    error_rate: 1  # %
+    throughput: 100  # requests/second
+
+# Configuración de reportes
+reporting:
+  formats: ["html", "json", "xml"]
+  include_coverage: true
+  include_performance: true
+  include_security: true
+  
+  destinations:
+    - "github_actions"
+    - "artifacts"
+    - "notifications"

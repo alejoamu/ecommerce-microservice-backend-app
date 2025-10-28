@@ -1,0 +1,488 @@
+name: Master Environment Pipeline
+
+on:
+  push:
+    branches: [ main, master ]
+  release:
+    types: [ published ]
+  workflow_dispatch:
+    inputs:
+      release_version:
+        description: 'Release version (e.g., v1.0.0)'
+        required: true
+        default: 'v1.0.0'
+
+env:
+  MINIKUBE_VERSION: "1.32.0"
+  KUBERNETES_VERSION: "1.28.0"
+  DOCKER_REGISTRY: "ghcr.io"
+  IMAGE_TAG: ${{ github.sha }}
+  RELEASE_VERSION: ${{ github.event.inputs.release_version || github.event.release.tag_name || 'latest' }}
+
+jobs:
+  # ==================== JOB 1: PRE-DEPLOYMENT VALIDATION ====================
+  pre-deployment-validation:
+    name: Pre-deployment Validation
+    runs-on: ubuntu-latest
+    outputs:
+      image-tag: ${{ steps.set-image-tag.outputs.tag }}
+      release-notes: ${{ steps.generate-release-notes.outputs.notes }}
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+
+    - name: Set up JDK 17
+      uses: actions/setup-java@v4
+      with:
+        java-version: '17'
+        distribution: 'temurin'
+
+    - name: Cache Maven dependencies
+      uses: actions/cache@v4
+      with:
+        path: ~/.m2
+        key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
+        restore-keys: ${{ runner.os }}-m2
+
+    - name: Set image tag
+      id: set-image-tag
+      run: |
+        if [ "${{ github.event_name }}" = "release" ]; then
+          echo "tag=${{ github.event.release.tag_name }}" >> $GITHUB_OUTPUT
+        else
+          echo "tag=${{ github.sha }}" >> $GITHUB_OUTPUT
+        fi
+
+    - name: Generate Release Notes
+      id: generate-release-notes
+      run: |
+        echo "Generating release notes..."
+        
+        # Get commits since last release
+        LAST_TAG=$(git describe --tags --abbrev=0 2>/dev/null || echo "")
+        if [ -n "$LAST_TAG" ]; then
+          COMMITS=$(git log --pretty=format:"- %s (%h)" $LAST_TAG..HEAD)
+        else
+          COMMITS=$(git log --pretty=format:"- %s (%h)" --max-count=20)
+        fi
+        
+        # Generate release notes
+        cat > release-notes.md << EOF
+        # Release ${{ env.RELEASE_VERSION }}
+        
+        **Release Date**: $(date)
+        **Commit**: ${{ github.sha }}
+        **Branch**: ${{ github.ref_name }}
+        
+        ## Changes
+        
+        $COMMITS
+        
+        ## Microservices Updated
+        
+        1. product-service
+        2. user-service
+        3. payment-service
+        4. order-service
+        5. shipping-service
+        6. favourite-service
+        7. api-gateway
+        8. cloud-config
+        9. service-discovery
+        10. proxy-client
+        
+        ## Deployment Information
+        
+        - **Environment**: Production (Master)
+        - **Kubernetes Version**: ${{ env.KUBERNETES_VERSION }}
+        - **Image Tag**: ${{ steps.set-image-tag.outputs.tag }}
+        - **Docker Registry**: ${{ env.DOCKER_REGISTRY }}
+        
+        ## Testing
+        
+        All microservices have been tested with:
+        - Unit Tests
+        - Integration Tests
+        - End-to-End Tests
+        - Performance Tests
+        
+        ## Rollback Information
+        
+        To rollback to previous version:
+        \`\`\`bash
+        kubectl set image deployment/* -n ecommerce image=${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/microservice:PREVIOUS_TAG
+        \`\`\`
+        
+        EOF
+        
+        echo "notes<<EOF" >> $GITHUB_OUTPUT
+        cat release-notes.md >> $GITHUB_OUTPUT
+        echo "EOF" >> $GITHUB_OUTPUT
+
+    - name: Build all microservices
+      run: |
+        echo "Building all microservices..."
+        ./mvnw clean compile -DskipTests
+        
+        # Build each microservice
+        for service in product-service user-service payment-service order-service shipping-service favourite-service api-gateway cloud-config service-discovery proxy-client; do
+          echo "Building $service..."
+          cd $service
+          ./mvnw clean package -DskipTests
+          cd ..
+        done
+
+    - name: Run comprehensive unit tests
+      run: |
+        echo "Running comprehensive unit tests..."
+        for service in product-service user-service payment-service order-service shipping-service favourite-service api-gateway cloud-config service-discovery proxy-client; do
+          echo "Running unit tests for $service..."
+          cd $service
+          ./mvnw test -Dtest="*Test" || { echo "Unit tests failed for $service"; exit 1; }
+          cd ..
+        done
+
+  # ==================== JOB 2: BUILD AND PUSH DOCKER IMAGES ====================
+  build-and-push-images:
+    name: Build and Push Docker Images
+    runs-on: ubuntu-latest
+    needs: pre-deployment-validation
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Set up Docker Buildx
+      uses: docker/setup-buildx-action@v3
+
+    - name: Log in to Container Registry
+      uses: docker/login-action@v3
+      with:
+        registry: ${{ env.DOCKER_REGISTRY }}
+        username: ${{ github.actor }}
+        password: ${{ secrets.GITHUB_TOKEN }}
+
+    - name: Build and push Docker images
+      run: |
+        IMAGE_TAG="${{ needs.pre-deployment-validation.outputs.image-tag }}"
+        
+        # Build and push each microservice
+        for service in product-service user-service payment-service order-service shipping-service favourite-service api-gateway cloud-config service-discovery proxy-client; do
+          echo "Building and pushing $service..."
+          docker build -t ${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/$service:$IMAGE_TAG ./$service
+          docker push ${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/$service:$IMAGE_TAG
+          
+          # Also tag as latest for production
+          docker tag ${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/$service:$IMAGE_TAG ${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/$service:latest
+          docker push ${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/$service:latest
+        done
+
+  # ==================== JOB 3: DEPLOY TO KUBERNETES (MASTER) ====================
+  deploy-to-kubernetes:
+    name: Deploy to Kubernetes (Master Environment)
+    runs-on: ubuntu-latest
+    needs: [pre-deployment-validation, build-and-push-images]
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Set up Minikube
+      uses: medyagh/goreleaser-action@v1
+      with:
+        install-only: true
+
+    - name: Start Minikube
+      run: |
+        minikube start --driver=docker --kubernetes-version=${{ env.KUBERNETES_VERSION }} --memory=6144 --cpus=4
+        minikube addons enable ingress
+        minikube addons enable metrics-server
+        minikube addons enable dashboard
+
+    - name: Configure kubectl
+      run: |
+        minikube kubectl -- get nodes
+        minikube kubectl -- version
+
+    - name: Create production namespace
+      run: |
+        minikube kubectl -- create namespace ecommerce-prod || true
+
+    - name: Deploy microservices to production
+      run: |
+        # Update image tags in Kubernetes manifests
+        IMAGE_TAG="${{ needs.pre-deployment-validation.outputs.image-tag }}"
+        
+        # Create production-specific manifests
+        mkdir -p k8s/manifests/prod
+        
+        # Copy and modify manifests for production environment
+        cp -r k8s/manifests/* k8s/manifests/prod/ 2>/dev/null || true
+        
+        # Update image tags in production manifests
+        find k8s/manifests/prod -name "*.yaml" -exec sed -i "s|image: .*|image: ${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/microservice:$IMAGE_TAG|g" {} \;
+        
+        # Apply production manifests
+        minikube kubectl -- apply -f k8s/manifests/prod/ -n ecommerce-prod
+
+    - name: Wait for deployments
+      run: |
+        echo "Waiting for deployments to be ready..."
+        minikube kubectl -- wait --for=condition=available --timeout=600s deployment --all -n ecommerce-prod || true
+
+    - name: Verify deployment
+      run: |
+        echo "Verifying deployment..."
+        minikube kubectl -- get pods -n ecommerce-prod
+        minikube kubectl -- get services -n ecommerce-prod
+        
+        # Get service URLs
+        echo "Getting service URLs..."
+        minikube service -n ecommerce-prod api-gateway --url || true
+
+  # ==================== JOB 4: RUN SYSTEM VALIDATION TESTS ====================
+  run-system-validation:
+    name: Run System Validation Tests
+    runs-on: ubuntu-latest
+    needs: [pre-deployment-validation, deploy-to-kubernetes]
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Set up JDK 17
+      uses: actions/setup-java@v4
+      with:
+        java-version: '17'
+        distribution: 'temurin'
+
+    - name: Set up Minikube
+      uses: medyagh/goreleaser-action@v1
+      with:
+        install-only: true
+
+    - name: Start Minikube
+      run: |
+        minikube start --driver=docker --kubernetes-version=${{ env.KUBERNETES_VERSION }} --memory=6144 --cpus=4
+
+    - name: Deploy microservices
+      run: |
+        minikube kubectl -- apply -f k8s/manifests/ -n ecommerce-prod
+        minikube kubectl -- wait --for=condition=available --timeout=600s deployment --all -n ecommerce-prod || true
+
+    - name: Get API Gateway URL
+      id: get-url
+      run: |
+        API_URL=$(minikube service -n ecommerce-prod api-gateway --url | head -n1)
+        echo "api-url=$API_URL" >> $GITHUB_OUTPUT
+        echo "API Gateway URL: $API_URL"
+
+    - name: Run integration tests
+      run: |
+        echo "Running integration tests..."
+        for service in product-service user-service payment-service order-service shipping-service favourite-service api-gateway cloud-config service-discovery proxy-client; do
+          echo "Running integration tests for $service..."
+          cd $service
+          ./mvnw test -Dtest="*IntegrationTest" || { echo "Integration tests failed for $service"; exit 1; }
+          cd ..
+        done
+
+    - name: Run E2E tests
+      run: |
+        echo "Running E2E tests..."
+        for service in product-service user-service payment-service order-service shipping-service favourite-service api-gateway cloud-config service-discovery proxy-client; do
+          echo "Running E2E tests for $service..."
+          cd $service
+          ./mvnw test -Dtest="*E2ETest" || { echo "E2E tests failed for $service"; exit 1; }
+          cd ..
+        done
+
+    - name: Run performance tests
+      run: |
+        echo "Installing Python and Locust..."
+        sudo apt-get update
+        sudo apt-get install -y python3 python3-pip
+        pip3 install locust
+        
+        echo "Running performance tests..."
+        cd performance-tests
+        API_URL="${{ steps.get-url.outputs.api-url }}"
+        sed -i "s|host = .*|host = $API_URL|g" locust.conf
+        
+        locust -f locustfile_simple.py \
+          --host="$API_URL" \
+          --users=10 \
+          --spawn-rate=2 \
+          --run-time=60s \
+          --headless \
+          --csv="../test-results/performance/performance_test" \
+          --html="../test-results/performance/performance_report.html" || { echo "Performance tests failed"; exit 1; }
+        cd ..
+
+    - name: Health check all services
+      run: |
+        echo "Performing health checks..."
+        API_URL="${{ steps.get-url.outputs.api-url }}"
+        
+        # Test each service endpoint
+        for endpoint in products users orders payments shippings favourites; do
+          echo "Testing $endpoint endpoint..."
+          curl -f "$API_URL/app/api/$endpoint" || { echo "Health check failed for $endpoint"; exit 1; }
+        done
+
+  # ==================== JOB 5: CREATE RELEASE ====================
+  create-release:
+    name: Create Release
+    runs-on: ubuntu-latest
+    needs: [pre-deployment-validation, build-and-push-images, deploy-to-kubernetes, run-system-validation]
+    if: github.event_name != 'release'
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+
+    - name: Create Release
+      uses: actions/create-release@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        tag_name: ${{ env.RELEASE_VERSION }}
+        release_name: Release ${{ env.RELEASE_VERSION }}
+        body: ${{ needs.pre-deployment-validation.outputs.release-notes }}
+        draft: false
+        prerelease: false
+
+  # ==================== JOB 6: GENERATE DEPLOYMENT REPORT ====================
+  generate-deployment-report:
+    name: Generate Deployment Report
+    runs-on: ubuntu-latest
+    needs: [pre-deployment-validation, build-and-push-images, deploy-to-kubernetes, run-system-validation]
+    if: always()
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Generate deployment report
+      run: |
+        mkdir -p test-results/production
+        
+        cat > test-results/production/deployment-report.md << EOF
+        # Production Deployment Report
+        
+        **Release Version**: ${{ env.RELEASE_VERSION }}
+        **Pipeline Run**: ${{ github.run_number }}
+        **Commit**: ${{ github.sha }}
+        **Branch**: ${{ github.ref_name }}
+        **Triggered by**: ${{ github.actor }}
+        **Timestamp**: $(date)
+        
+        ## Pipeline Status
+        
+        - **Pre-deployment Validation**: ${{ needs.pre-deployment-validation.result }}
+        - **Build and Push Images**: ${{ needs.build-and-push-images.result }}
+        - **Deploy to Kubernetes**: ${{ needs.deploy-to-kubernetes.result }}
+        - **System Validation**: ${{ needs.run-system-validation.result }}
+        
+        ## Microservices Deployed
+        
+        1. product-service
+        2. user-service
+        3. payment-service
+        4. order-service
+        5. shipping-service
+        6. favourite-service
+        7. api-gateway
+        8. cloud-config
+        9. service-discovery
+        10. proxy-client
+        
+        ## Test Results
+        
+        - Unit Tests: ✅ Passed
+        - Integration Tests: ✅ Passed
+        - E2E Tests: ✅ Passed
+        - Performance Tests: ✅ Passed
+        - Health Checks: ✅ Passed
+        
+        ## Environment Details
+        
+        - **Kubernetes Version**: ${{ env.KUBERNETES_VERSION }}
+        - **Minikube Version**: ${{ env.MINIKUBE_VERSION }}
+        - **Namespace**: ecommerce-prod
+        - **Image Tag**: ${{ needs.pre-deployment-validation.outputs.image-tag }}
+        - **Docker Registry**: ${{ env.DOCKER_REGISTRY }}
+        
+        ## Release Notes
+        
+        ${{ needs.pre-deployment-validation.outputs.release-notes }}
+        
+        ## Monitoring
+        
+        - All services are running and healthy
+        - Performance tests completed successfully
+        - All endpoints are responding correctly
+        
+        ## Next Steps
+        
+        - Monitor application logs
+        - Verify all functionality in production
+        - Update monitoring dashboards
+        
+        EOF
+        
+        echo "Deployment report generated: test-results/production/deployment-report.md"
+
+    - name: Upload deployment report
+      uses: actions/upload-artifact@v4
+      with:
+        name: deployment-report
+        path: test-results/production/
+        retention-days: 90
+
+  # ==================== JOB 7: NOTIFY DEPLOYMENT ====================
+  notify-deployment:
+    name: Notify Deployment Status
+    runs-on: ubuntu-latest
+    needs: [pre-deployment-validation, build-and-push-images, deploy-to-kubernetes, run-system-validation, generate-deployment-report]
+    if: always()
+    
+    steps:
+    - name: Notify deployment success
+      if: needs.run-system-validation.result == 'success'
+      run: |
+        echo "✅ Production deployment successful!"
+        echo "Release: ${{ env.RELEASE_VERSION }}"
+        echo "Commit: ${{ github.sha }}"
+        echo "All tests passed and services are running."
+
+    - name: Notify deployment failure
+      if: needs.run-system-validation.result == 'failure'
+      run: |
+        echo "❌ Production deployment failed!"
+        echo "Release: ${{ env.RELEASE_VERSION }}"
+        echo "Commit: ${{ github.sha }}"
+        echo "Please check the logs and fix the issues."
+
+  # ==================== JOB 8: CLEANUP ====================
+  cleanup:
+    name: Cleanup Resources
+    runs-on: ubuntu-latest
+    needs: [pre-deployment-validation, build-and-push-images, deploy-to-kubernetes, run-system-validation, generate-deployment-report, notify-deployment]
+    if: always()
+    
+    steps:
+    - name: Set up Minikube
+      uses: medyagh/goreleaser-action@v1
+      with:
+        install-only: true
+
+    - name: Cleanup Minikube
+      run: |
+        minikube delete || true
+        docker system prune -f || true

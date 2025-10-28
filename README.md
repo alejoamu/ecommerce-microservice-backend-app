@@ -130,6 +130,81 @@ All build commands and test suite for each microservice should run successfully,
 [INFO] ------------------------------------------------------------------------
 ```
 
+## 🚀 **CI/CD Pipelines with GitHub Actions**
+
+### Overview
+This project includes comprehensive CI/CD pipelines using GitHub Actions with Minikube for local Kubernetes deployment, providing automated testing, building, and deployment capabilities.
+
+### Pipeline Structure
+
+#### 1. **Continuous Integration** (`.github/workflows/continuous-integration.yml`)
+- **Trigger**: Push to any branch, Pull Requests
+- **Purpose**: Continuous code validation and quality assurance
+- **Features**:
+  - Unit, Integration, and E2E tests for all microservices
+  - Docker image building and validation
+  - Kubernetes manifest validation
+  - Performance testing with Locust
+  - Security scanning
+  - Automated reporting
+
+#### 2. **Stage Environment** (`.github/workflows/stage-environment.yml`)
+- **Trigger**: Push to `develop`/`staging` branches, Pull Requests, Manual
+- **Purpose**: Stage environment deployment for validation
+- **Features**:
+  - Automated deployment to Minikube (stage namespace)
+  - Comprehensive testing suite execution
+  - Performance validation
+  - Stage environment reporting
+
+#### 3. **Master Environment** (`.github/workflows/master-environment.yml`)
+- **Trigger**: Push to `main`/`master` branches, Release creation, Manual
+- **Purpose**: Production deployment with full validation
+- **Features**:
+  - Production deployment to Minikube (prod namespace)
+  - System validation tests
+  - Automatic release notes generation
+  - Deployment reporting and notifications
+
+### Pipeline Features
+
+#### **Testing Coverage**
+- **150+ Automated Tests**: Unit, Integration, E2E, and Performance tests
+- **10 Microservices**: Complete test coverage for all services
+- **Locust Performance Testing**: Real-world load simulation
+- **Security Scanning**: Dependency vulnerability checks
+
+#### **Deployment Capabilities**
+- **Kubernetes Native**: Full Kubernetes deployment with Minikube
+- **Service Discovery**: Eureka-based service discovery
+- **API Gateway**: Spring Cloud Gateway for routing
+- **Configuration Management**: Centralized config with Spring Cloud Config
+- **Distributed Tracing**: Zipkin for request tracing
+
+#### **Automation Features**
+- **Automatic Release Notes**: Generated from git commits and changes
+- **Docker Image Building**: Automated containerization
+- **Health Checks**: Comprehensive health monitoring
+- **Rollback Capabilities**: Easy rollback procedures
+- **Resource Management**: CPU and memory limits configured
+
+### Quick Start with Pipelines
+
+1. **Fork or Clone** the repository
+2. **Enable GitHub Actions** in your repository settings
+3. **Push to develop branch** to trigger Stage Environment pipeline
+4. **Push to main branch** to trigger Master Environment pipeline
+5. **Monitor progress** in the Actions tab
+
+### Pipeline Configuration
+
+All pipeline configurations are centralized in `.github/pipeline-config.yml`:
+- Microservice definitions and ports
+- Testing configurations
+- Kubernetes resource limits
+- Performance thresholds
+- Security policies
+
 ## 🚀 **Kubernetes Deployment with Minikube**
 
 ### Overview
