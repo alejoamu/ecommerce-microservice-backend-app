@@ -231,12 +231,51 @@ jobs:
         minikube kubectl -- apply -f k8s/manifests/ -n ecommerce-stage
         minikube kubectl -- wait --for=condition=available --timeout=300s deployment --all -n ecommerce-stage || true
 
+    - name: Wait for API Gateway to be ready
+      run: |
+        echo "Waiting for API Gateway service to be ready..."
+        minikube kubectl -- wait --for=condition=available --timeout=300s deployment/api-gateway -n ecommerce-stage || true
+        sleep 10  # Give service time to fully start
+        
+        # Verify service exists
+        minikube kubectl -- get svc api-gateway -n ecommerce-stage
+        
+        # Verify pods are running
+        minikube kubectl -- get pods -n ecommerce-stage -l app=api-gateway
+
     - name: Get API Gateway URL
       id: get-url
       run: |
-        API_URL=$(minikube service -n ecommerce-stage api-gateway --url | head -n1)
+        echo "Getting API Gateway URL..."
+        # Try to get the URL, retry if needed
+        for i in {1..5}; do
+          API_URL=$(minikube service -n ecommerce-stage api-gateway --url 2>/dev/null | head -n1 | tr -d '\n' | tr -d '\r')
+          if [ -n "$API_URL" ] && [ "$API_URL" != "" ]; then
+            echo "✓ Got API Gateway URL: $API_URL"
+            break
+          else
+            echo "Attempt $i: URL not available yet, waiting..."
+            sleep 5
+          fi
+        done
+        
+        # If still empty, try using port-forward or kubectl port-forward
+        if [ -z "$API_URL" ] || [ "$API_URL" == "" ]; then
+          echo "⚠ minikube service --url failed, trying alternative method..."
+          NODE_IP=$(minikube ip)
+          NODE_PORT=$(minikube kubectl -- get svc api-gateway -n ecommerce-stage -o jsonpath='{.spec.ports[0].nodePort}')
+          if [ -n "$NODE_PORT" ]; then
+            API_URL="http://${NODE_IP}:${NODE_PORT}"
+            echo "✓ Using NodePort: $API_URL"
+          else
+            echo "✗ Could not determine API Gateway URL"
+            minikube kubectl -- get svc api-gateway -n ecommerce-stage
+            exit 1
+          fi
+        fi
+        
         echo "api-url=$API_URL" >> $GITHUB_OUTPUT
-        echo "API Gateway URL: $API_URL"
+        echo "Final API Gateway URL: $API_URL"
 
     - name: Run integration tests
       run: |
