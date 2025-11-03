@@ -27,9 +27,9 @@
 [INFO]  T E S T S
 [INFO] -------------------------------------------------------
 [INFO] Running com.selimhorri.app.SimpleTest
-[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.077 s - in com.selimhorri.app.SimpleTest
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.052 s - in com.selimhorri.app.SimpleTest
 [INFO] Running com.selimhorri.app.UserE2ETest
-[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in com.selimhorri.app.UserE2ETest
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in com.selimhorri.app.UserE2ETest
 [INFO] Running com.selimhorri.app.UserIntegrationTest
 [INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in com.selimhorri.app.UserIntegrationTest
 [INFO] Running com.selimhorri.app.UserServiceTest
@@ -42,6 +42,6 @@
 [INFO] ------------------------------------------------------------------------
 [INFO] BUILD SUCCESS
 [INFO] ------------------------------------------------------------------------
-[INFO] Total time:  6.630 s
-[INFO] Finished at: 2025-10-28T16:35:48-05:00
+[INFO] Total time:  7.945 s
+[INFO] Finished at: 2025-10-29T07:09:32-05:00
 [INFO] ------------------------------------------------------------------------

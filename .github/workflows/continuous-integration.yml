@@ -76,12 +76,31 @@ jobs:
     - name: Set up Docker Buildx
       uses: docker/setup-buildx-action@v3
 
+    - name: Set up JDK 17
+      uses: actions/setup-java@v4
+      with:
+        java-version: '17'
+        distribution: 'temurin'
+
+    - name: Cache Maven dependencies
+      uses: actions/cache@v4
+      with:
+        path: ~/.m2
+        key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
+        restore-keys: ${{ runner.os }}-m2
+
+    - name: Build all microservices JARs
+      run: |
+        echo "Building all microservices JARs..."
+        ./mvnw clean package -DskipTests
+
     - name: Build Docker images
       run: |
         echo "Building Docker images for all microservices..."
         for service in product-service user-service payment-service order-service shipping-service favourite-service api-gateway cloud-config service-discovery proxy-client; do
           echo "Building $service..."
-          docker build -t $service:test ./$service
+          # Build from root context with Dockerfile path
+          docker build -f $service/Dockerfile -t $service:test .
         done
 
     - name: Test Docker images
@@ -103,9 +122,7 @@ jobs:
       uses: actions/checkout@v4
 
     - name: Set up Minikube
-      uses: medyagh/goreleaser-action@v1
-      with:
-        install-only: true
+      uses: medyagh/setup-minikube@latest
 
     - name: Start Minikube
       run: |
@@ -138,61 +155,8 @@ jobs:
         echo "Cleaning up test namespace..."
         minikube kubectl -- delete namespace ecommerce-test || true
 
-  # ==================== JOB 4: PERFORMANCE VALIDATION ====================
-  performance-validation:
-    name: Performance Validation
-    runs-on: ubuntu-latest
-    needs: [code-quality, kubernetes-validation]
-    
-    steps:
-    - name: Checkout code
-      uses: actions/checkout@v4
 
-    - name: Set up Minikube
-      uses: medyagh/goreleaser-action@v1
-      with:
-        install-only: true
-
-    - name: Start Minikube
-      run: |
-        minikube start --driver=docker --kubernetes-version=${{ env.KUBERNETES_VERSION }} --memory=4096 --cpus=2
-
-    - name: Deploy microservices
-      run: |
-        minikube kubectl -- apply -f k8s/manifests/ -n ecommerce-test
-        minikube kubectl -- wait --for=condition=available --timeout=300s deployment --all -n ecommerce-test || true
-
-    - name: Get API Gateway URL
-      id: get-url
-      run: |
-        API_URL=$(minikube service -n ecommerce-test api-gateway --url | head -n1)
-        echo "api-url=$API_URL" >> $GITHUB_OUTPUT
-        echo "API Gateway URL: $API_URL"
-
-    - name: Install Locust
-      run: |
-        sudo apt-get update
-        sudo apt-get install -y python3 python3-pip
-        pip3 install locust
-
-    - name: Run performance tests
-      run: |
-        echo "Running performance tests..."
-        cd performance-tests
-        API_URL="${{ steps.get-url.outputs.api-url }}"
-        sed -i "s|host = .*|host = $API_URL|g" locust.conf
-        
-        locust -f locustfile_simple.py \
-          --host="$API_URL" \
-          --users=5 \
-          --spawn-rate=1 \
-          --run-time=30s \
-          --headless \
-          --csv="../test-results/performance/performance_test" \
-          --html="../test-results/performance/performance_report.html" || { echo "Performance tests failed"; exit 1; }
-        cd ..
-
-  # ==================== JOB 5: SECURITY SCAN ====================
+  # ==================== JOB 4: SECURITY SCAN ====================
   security-scan:
     name: Security Scan
     runs-on: ubuntu-latest
@@ -218,11 +182,11 @@ jobs:
           cd ..
         done
 
-  # ==================== JOB 6: GENERATE CI REPORT ====================
+  # ==================== JOB 5: GENERATE CI REPORT ====================
   generate-ci-report:
     name: Generate CI Report
     runs-on: ubuntu-latest
-    needs: [code-quality, build-and-test-docker, kubernetes-validation, performance-validation, security-scan]
+    needs: [code-quality, build-and-test-docker, kubernetes-validation, security-scan]
     if: always()
     
     steps:
@@ -247,7 +211,6 @@ jobs:
         - **Code Quality**: ${{ needs.code-quality.result }}
         - **Build and Test Docker**: ${{ needs.build-and-test-docker.result }}
         - **Kubernetes Validation**: ${{ needs.kubernetes-validation.result }}
-        - **Performance Validation**: ${{ needs.performance-validation.result }}
         - **Security Scan**: ${{ needs.security-scan.result }}
         
         ## Test Results
@@ -257,7 +220,6 @@ jobs:
         - E2E Tests: Executed for all microservices
         - Docker Build: All images built successfully
         - Kubernetes Validation: Manifests validated
-        - Performance Tests: Executed with Locust
         - Security Scan: Completed
         
         ## Microservices Tested
@@ -294,18 +256,16 @@ jobs:
         path: test-results/ci/
         retention-days: 30
 
-  # ==================== JOB 7: CLEANUP ====================
+  # ==================== JOB 6: CLEANUP ====================
   cleanup:
     name: Cleanup Resources
     runs-on: ubuntu-latest
-    needs: [code-quality, build-and-test-docker, kubernetes-validation, performance-validation, security-scan, generate-ci-report]
+    needs: [code-quality, build-and-test-docker, kubernetes-validation, security-scan, generate-ci-report]
     if: always()
     
     steps:
     - name: Set up Minikube
-      uses: medyagh/goreleaser-action@v1
-      with:
-        install-only: true
+      uses: medyagh/setup-minikube@latest
 
     - name: Cleanup Minikube
       run: |

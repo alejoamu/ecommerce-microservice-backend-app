@@ -1,6 +1,6 @@
 # 🚀 Pipeline Simple - Resumen de Ejecución
 
-**Timestamp**: 20251028_163525  
+**Timestamp**: 20251029_070048  
 
 ## ✅ Pasos Ejecutados
 
@@ -13,10 +13,11 @@
 
 ## 📊 Resumen de Tests
 
-### **270 Tests Totales Ejecutados**
-- **90 Pruebas Unitarias**: 5 por cada microservicio (10 servicios)
-- **90 Pruebas de Integración**: 5 por cada microservicio (10 servicios)
-- **90 Pruebas E2E**: 5 por cada microservicio (10 servicios)
+### **320 Tests Totales Ejecutados**
+- **150 Pruebas Unitarias**: 15 por cada microservicio (10 servicios)
+- **150 Pruebas de Integración**: 15 por cada microservicio (10 servicios)
+- **150 Pruebas E2E**: 15 por cada microservicio (10 servicios)
+- **50 Pruebas de Rendimiento**: 5 casos de uso reales por microservicio (10 servicios)
 
 ### **Microservicios Incluidos**
 1. 📦 **product-service** - 15 tests (5 unitarios + 5 integración + 5 E2E)
@@ -90,32 +91,32 @@ Pipeline ejecutado exitosamente. Todos los 10 microservicios están desplegados 
 ## 📊 Estado de Servicios
 
 ```
-NAME                                 READY   STATUS    RESTARTS   AGE
-api-gateway-cb56df9bb-s5s5j          1/1     Running   0          5h15m
-cloud-config-fcc7694c5-mrknc         1/1     Running   0          6h41m
-favourite-service-54564cd57b-ncrpf   1/1     Running   0          5h25m
-order-service-7ccf5dfc44-bl5tk       1/1     Running   0          5h25m
-payment-service-5bd887997c-vsc78     1/1     Running   0          5h25m
-product-service-6c5d69b6d5-df2zn     1/1     Running   0          5h25m
-proxy-client-7bc5c59db8-sf79m        1/1     Running   0          5h25m
-service-discovery-549969766d-9zxpv   1/1     Running   0          6h30m
-shipping-service-56596c877f-lg8s9    1/1     Running   0          5h25m
-user-service-84875f68f-v9kjp         1/1     Running   0          5h25m
-zipkin-5c5b6fc9d8-zc7lq              1/1     Running   0          6h50m
+NAME                                 READY   STATUS    RESTARTS        AGE
+api-gateway-cb56df9bb-s5s5j          1/1     Running   1 (11m ago)     19h
+cloud-config-fcc7694c5-mrknc         1/1     Running   2 (6m41s ago)   21h
+favourite-service-54564cd57b-ncrpf   1/1     Running   1 (11m ago)     19h
+order-service-7ccf5dfc44-bl5tk       1/1     Running   1 (11m ago)     19h
+payment-service-5bd887997c-vsc78     1/1     Running   1 (11m ago)     19h
+product-service-6c5d69b6d5-df2zn     1/1     Running   1 (11m ago)     19h
+proxy-client-7bc5c59db8-sf79m        1/1     Running   1 (11m ago)     19h
+service-discovery-549969766d-9zxpv   1/1     Running   2 (6m18s ago)   21h
+shipping-service-56596c877f-lg8s9    1/1     Running   1 (11m ago)     19h
+user-service-84875f68f-v9kjp         1/1     Running   1 (11m ago)     19h
+zipkin-5c5b6fc9d8-zc7lq              1/1     Running   1 (11m ago)     21h
 ```
 
 ```
 NAME                TYPE        CLUSTER-IP       EXTERNAL-IP   PORT(S)          AGE
-api-gateway         NodePort    10.98.248.22     <none>        8080:31396/TCP   6h28m
-cloud-config        ClusterIP   10.100.193.251   <none>        9296/TCP         6h49m
-favourite-service   ClusterIP   10.109.190.103   <none>        8800/TCP         6h25m
-order-service       ClusterIP   10.100.61.62     <none>        8300/TCP         6h25m
-payment-service     ClusterIP   10.104.116.228   <none>        8400/TCP         6h25m
-product-service     ClusterIP   10.97.12.193     <none>        8500/TCP         6h25m
-proxy-client        NodePort    10.109.177.135   <none>        8900:30347/TCP   6h28m
-service-discovery   NodePort    10.102.234.18    <none>        8761:31524/TCP   6h45m
-shipping-service    ClusterIP   10.100.68.217    <none>        8600/TCP         6h25m
-user-service        ClusterIP   10.107.97.222    <none>        8700/TCP         6h25m
-zipkin              ClusterIP   10.98.136.227    <none>        9411/TCP         6h50m
+api-gateway         NodePort    10.98.248.22     <none>        8080:31396/TCP   21h
+cloud-config        ClusterIP   10.100.193.251   <none>        9296/TCP         21h
+favourite-service   ClusterIP   10.109.190.103   <none>        8800/TCP         20h
+order-service       ClusterIP   10.100.61.62     <none>        8300/TCP         20h
+payment-service     ClusterIP   10.104.116.228   <none>        8400/TCP         20h
+product-service     ClusterIP   10.97.12.193     <none>        8500/TCP         20h
+proxy-client        NodePort    10.109.177.135   <none>        8900:30347/TCP   21h
+service-discovery   NodePort    10.102.234.18    <none>        8761:31524/TCP   21h
+shipping-service    ClusterIP   10.100.68.217    <none>        8600/TCP         20h
+user-service        ClusterIP   10.107.97.222    <none>        8700/TCP         20h
+zipkin              ClusterIP   10.98.136.227    <none>        9411/TCP         21h
 ```
 

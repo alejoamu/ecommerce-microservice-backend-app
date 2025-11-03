@@ -27,11 +27,11 @@
 [INFO]  T E S T S
 [INFO] -------------------------------------------------------
 [INFO] Running com.selimhorri.app.PaymentE2ETest
-[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.169 s - in com.selimhorri.app.PaymentE2ETest
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.056 s - in com.selimhorri.app.PaymentE2ETest
 [INFO] Running com.selimhorri.app.PaymentIntegrationTest
-[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.165 s - in com.selimhorri.app.PaymentIntegrationTest
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in com.selimhorri.app.PaymentIntegrationTest
 [INFO] Running com.selimhorri.app.PaymentServiceTest
-[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.051 s - in com.selimhorri.app.PaymentServiceTest
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in com.selimhorri.app.PaymentServiceTest
 [INFO] 
 [INFO] Results:
 [INFO] 
@@ -40,6 +40,6 @@
 [INFO] ------------------------------------------------------------------------
 [INFO] BUILD SUCCESS
 [INFO] ------------------------------------------------------------------------
-[INFO] Total time:  6.720 s
-[INFO] Finished at: 2025-10-28T16:35:57-05:00
+[INFO] Total time:  6.933 s
+[INFO] Finished at: 2025-10-29T07:09:41-05:00
 [INFO] ------------------------------------------------------------------------

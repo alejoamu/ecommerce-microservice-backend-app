@@ -27,7 +27,7 @@
 [INFO]  T E S T S
 [INFO] -------------------------------------------------------
 [INFO] Running com.selimhorri.app.ServiceDiscoveryE2ETest
-[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.093 s - in com.selimhorri.app.ServiceDiscoveryE2ETest
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.055 s - in com.selimhorri.app.ServiceDiscoveryE2ETest
 [INFO] 
 [INFO] Results:
 [INFO] 
@@ -36,6 +36,6 @@
 [INFO] ------------------------------------------------------------------------
 [INFO] BUILD SUCCESS
 [INFO] ------------------------------------------------------------------------
-[INFO] Total time:  6.769 s
-[INFO] Finished at: 2025-10-28T16:40:18-05:00
+[INFO] Total time:  5.653 s
+[INFO] Finished at: 2025-10-29T07:13:21-05:00
 [INFO] ------------------------------------------------------------------------

@@ -27,7 +27,7 @@
 [INFO]  T E S T S
 [INFO] -------------------------------------------------------
 [INFO] Running com.selimhorri.app.E2ETest
-[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.073 s - in com.selimhorri.app.E2ETest
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.046 s - in com.selimhorri.app.E2ETest
 [INFO] Running com.selimhorri.app.IntegrationTest
 [INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in com.selimhorri.app.IntegrationTest
 [INFO] Running com.selimhorri.app.SimpleTest
@@ -40,6 +40,6 @@
 [INFO] ------------------------------------------------------------------------
 [INFO] BUILD SUCCESS
 [INFO] ------------------------------------------------------------------------
-[INFO] Total time:  6.399 s
-[INFO] Finished at: 2025-10-28T16:37:03-05:00
+[INFO] Total time:  10.177 s
+[INFO] Finished at: 2025-10-29T07:10:54-05:00
 [INFO] ------------------------------------------------------------------------

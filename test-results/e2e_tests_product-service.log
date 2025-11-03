@@ -27,7 +27,7 @@
 [INFO]  T E S T S
 [INFO] -------------------------------------------------------
 [INFO] Running com.selimhorri.app.ProductE2ETest
-[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.071 s - in com.selimhorri.app.ProductE2ETest
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.058 s - in com.selimhorri.app.ProductE2ETest
 [INFO] 
 [INFO] Results:
 [INFO] 
@@ -36,6 +36,6 @@
 [INFO] ------------------------------------------------------------------------
 [INFO] BUILD SUCCESS
 [INFO] ------------------------------------------------------------------------
-[INFO] Total time:  7.093 s
-[INFO] Finished at: 2025-10-28T16:38:58-05:00
+[INFO] Total time:  6.096 s
+[INFO] Finished at: 2025-10-29T07:12:18-05:00
 [INFO] ------------------------------------------------------------------------

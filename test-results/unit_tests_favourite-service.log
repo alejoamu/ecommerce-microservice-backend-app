@@ -27,11 +27,11 @@
 [INFO]  T E S T S
 [INFO] -------------------------------------------------------
 [INFO] Running com.selimhorri.app.FavouriteE2ETest
-[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.091 s - in com.selimhorri.app.FavouriteE2ETest
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.059 s - in com.selimhorri.app.FavouriteE2ETest
 [INFO] Running com.selimhorri.app.FavouriteIntegrationTest
-[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in com.selimhorri.app.FavouriteIntegrationTest
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in com.selimhorri.app.FavouriteIntegrationTest
 [INFO] Running com.selimhorri.app.FavouriteServiceTest
-[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s - in com.selimhorri.app.FavouriteServiceTest
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in com.selimhorri.app.FavouriteServiceTest
 [INFO] 
 [INFO] Results:
 [INFO] 
@@ -40,6 +40,6 @@
 [INFO] ------------------------------------------------------------------------
 [INFO] BUILD SUCCESS
 [INFO] ------------------------------------------------------------------------
-[INFO] Total time:  6.762 s
-[INFO] Finished at: 2025-10-28T16:36:26-05:00
+[INFO] Total time:  6.908 s
+[INFO] Finished at: 2025-10-29T07:10:09-05:00
 [INFO] ------------------------------------------------------------------------

@@ -2168,3 +2168,27 @@ locust.exception.LocustError: In order to use a with-block for requests, you mus
 [2025-10-28 17:11:57,962] DESKTOP-16EJNEG/INFO/locust.main: --run-time limit reached, shutting down
 [2025-10-28 17:11:58,320] DESKTOP-16EJNEG/INFO/locust.main: writing html report to file: ../test-results/performance/performance_report.html
 [2025-10-28 17:11:58,325] DESKTOP-16EJNEG/INFO/locust.main: Shutting down (exit code 1)
+[2025-10-29 07:13:43,826] DESKTOP-16EJNEG/INFO/locust.main: Starting Locust 2.42.1
+[2025-10-29 07:13:43,826] DESKTOP-16EJNEG/INFO/locust.main: Starting web interface at http://http://127.0.0.1:57638:8089, press enter to open your default browser.
+[2025-10-29 07:13:43,991] DESKTOP-16EJNEG/CRITICAL/locust.web: Unhandled exception in greenlet: <Greenlet at 0x26486433740: <bound method WebUI.start_server of <locust.web.WebUI object at 0x0000026486577C40>>>
+Traceback (most recent call last):
+  File "src/gevent/greenlet.py", line 900, in gevent._gevent_cgreenlet.Greenlet.run
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\locust\web.py", line 627, in start_server
+    self.server.serve_forever()
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\gevent\baseserver.py", line 401, in serve_forever
+    self.start()
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\gevent\baseserver.py", line 339, in start
+    self.init_socket()
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\gevent\pywsgi.py", line 1672, in init_socket
+    StreamServer.init_socket(self)
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\gevent\server.py", line 173, in init_socket
+    self.socket = self.get_listener(self.address, self.backlog, self.family)
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\gevent\server.py", line 185, in get_listener
+    return _tcp_listener(address, backlog=backlog, reuse_addr=cls.reuse_addr, family=family)
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\gevent\server.py", line 264, in _tcp_listener
+    sock.bind(address)
+  File "C:\Users\Alejandro\AppData\Local\Programs\Python\Python310\lib\site-packages\gevent\_socketcommon.py", line 543, in bind
+    return self._sock.bind(address)
+socket.gaierror: [Errno 11001] getaddrinfo failed: ('http://127.0.0.1:57638', 8089)
+[2025-10-29 07:13:44,338] DESKTOP-16EJNEG/INFO/locust.main: writing html report to file: ../test-results/performance/performance_report.html
+[2025-10-29 07:13:44,341] DESKTOP-16EJNEG/INFO/locust.main: Shutting down (exit code 2)

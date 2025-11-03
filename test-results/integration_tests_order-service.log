@@ -27,7 +27,7 @@
 [INFO]  T E S T S
 [INFO] -------------------------------------------------------
 [INFO] Running com.selimhorri.app.OrderIntegrationTest
-[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.113 s - in com.selimhorri.app.OrderIntegrationTest
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.057 s - in com.selimhorri.app.OrderIntegrationTest
 [INFO] 
 [INFO] Results:
 [INFO] 
@@ -36,6 +36,6 @@
 [INFO] ------------------------------------------------------------------------
 [INFO] BUILD SUCCESS
 [INFO] ------------------------------------------------------------------------
-[INFO] Total time:  7.262 s
-[INFO] Finished at: 2025-10-28T16:37:46-05:00
+[INFO] Total time:  5.593 s
+[INFO] Finished at: 2025-10-29T07:11:25-05:00
 [INFO] ------------------------------------------------------------------------
