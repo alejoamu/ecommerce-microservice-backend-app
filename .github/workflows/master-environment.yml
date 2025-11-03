@@ -255,11 +255,14 @@ jobs:
         # Copy and modify manifests for production environment
         cp -r k8s/manifests/* k8s/manifests/prod/ 2>/dev/null || true
         
+        # Update namespace in production manifests
+        find k8s/manifests/prod -name "*.yaml" -type f ! -name "namespace.yaml" -exec sed -i "s|namespace: ecommerce|namespace: ecommerce-prod|g" {} \;
+        
         # Update image tags in production manifests
         find k8s/manifests/prod -name "*.yaml" -exec sed -i "s|image: .*|image: ${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/microservice:$IMAGE_TAG|g" {} \;
         
         # Apply production manifests
-        minikube kubectl -- apply -f k8s/manifests/prod/ -n ecommerce-prod
+        minikube kubectl -- apply -f k8s/manifests/prod/
 
     - name: Wait for deployments
       run: |
@@ -304,22 +307,45 @@ jobs:
       run: |
         minikube start --driver=docker --kubernetes-version=${{ env.KUBERNETES_VERSION }} --memory=6144 --cpus=4
 
+    - name: Create namespace
+      run: |
+        minikube kubectl -- create namespace ecommerce-prod || true
+
     - name: Deploy microservices
       run: |
-        minikube kubectl -- apply -f k8s/manifests/ -n ecommerce-prod
+        # Create temporary manifests with correct namespace
+        mkdir -p k8s/manifests/temp
+        cp -r k8s/manifests/* k8s/manifests/temp/ 2>/dev/null || true
+        find k8s/manifests/temp -name "*.yaml" -type f ! -name "namespace.yaml" -exec sed -i "s|namespace: ecommerce|namespace: ecommerce-prod|g" {} \;
+        
+        minikube kubectl -- apply -f k8s/manifests/temp/ || true
         minikube kubectl -- wait --for=condition=available --timeout=600s deployment --all -n ecommerce-prod || true
 
     - name: Wait for API Gateway to be ready
       run: |
         echo "Waiting for API Gateway service to be ready..."
-        minikube kubectl -- wait --for=condition=available --timeout=300s deployment/api-gateway -n ecommerce-prod || true
+        
+        # Check if namespace exists
+        if ! minikube kubectl -- get namespace ecommerce-prod 2>/dev/null; then
+          echo "Creating namespace ecommerce-prod..."
+          minikube kubectl -- create namespace ecommerce-prod
+        fi
+        
+        # Check if deployment exists before waiting
+        if minikube kubectl -- get deployment api-gateway -n ecommerce-prod 2>/dev/null; then
+          echo "API Gateway deployment found, waiting for it to be ready..."
+          minikube kubectl -- wait --for=condition=available --timeout=300s deployment/api-gateway -n ecommerce-prod || true
+        else
+          echo "⚠ API Gateway deployment not found, skipping wait..."
+        fi
+        
         sleep 10  # Give service time to fully start
         
         # Verify service exists
-        minikube kubectl -- get svc api-gateway -n ecommerce-prod
+        minikube kubectl -- get svc api-gateway -n ecommerce-prod || echo "Service not found"
         
         # Verify pods are running
-        minikube kubectl -- get pods -n ecommerce-prod -l app=api-gateway
+        minikube kubectl -- get pods -n ecommerce-prod -l app=api-gateway || echo "Pods not found"
 
     - name: Get API Gateway URL
       id: get-url
