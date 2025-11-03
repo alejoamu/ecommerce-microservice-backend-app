@@ -5,9 +5,12 @@
 ## Use a published Maven image tag (slim) that is available on Docker Hub
 FROM maven:3-openjdk-11 AS build
 WORKDIR /build
+# copy parent POM first (needed for child modules)
+COPY pom.xml ./
 # copy module sources and pom
 COPY product-service/ ./product-service/
-RUN mvn -f product-service/pom.xml -B -DskipTests package
+# Install parent POM and build the module
+RUN mvn -N install && mvn -f product-service/pom.xml -B -DskipTests package
 
 # Stage 2: Runtime
 FROM openjdk:11-jre-slim

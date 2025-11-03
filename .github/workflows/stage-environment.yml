@@ -149,6 +149,11 @@ jobs:
     - name: Set up Minikube
       uses: medyagh/setup-minikube@latest
 
+    - name: Clean up existing Minikube cluster (if any)
+      run: |
+        minikube delete || true
+        docker system prune -f || true
+
     - name: Start Minikube
       run: |
         minikube start --driver=docker --kubernetes-version=${{ env.KUBERNETES_VERSION }} --memory=4096 --cpus=2
@@ -211,6 +216,11 @@ jobs:
 
     - name: Set up Minikube
       uses: medyagh/setup-minikube@latest
+
+    - name: Clean up existing Minikube cluster (if any)
+      run: |
+        minikube delete || true
+        docker system prune -f || true
 
     - name: Start Minikube
       run: |
