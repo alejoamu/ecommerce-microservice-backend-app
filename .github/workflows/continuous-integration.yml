@@ -53,15 +53,16 @@ jobs:
           cd ..
         done
 
-    - name: Run E2E tests
+    - name: Install Newman
       run: |
-        echo "Running E2E tests for all microservices..."
-        for service in product-service user-service payment-service order-service shipping-service favourite-service api-gateway cloud-config service-discovery proxy-client; do
-          echo "Running E2E tests for $service..."
-          cd $service
-          ./mvnw test -Dtest="*E2ETest" || { echo "E2E tests failed for $service"; exit 1; }
-          cd ..
-        done
+        echo "Installing Newman..."
+        npm install -g newman
+
+    - name: Run E2E tests with Newman (if services are deployed)
+      run: |
+        echo "Note: E2E tests require deployed services. Skipping in CI pipeline."
+        echo "E2E tests will be executed in stage and master environment pipelines."
+        echo "To run E2E tests locally, use: ./e2e-tests/newman-scripts/run-e2e-tests.sh <service-name> <base-url>"
 
   # ==================== JOB 2: BUILD AND TEST DOCKER IMAGES ====================
   build-and-test-docker:

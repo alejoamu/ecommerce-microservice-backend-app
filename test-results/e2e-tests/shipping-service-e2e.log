@@ -1,0 +1,152 @@
+newman
+
+Shipping Service E2E Tests
+
+→ E2E Test 1: Health Check
+  GET http://localhost:8600/actuator/health [errored]
+     connect ECONNREFUSED 127.0.0.1:8600
+  2. E2E Test 1: Status code is 200
+  3. E2E Test 1: Response time is less than 3000ms
+
+→ E2E Test 2: Get All Shippings
+  GET http://localhost:8600/api/shippings [errored]
+     connect ECONNREFUSED 127.0.0.1:8600
+  5. E2E Test 2: Status code is 200
+  6. E2E Test 2: Response has collection property
+  7. E2E Test 2: Response time is less than 3000ms
+
+→ E2E Test 3: Create Shipping
+  POST http://localhost:8600/api/shippings [errored]
+     connect ECONNREFUSED 127.0.0.1:8600
+  9. E2E Test 3: Status code is 200
+ 10. E2E Test 3: Shipping created successfully
+ 11. E2E Test 3: Response time is less than 3000ms
+
+→ E2E Test 4: Get Shipping By ID
+  GET http://localhost:8600/api/shippings/1/1 [errored]
+     connect ECONNREFUSED 127.0.0.1:8600
+ 13. E2E Test 4: Status code is 200
+ 14. E2E Test 4: Shipping retrieved successfully
+ 15. E2E Test 4: Response time is less than 3000ms
+
+→ E2E Test 5: Update Shipping
+  PUT http://localhost:8600/api/shippings [errored]
+     connect ECONNREFUSED 127.0.0.1:8600
+ 17. E2E Test 5: Status code is 200
+ 18. E2E Test 5: Shipping updated successfully
+ 19. E2E Test 5: Response time is less than 3000ms
+
+┌─────────────────────────┬──────────┬──────────┐
+│                         │ executed │   failed │
+├─────────────────────────┼──────────┼──────────┤
+│              iterations │        1 │        0 │
+├─────────────────────────┼──────────┼──────────┤
+│                requests │        5 │        5 │
+├─────────────────────────┼──────────┼──────────┤
+│            test-scripts │        5 │        0 │
+├─────────────────────────┼──────────┼──────────┤
+│      prerequest-scripts │        0 │        0 │
+├─────────────────────────┼──────────┼──────────┤
+│              assertions │       14 │       14 │
+├─────────────────────────┴──────────┴──────────┤
+│ total run duration: 474ms                     │
+├───────────────────────────────────────────────┤
+│ total data received: 0B (approx)              │
+└───────────────────────────────────────────────┘
+
+[31m   # [39m[31m failure        [39m[31m detail                                            [39m
+[90m     [39m[90m                [39m[90m                                                   [39m
+ 01.  Error                                                             
+                      connect ECONNREFUSED 127.0.0.1:8600               
+                      at request                                        
+                      inside ""                                         
+[90m     [39m[90m                [39m[90m                                                   [39m
+ 02.  AssertionError  E2E Test 1: Status code is 200                    
+                      expected undefined to be one of [ 200, 201, 204 ] 
+                      at assertion:0 in test-script                     
+                      inside "E2E Test 1: Health Check"                 
+[90m     [39m[90m                [39m[90m                                                   [39m
+ 03.  AssertionError  E2E Test 1: Response time is less than 3000ms     
+                      expected undefined to be a number or a date       
+                      at assertion:1 in test-script                     
+                      inside "E2E Test 1: Health Check"                 
+[90m     [39m[90m                [39m[90m                                                   [39m
+ 04.  Error                                                             
+                      connect ECONNREFUSED 127.0.0.1:8600               
+                      at request                                        
+                      inside ""                                         
+[90m     [39m[90m                [39m[90m                                                   [39m
+ 05.  AssertionError  E2E Test 2: Status code is 200                    
+                      expected undefined to be one of [ 200, 201, 204 ] 
+                      at assertion:0 in test-script                     
+                      inside "E2E Test 2: Get All Shippings"            
+[90m     [39m[90m                [39m[90m                                                   [39m
+ 06.  JSONError       E2E Test 2: Response has collection property      
+                      "undefined" is not valid JSON                     
+                      at assertion:1 in test-script                     
+                      inside "E2E Test 2: Get All Shippings"            
+[90m     [39m[90m                [39m[90m                                                   [39m
+ 07.  AssertionError  E2E Test 2: Response time is less than 3000ms     
+                      expected undefined to be a number or a date       
+                      at assertion:2 in test-script                     
+                      inside "E2E Test 2: Get All Shippings"            
+[90m     [39m[90m                [39m[90m                                                   [39m
+ 08.  Error                                                             
+                      connect ECONNREFUSED 127.0.0.1:8600               
+                      at request                                        
+                      inside ""                                         
+[90m     [39m[90m                [39m[90m                                                   [39m
+ 09.  AssertionError  E2E Test 3: Status code is 200                    
+                      expected undefined to be one of [ 200, 201, 204 ] 
+                      at assertion:0 in test-script                     
+                      inside "E2E Test 3: Create Shipping"              
+[90m     [39m[90m                [39m[90m                                                   [39m
+ 10.  JSONError       E2E Test 3: Shipping created successfully         
+                      "undefined" is not valid JSON                     
+                      at assertion:1 in test-script                     
+                      inside "E2E Test 3: Create Shipping"              
+[90m     [39m[90m                [39m[90m                                                   [39m
+ 11.  AssertionError  E2E Test 3: Response time is less than 3000ms     
+                      expected undefined to be a number or a date       
+                      at assertion:2 in test-script                     
+                      inside "E2E Test 3: Create Shipping"              
+[90m     [39m[90m                [39m[90m                                                   [39m
+ 12.  Error                                                             
+                      connect ECONNREFUSED 127.0.0.1:8600               
+                      at request                                        
+                      inside ""                                         
+[90m     [39m[90m                [39m[90m                                                   [39m
+ 13.  AssertionError  E2E Test 4: Status code is 200                    
+                      expected undefined to be one of [ 200, 201, 204 ] 
+                      at assertion:0 in test-script                     
+                      inside "E2E Test 4: Get Shipping By ID"           
+[90m     [39m[90m                [39m[90m                                                   [39m
+ 14.  JSONError       E2E Test 4: Shipping retrieved successfully       
+                      "undefined" is not valid JSON                     
+                      at assertion:1 in test-script                     
+                      inside "E2E Test 4: Get Shipping By ID"           
+[90m     [39m[90m                [39m[90m                                                   [39m
+ 15.  AssertionError  E2E Test 4: Response time is less than 3000ms     
+                      expected undefined to be a number or a date       
+                      at assertion:2 in test-script                     
+                      inside "E2E Test 4: Get Shipping By ID"           
+[90m     [39m[90m                [39m[90m                                                   [39m
+ 16.  Error                                                             
+                      connect ECONNREFUSED 127.0.0.1:8600               
+                      at request                                        
+                      inside ""                                         
+[90m     [39m[90m                [39m[90m                                                   [39m
+ 17.  AssertionError  E2E Test 5: Status code is 200                    
+                      expected undefined to be one of [ 200, 201, 204 ] 
+                      at assertion:0 in test-script                     
+                      inside "E2E Test 5: Update Shipping"              
+[90m     [39m[90m                [39m[90m                                                   [39m
+ 18.  JSONError       E2E Test 5: Shipping updated successfully         
+                      "undefined" is not valid JSON                     
+                      at assertion:1 in test-script                     
+                      inside "E2E Test 5: Update Shipping"              
+[90m     [39m[90m                [39m[90m                                                   [39m
+ 19.  AssertionError  E2E Test 5: Response time is less than 3000ms     
+                      expected undefined to be a number or a date       
+                      at assertion:2 in test-script                     
+                      inside "E2E Test 5: Update Shipping"              

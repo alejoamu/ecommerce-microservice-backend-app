@@ -1,0 +1,152 @@
+newman
+
+User Service E2E Tests
+
+→ E2E Test 1: Health Check
+  GET http://localhost:8700/actuator/health [errored]
+     connect ECONNREFUSED 127.0.0.1:8700
+  2. E2E Test 1: Status code is successful
+  3. E2E Test 1: Response time is acceptable
+
+→ E2E Test 2: Get All Users
+  GET http://localhost:8700/api/users [errored]
+     connect ECONNREFUSED 127.0.0.1:8700
+  5. E2E Test 2: Status code is successful
+  6. E2E Test 2: Response is valid JSON
+  7. E2E Test 2: Response time is acceptable
+
+→ E2E Test 3: Create User
+  POST http://localhost:8700/api/users [errored]
+     connect ECONNREFUSED 127.0.0.1:8700
+  9. E2E Test 3: Status code is successful
+ 10. E2E Test 3: User created successfully
+ 11. E2E Test 3: Response time is acceptable
+
+→ E2E Test 4: Get User By ID
+  GET http://localhost:8700/api/users/1 [errored]
+     connect ECONNREFUSED 127.0.0.1:8700
+ 13. E2E Test 4: Status code is successful
+ 14. E2E Test 4: User retrieved successfully
+ 15. E2E Test 4: Response time is acceptable
+
+→ E2E Test 5: Update User
+  PUT http://localhost:8700/api/users [errored]
+     connect ECONNREFUSED 127.0.0.1:8700
+ 17. E2E Test 5: Status code is successful
+ 18. E2E Test 5: User updated successfully
+ 19. E2E Test 5: Response time is acceptable
+
+┌─────────────────────────┬──────────┬──────────┐
+│                         │ executed │   failed │
+├─────────────────────────┼──────────┼──────────┤
+│              iterations │        1 │        0 │
+├─────────────────────────┼──────────┼──────────┤
+│                requests │        5 │        5 │
+├─────────────────────────┼──────────┼──────────┤
+│            test-scripts │        5 │        0 │
+├─────────────────────────┼──────────┼──────────┤
+│      prerequest-scripts │        0 │        0 │
+├─────────────────────────┼──────────┼──────────┤
+│              assertions │       14 │       14 │
+├─────────────────────────┴──────────┴──────────┤
+│ total run duration: 499ms                     │
+├───────────────────────────────────────────────┤
+│ total data received: 0B (approx)              │
+└───────────────────────────────────────────────┘
+
+[31m   # [39m[31m failure        [39m[31m detail                                            [39m
+[90m     [39m[90m                [39m[90m                                                   [39m
+ 01.  Error                                                             
+                      connect ECONNREFUSED 127.0.0.1:8700               
+                      at request                                        
+                      inside ""                                         
+[90m     [39m[90m                [39m[90m                                                   [39m
+ 02.  AssertionError  E2E Test 1: Status code is successful             
+                      expected undefined to be one of [ 200, 201, 204 ] 
+                      at assertion:0 in test-script                     
+                      inside "E2E Test 1: Health Check"                 
+[90m     [39m[90m                [39m[90m                                                   [39m
+ 03.  AssertionError  E2E Test 1: Response time is acceptable           
+                      expected undefined to be a number or a date       
+                      at assertion:1 in test-script                     
+                      inside "E2E Test 1: Health Check"                 
+[90m     [39m[90m                [39m[90m                                                   [39m
+ 04.  Error                                                             
+                      connect ECONNREFUSED 127.0.0.1:8700               
+                      at request                                        
+                      inside ""                                         
+[90m     [39m[90m                [39m[90m                                                   [39m
+ 05.  AssertionError  E2E Test 2: Status code is successful             
+                      expected undefined to be one of [ 200, 201, 204 ] 
+                      at assertion:0 in test-script                     
+                      inside "E2E Test 2: Get All Users"                
+[90m     [39m[90m                [39m[90m                                                   [39m
+ 06.  AssertionError  E2E Test 2: Response is valid JSON                
+                      Response is not valid JSON                        
+                      at assertion:1 in test-script                     
+                      inside "E2E Test 2: Get All Users"                
+[90m     [39m[90m                [39m[90m                                                   [39m
+ 07.  AssertionError  E2E Test 2: Response time is acceptable           
+                      expected undefined to be a number or a date       
+                      at assertion:2 in test-script                     
+                      inside "E2E Test 2: Get All Users"                
+[90m     [39m[90m                [39m[90m                                                   [39m
+ 08.  Error                                                             
+                      connect ECONNREFUSED 127.0.0.1:8700               
+                      at request                                        
+                      inside ""                                         
+[90m     [39m[90m                [39m[90m                                                   [39m
+ 09.  AssertionError  E2E Test 3: Status code is successful             
+                      expected undefined to be one of [ 200, 201, 204 ] 
+                      at assertion:0 in test-script                     
+                      inside "E2E Test 3: Create User"                  
+[90m     [39m[90m                [39m[90m                                                   [39m
+ 10.  AssertionError  E2E Test 3: User created successfully             
+                      Invalid response format                           
+                      at assertion:1 in test-script                     
+                      inside "E2E Test 3: Create User"                  
+[90m     [39m[90m                [39m[90m                                                   [39m
+ 11.  AssertionError  E2E Test 3: Response time is acceptable           
+                      expected undefined to be a number or a date       
+                      at assertion:2 in test-script                     
+                      inside "E2E Test 3: Create User"                  
+[90m     [39m[90m                [39m[90m                                                   [39m
+ 12.  Error                                                             
+                      connect ECONNREFUSED 127.0.0.1:8700               
+                      at request                                        
+                      inside ""                                         
+[90m     [39m[90m                [39m[90m                                                   [39m
+ 13.  AssertionError  E2E Test 4: Status code is successful             
+                      expected undefined to be one of [ 200, 201, 204 ] 
+                      at assertion:0 in test-script                     
+                      inside "E2E Test 4: Get User By ID"               
+[90m     [39m[90m                [39m[90m                                                   [39m
+ 14.  AssertionError  E2E Test 4: User retrieved successfully           
+                      Invalid response format                           
+                      at assertion:1 in test-script                     
+                      inside "E2E Test 4: Get User By ID"               
+[90m     [39m[90m                [39m[90m                                                   [39m
+ 15.  AssertionError  E2E Test 4: Response time is acceptable           
+                      expected undefined to be a number or a date       
+                      at assertion:2 in test-script                     
+                      inside "E2E Test 4: Get User By ID"               
+[90m     [39m[90m                [39m[90m                                                   [39m
+ 16.  Error                                                             
+                      connect ECONNREFUSED 127.0.0.1:8700               
+                      at request                                        
+                      inside ""                                         
+[90m     [39m[90m                [39m[90m                                                   [39m
+ 17.  AssertionError  E2E Test 5: Status code is successful             
+                      expected undefined to be one of [ 200, 201, 204 ] 
+                      at assertion:0 in test-script                     
+                      inside "E2E Test 5: Update User"                  
+[90m     [39m[90m                [39m[90m                                                   [39m
+ 18.  AssertionError  E2E Test 5: User updated successfully             
+                      Invalid response format                           
+                      at assertion:1 in test-script                     
+                      inside "E2E Test 5: Update User"                  
+[90m     [39m[90m                [39m[90m                                                   [39m
+ 19.  AssertionError  E2E Test 5: Response time is acceptable           
+                      expected undefined to be a number or a date       
+                      at assertion:2 in test-script                     
+                      inside "E2E Test 5: Update User"                  

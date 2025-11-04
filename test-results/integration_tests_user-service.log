@@ -27,7 +27,7 @@
 [INFO]  T E S T S
 [INFO] -------------------------------------------------------
 [INFO] Running com.selimhorri.app.UserIntegrationTest
-[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.066 s - in com.selimhorri.app.UserIntegrationTest
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.049 s - in com.selimhorri.app.UserIntegrationTest
 [INFO] 
 [INFO] Results:
 [INFO] 
@@ -36,6 +36,6 @@
 [INFO] ------------------------------------------------------------------------
 [INFO] BUILD SUCCESS
 [INFO] ------------------------------------------------------------------------
-[INFO] Total time:  5.396 s
-[INFO] Finished at: 2025-10-29T07:11:09-05:00
+[INFO] Total time:  4.652 s
+[INFO] Finished at: 2025-11-04T16:53:24-05:00
 [INFO] ------------------------------------------------------------------------

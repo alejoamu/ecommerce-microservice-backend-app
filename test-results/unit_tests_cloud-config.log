@@ -27,9 +27,9 @@
 [INFO]  T E S T S
 [INFO] -------------------------------------------------------
 [INFO] Running com.selimhorri.app.CloudConfigE2ETest
-[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.074 s - in com.selimhorri.app.CloudConfigE2ETest
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.055 s - in com.selimhorri.app.CloudConfigE2ETest
 [INFO] Running com.selimhorri.app.CloudConfigIntegrationTest
-[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in com.selimhorri.app.CloudConfigIntegrationTest
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in com.selimhorri.app.CloudConfigIntegrationTest
 [INFO] Running com.selimhorri.app.CloudConfigTest
 [INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in com.selimhorri.app.CloudConfigTest
 [INFO] 
@@ -40,6 +40,6 @@
 [INFO] ------------------------------------------------------------------------
 [INFO] BUILD SUCCESS
 [INFO] ------------------------------------------------------------------------
-[INFO] Total time:  8.679 s
-[INFO] Finished at: 2025-10-29T07:10:31-05:00
+[INFO] Total time:  4.637 s
+[INFO] Finished at: 2025-11-04T16:52:58-05:00
 [INFO] ------------------------------------------------------------------------

@@ -1,0 +1,94 @@
+newman
+
+Service Discovery E2E Tests
+
+→ E2E Test 1: Health Check
+  GET http://192.168.49.2:31524/actuator/health [errored]
+     ETIMEDOUT
+  2. E2E Test 1: Status code is 200
+  3. E2E Test 1: Response time is less than 3000ms
+
+→ E2E Test 2: Get Eureka Dashboard
+  GET http://192.168.49.2:31524 [errored]
+     ETIMEDOUT
+  5. E2E Test 2: Status code is 200
+  6. E2E Test 2: Eureka dashboard accessible
+  7. E2E Test 2: Response time is less than 3000ms
+
+→ E2E Test 3: Get Registered Services
+  GET http://192.168.49.2:31524/eureka/apps 
+┌─────────────────────────┬──────────┬──────────┐
+│                         │ executed │   failed │
+├─────────────────────────┼──────────┼──────────┤
+│              iterations │        0 │        0 │
+├─────────────────────────┼──────────┼──────────┤
+│                requests │        2 │        2 │
+├─────────────────────────┼──────────┼──────────┤
+│            test-scripts │        2 │        0 │
+├─────────────────────────┼──────────┼──────────┤
+│      prerequest-scripts │        0 │        0 │
+├─────────────────────────┼──────────┼──────────┤
+│              assertions │        5 │        5 │
+├─────────────────────────┴──────────┴──────────┤
+│ total run duration: 0ms                       │
+├───────────────────────────────────────────────┤
+│ total data received: 0B (approx)              │
+└───────────────────────────────────────────────┘
+
+[31m  # [39m[31m failure        [39m[31m detail                                                                                                                                                                             [39m
+[90m    [39m[90m                [39m[90m                                                                                                                                                                                    [39m
+ 1.  Error                                                                                                                                                                                              
+                     ETIMEDOUT                                                                                                                                                                          
+                     at request                                                                                                                                                                         
+                     inside ""                                                                                                                                                                          
+[90m    [39m[90m                [39m[90m                                                                                                                                                                                    [39m
+ 2.  AssertionError  E2E Test 1: Status code is 200                                                                                                                                                     
+                     expected undefined to be one of [ 200, 201, 204 ]                                                                                                                                  
+                     at assertion:0 in test-script                                                                                                                                                      
+                     inside "E2E Test 1: Health Check"                                                                                                                                                  
+[90m    [39m[90m                [39m[90m                                                                                                                                                                                    [39m
+ 3.  AssertionError  E2E Test 1: Response time is less than 3000ms                                                                                                                                      
+                     expected undefined to be a number or a date                                                                                                                                        
+                     at assertion:1 in test-script                                                                                                                                                      
+                     inside "E2E Test 1: Health Check"                                                                                                                                                  
+[90m    [39m[90m                [39m[90m                                                                                                                                                                                    [39m
+ 4.  Error                                                                                                                                                                                              
+                     ETIMEDOUT                                                                                                                                                                          
+                     at request                                                                                                                                                                         
+                     inside ""                                                                                                                                                                          
+[90m    [39m[90m                [39m[90m                                                                                                                                                                                    [39m
+ 5.  AssertionError  E2E Test 2: Status code is 200                                                                                                                                                     
+                     expected undefined to be one of [ 200, 201, 204 ]                                                                                                                                  
+                     at assertion:0 in test-script                                                                                                                                                      
+                     inside "E2E Test 2: Get Eureka Dashboard"                                                                                                                                          
+[90m    [39m[90m                [39m[90m                                                                                                                                                                                    [39m
+ 6.  AssertionError  E2E Test 2: Eureka dashboard accessible                                                                                                                                            
+                     the given combination of arguments (undefined and string) is invalid for this assertion. You can use an array, a map, an object, a set, a string, or a weakset instead of a string 
+                     at assertion:1 in test-script                                                                                                                                                      
+                     inside "E2E Test 2: Get Eureka Dashboard"                                                                                                                                          
+[90m    [39m[90m                [39m[90m                                                                                                                                                                                    [39m
+ 7.  AssertionError  E2E Test 2: Response time is less than 3000ms                                                                                                                                      
+                     expected undefined to be a number or a date                                                                                                                                        
+                     at assertion:2 in test-script                                                                                                                                                      
+                     inside "E2E Test 2: Get Eureka Dashboard"                                                                                                                                          
+error: callback timed out
+
+[errored]
+     ETIMEDOUT
+  9. E2E Test 3: Status code is 200
+ 10. E2E Test 3: Services registry accessible
+ 11. E2E Test 3: Response time is less than 3000ms
+
+→ E2E Test 4: Get Service Instances
+  GET http://192.168.49.2:31524/eureka/apps/PRODUCT-SERVICE [errored]
+     ETIMEDOUT
+ 13. E2E Test 4: Status code is 200
+ 14. E2E Test 4: Service instances accessible
+ 15. E2E Test 4: Response time is less than 3000ms
+
+→ E2E Test 5: Get All Applications
+  GET http://192.168.49.2:31524/eureka/apps [errored]
+     ETIMEDOUT
+ 17. E2E Test 5: Status code is 200
+ 18. E2E Test 5: Applications list accessible
+ 19. E2E Test 5: Response time is less than 3000ms

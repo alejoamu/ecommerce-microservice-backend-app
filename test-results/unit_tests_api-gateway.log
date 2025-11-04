@@ -27,11 +27,11 @@
 [INFO]  T E S T S
 [INFO] -------------------------------------------------------
 [INFO] Running com.selimhorri.app.ApiGatewayE2ETest
-[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.066 s - in com.selimhorri.app.ApiGatewayE2ETest
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.058 s - in com.selimhorri.app.ApiGatewayE2ETest
 [INFO] Running com.selimhorri.app.ApiGatewayIntegrationTest
 [INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in com.selimhorri.app.ApiGatewayIntegrationTest
 [INFO] Running com.selimhorri.app.ApiGatewayTest
-[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in com.selimhorri.app.ApiGatewayTest
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in com.selimhorri.app.ApiGatewayTest
 [INFO] 
 [INFO] Results:
 [INFO] 
@@ -40,6 +40,6 @@
 [INFO] ------------------------------------------------------------------------
 [INFO] BUILD SUCCESS
 [INFO] ------------------------------------------------------------------------
-[INFO] Total time:  9.166 s
-[INFO] Finished at: 2025-10-29T07:10:20-05:00
+[INFO] Total time:  4.649 s
+[INFO] Finished at: 2025-11-04T16:52:52-05:00
 [INFO] ------------------------------------------------------------------------

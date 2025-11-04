@@ -1,0 +1,94 @@
+newman
+
+API Gateway E2E Tests
+
+→ E2E Test 1: Health Check
+  GET http://192.168.49.2:31396/actuator/health [errored]
+     ETIMEDOUT
+  2. E2E Test 1: Status code is 200
+  3. E2E Test 1: Response time is less than 3000ms
+
+→ E2E Test 2: Route to Product Service
+  GET http://192.168.49.2:31396/app/api/products [errored]
+     ETIMEDOUT
+  5. E2E Test 2: Status code is successful
+  6. E2E Test 2: Gateway routes to product service
+  7. E2E Test 2: Response time is acceptable
+
+→ E2E Test 3: Route to User Service
+  GET http://192.168.49.2:31396/user-service/api/users 
+┌─────────────────────────┬──────────┬──────────┐
+│                         │ executed │   failed │
+├─────────────────────────┼──────────┼──────────┤
+│              iterations │        0 │        0 │
+├─────────────────────────┼──────────┼──────────┤
+│                requests │        2 │        2 │
+├─────────────────────────┼──────────┼──────────┤
+│            test-scripts │        2 │        0 │
+├─────────────────────────┼──────────┼──────────┤
+│      prerequest-scripts │        0 │        0 │
+├─────────────────────────┼──────────┼──────────┤
+│              assertions │        5 │        5 │
+├─────────────────────────┴──────────┴──────────┤
+│ total run duration: 0ms                       │
+├───────────────────────────────────────────────┤
+│ total data received: 0B (approx)              │
+└───────────────────────────────────────────────┘
+
+[31m  # [39m[31m failure        [39m[31m detail                                            [39m
+[90m    [39m[90m                [39m[90m                                                   [39m
+ 1.  Error                                                             
+                     ETIMEDOUT                                         
+                     at request                                        
+                     inside ""                                         
+[90m    [39m[90m                [39m[90m                                                   [39m
+ 2.  AssertionError  E2E Test 1: Status code is 200                    
+                     expected undefined to be one of [ 200, 201, 204 ] 
+                     at assertion:0 in test-script                     
+                     inside "E2E Test 1: Health Check"                 
+[90m    [39m[90m                [39m[90m                                                   [39m
+ 3.  AssertionError  E2E Test 1: Response time is less than 3000ms     
+                     expected undefined to be a number or a date       
+                     at assertion:1 in test-script                     
+                     inside "E2E Test 1: Health Check"                 
+[90m    [39m[90m                [39m[90m                                                   [39m
+ 4.  Error                                                             
+                     ETIMEDOUT                                         
+                     at request                                        
+                     inside ""                                         
+[90m    [39m[90m                [39m[90m                                                   [39m
+ 5.  AssertionError  E2E Test 2: Status code is successful             
+                     expected undefined to be one of [ 200, 201, 204 ] 
+                     at assertion:0 in test-script                     
+                     inside "E2E Test 2: Route to Product Service"     
+[90m    [39m[90m                [39m[90m                                                   [39m
+ 6.  AssertionError  E2E Test 2: Gateway routes to product service     
+                     Response is not valid JSON                        
+                     at assertion:1 in test-script                     
+                     inside "E2E Test 2: Route to Product Service"     
+[90m    [39m[90m                [39m[90m                                                   [39m
+ 7.  AssertionError  E2E Test 2: Response time is acceptable           
+                     expected undefined to be a number or a date       
+                     at assertion:2 in test-script                     
+                     inside "E2E Test 2: Route to Product Service"     
+error: callback timed out
+
+[errored]
+     ETIMEDOUT
+  9. E2E Test 3: Status code is 200
+ 10. E2E Test 3: Gateway routes to user service
+ 11. E2E Test 3: Response time is less than 3000ms
+
+→ E2E Test 4: Route to Order Service
+  GET http://192.168.49.2:31396/order-service/api/orders [errored]
+     ETIMEDOUT
+ 13. E2E Test 4: Status code is 200
+ 14. E2E Test 4: Gateway routes to order service
+ 15. E2E Test 4: Response time is less than 3000ms
+
+→ E2E Test 5: Route to Payment Service
+  GET http://192.168.49.2:31396/payment-service/api/payments [errored]
+     ETIMEDOUT
+ 17. E2E Test 5: Status code is 200
+ 18. E2E Test 5: Gateway routes to payment service
+ 19. E2E Test 5: Response time is less than 3000ms
