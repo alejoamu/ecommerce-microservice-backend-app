@@ -640,7 +640,8 @@ jobs:
         echo "Installing Python and Locust for performance testing..."
         sudo apt-get update
         sudo apt-get install -y python3 python3-pip
-        pip3 install locust
+        pip3 install --upgrade pip
+        pip3 install locust zope.event
 
     - name: Run performance tests with Locust
       run: |
