@@ -2,15 +2,18 @@
 ### Multi-stage Dockerfile: build jar with Maven, then produce a small runtime image
 
 # Stage 1: Build with Maven
-## Use a published Maven image tag (slim) that is available on Docker Hub
-FROM maven:3-openjdk-11 AS build
+## Use a published Maven image tag with Eclipse Temurin JDK
+FROM maven:3.9-eclipse-temurin-11 AS build
 WORKDIR /build
-# copy module sources and pom
+# Copy parent pom.xml first (required for Maven multi-module builds)
+COPY pom.xml ./
+# Copy module sources
 COPY product-service/ ./product-service/
-RUN mvn -f product-service/pom.xml -B -DskipTests package
+# Install parent POM first, then build the module
+RUN mvn -N install && mvn -f product-service/pom.xml -B -DskipTests package
 
 # Stage 2: Runtime
-FROM openjdk:11-jre-slim
+FROM eclipse-temurin:11-jre-alpine
 RUN mkdir -p /home/app
 WORKDIR /home/app
 ENV SPRING_PROFILES_ACTIVE=dev
