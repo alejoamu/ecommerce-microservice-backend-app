@@ -639,9 +639,10 @@ jobs:
       run: |
         echo "Installing Python and Locust for performance testing..."
         sudo apt-get update
-        sudo apt-get install -y python3 python3-pip
-        pip3 install --upgrade pip
-        pip3 install locust zope.event
+        sudo apt-get install -y python3 python3-pip python3-venv
+        python3 -m pip install --upgrade pip setuptools wheel
+        python3 -m pip install --no-cache-dir zope.event zope.interface gevent locust
+        python3 -m pip list | grep -E "(locust|zope|gevent)"
 
     - name: Run performance tests with Locust
       run: |
@@ -673,7 +674,13 @@ jobs:
         
         cd performance-tests
         
-        locust -f locustfile.py \
+        # Verify Locust installation
+        python3 -c "import locust; print('Locust version:', locust.__version__)" || {
+          echo "❌ Locust import failed, reinstalling..."
+          python3 -m pip install --force-reinstall --no-cache-dir zope.event zope.interface gevent locust
+        }
+        
+        python3 -m locust -f locustfile.py \
           --host="$API_GATEWAY_URL" \
           --users=20 \
           --spawn-rate=2 \
