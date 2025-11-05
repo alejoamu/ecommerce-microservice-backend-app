@@ -701,6 +701,7 @@ jobs:
         
         cd performance-tests
         
+        # Run Locust and capture exit code
         python -m locust -f locustfile.py \
           --host="$API_GATEWAY_URL" \
           --users=20 \
@@ -711,18 +712,23 @@ jobs:
           --html="../test-results/performance/performance_report.html" \
           --logfile="../test-results/performance/locust.log" \
           --loglevel=INFO \
-          --stop-timeout=30 || EXIT_CODE=$?
+          --stop-timeout=30 2>&1 | tee ../test-results/performance/locust_output.log || EXIT_CODE=$?
         
         cd ..
         
-        # Accept exit codes 0 (success) or 2 (some requests failed but completed)
-        if [ ${EXIT_CODE:-0} -eq 0 ] || [ ${EXIT_CODE:-0} -eq 2 ]; then
-          echo "✅ Performance tests completed"
-          if [ ${EXIT_CODE:-0} -eq 2 ]; then
-            echo "⚠️  Some requests failed, but tests completed"
+        # Check if performance report was generated and tests passed
+        if [ -f "test-results/performance/performance_report.html" ]; then
+          echo "✅ Performance tests completed - Report generated"
+          # Only accept exit code 0 as success (tests are now intelligent and should work correctly)
+          if [ ${EXIT_CODE:-0} -eq 0 ]; then
+            echo "✅ All performance tests passed successfully"
+          else
+            echo "❌ Performance tests failed with exit code: ${EXIT_CODE:-0}"
+            echo "Check the logs and report for details"
+            exit 1
           fi
         else
-          echo "❌ Performance tests failed with exit code: ${EXIT_CODE:-0}"
+          echo "❌ Performance tests failed - No report generated"
           exit 1
         fi
         
