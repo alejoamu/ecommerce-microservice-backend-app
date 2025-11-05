@@ -640,13 +640,33 @@ jobs:
         echo "Installing Python and Locust for performance testing..."
         sudo apt-get update
         sudo apt-get install -y python3 python3-pip python3-venv
-        python3 -m pip install --upgrade pip setuptools wheel
-        python3 -m pip install --no-cache-dir zope.event zope.interface gevent locust
-        python3 -m pip list | grep -E "(locust|zope|gevent)"
+        
+        # Create virtual environment to avoid conflicts
+        python3 -m venv locust_env
+        source locust_env/bin/activate
+        
+        # Upgrade pip and install dependencies
+        pip install --upgrade pip setuptools wheel
+        pip install --no-cache-dir zope.event zope.interface gevent locust
+        
+        # Verify installation
+        python -c "import zope.event; import gevent; import locust; print('✅ All modules imported successfully')" || {
+          echo "❌ Import verification failed"
+          pip list | grep -E "(locust|zope|gevent)"
+          exit 1
+        }
+        
+        echo "✅ Locust installed successfully"
 
     - name: Run performance tests with Locust
       run: |
         echo "Running performance tests with Locust..."
+        
+        # Activate virtual environment (must be in same step or use shell with -c)
+        source locust_env/bin/activate || {
+          echo "❌ Failed to activate virtual environment"
+          exit 1
+        }
         
         # Get API Gateway URL from previous step
         API_GATEWAY_URL="${{ steps.get-url.outputs.api-url }}"
@@ -667,6 +687,13 @@ jobs:
         # Create results directory
         mkdir -p test-results/performance
         
+        # Verify Locust installation before running
+        python -c "import zope.event; import gevent; import locust; print('✅ All dependencies verified')" || {
+          echo "❌ Dependency verification failed"
+          pip list | grep -E "(locust|zope|gevent)"
+          exit 1
+        }
+        
         # Run Locust in headless mode
         echo "Starting Locust performance tests..."
         echo "Target: $API_GATEWAY_URL"
@@ -674,13 +701,7 @@ jobs:
         
         cd performance-tests
         
-        # Verify Locust installation
-        python3 -c "import locust; print('Locust version:', locust.__version__)" || {
-          echo "❌ Locust import failed, reinstalling..."
-          python3 -m pip install --force-reinstall --no-cache-dir zope.event zope.interface gevent locust
-        }
-        
-        python3 -m locust -f locustfile.py \
+        python -m locust -f locustfile.py \
           --host="$API_GATEWAY_URL" \
           --users=20 \
           --spawn-rate=2 \
